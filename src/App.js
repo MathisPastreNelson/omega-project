@@ -1,14 +1,20 @@
 import React from 'react';
+/* Package pour la création/gestion des routes*/
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import Home from "./pages/Home"
 
-function App() {
+/* Definition des routes de l'applications */
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Voici le tout départ</h1>
-      </header>
-    </div >
+    <React.StrictMode>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </React.StrictMode>
   );
-}
+};
 
 export default App;
