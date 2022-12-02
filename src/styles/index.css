@@ -1,8 +1,5 @@
 .statistic--container {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 50%;
   background-color: red;
 }
 
@@ -10,6 +7,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.statistic__unitary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .lessAndMore {
