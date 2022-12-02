@@ -1,9 +1,9 @@
 import React from 'react';
-import Test from "../components/Test"
+import StatsRepartition from "../components/StatsRepartition"
 
 const Home = () => {
     return (
-        <Test />
+        <StatsRepartition />
     );
 };
 
