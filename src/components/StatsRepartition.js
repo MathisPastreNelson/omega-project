@@ -3,39 +3,51 @@ import { useState } from "react";
 
 const StatsRepartition = () => {
     // States des statistiques
-    const [countStr, setCounterStr] = useState(5);
-    const [countAgi, setCounterAgi] = useState(5);
-    const [countIntel, setCounterIntel] = useState(5);
-    const [countEndu, setCounterEndu] = useState(5);
+    const [countTotal, setCountTotal] = useState(5);
+    const [countStr, setCounterStr] = useState(3);
+    const [countAgi, setCounterAgi] = useState(3);
+    const [countIntel, setCounterIntel] = useState(3);
+    const [countEndu, setCounterEndu] = useState(3);
+
+    // if (setCountTotal == 0) { countStr, countAgi, countIntel, countEndu }
 
     // Logique des statistiques
     const deleteStatStr = () => {
         setCounterStr(countStr - 1)
+        setCountTotal(countTotal + 1)
     }
     const addStatStr = () => {
         setCounterStr(countStr + 1)
+        setCountTotal(countTotal - 1)
     }
     const deleteStatAgi = () => {
         setCounterAgi(countAgi - 1)
+        setCountTotal(countTotal + 1)
     }
     const addStatAgi = () => {
         setCounterAgi(countAgi + 1)
+        setCountTotal(countTotal - 1)
     }
     const deleteStatIntel = () => {
         setCounterIntel(countIntel - 1)
+        setCountTotal(countTotal + 1)
     }
     const addStatIntel = () => {
         setCounterIntel(countIntel + 1)
+        setCountTotal(countTotal - 1)
     }
     const deleteEndu = () => {
         setCounterEndu(countEndu - 1)
+        setCountTotal(countTotal + 1)
     }
     const addStatEndu = () => {
         setCounterEndu(countEndu + 1)
+        setCountTotal(countTotal - 1)
     }
 
     return (
         <div className="statistic--container">
+            <p className="test">Point restants : {countTotal}</p>
             <div className="statistic__unitary">
                 <p>Force</p>
                 <form className="statistic_form">
