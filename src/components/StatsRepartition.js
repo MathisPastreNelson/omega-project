@@ -9,8 +9,7 @@ const StatsRepartition = () => {
     const [countIntel, setCounterIntel] = useState(3);
     const [countEndu, setCounterEndu] = useState(3);
 
-    // if (setCountTotal == 0) { countStr, countAgi, countIntel, countEndu }
-
+    console.log(countTotal)
     // Logique des statistiques
     const deleteStatStr = () => {
         setCounterStr(countStr - 1)
@@ -45,6 +44,7 @@ const StatsRepartition = () => {
         setCountTotal(countTotal - 1)
     }
 
+    // Rendu
     return (
         <div className="statistic--container">
             <p className="test">Point restants : {countTotal}</p>
