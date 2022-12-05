@@ -1,11 +1,17 @@
 .test {
   width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .statistic--container {
-  width: 50%;
+  width: 100%;
   background-color: red;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .statistic_form {
