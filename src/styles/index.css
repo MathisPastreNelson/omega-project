@@ -7,7 +7,7 @@
 
 .statistic--container {
   width: 100%;
-  background-color: red;
+  background-color: rgb(152, 160, 86);
   justify-content: center;
   align-items: center;
   justify-content: center;
@@ -36,6 +36,27 @@
   background-color: salmon;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+.resetButton__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resetButton {
+  width: 10%;
+  height: 50px;
+  background-color: salmon;
+  border-radius: 20px;
+  transition: 500ms;
+  margin-bottom: 20px;
+}
+
+.resetButton:hover {
+  background-color: rgb(190, 69, 55);
+  border-radius: 0px;
 }
 
 body {

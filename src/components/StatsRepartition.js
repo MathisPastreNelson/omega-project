@@ -43,6 +43,14 @@ const StatsRepartition = () => {
         setCounterEndu(countEndu + 1)
         setCountTotal(countTotal - 1)
     }
+    const resetButton = () => {
+        setCountTotal(5)
+        setCounterStr(3)
+        setCounterAgi(3)
+        setCounterIntel(3)
+        setCounterEndu(3)
+        console.log(setCountTotal)
+    }
 
     // Rendu
     return (
@@ -79,6 +87,10 @@ const StatsRepartition = () => {
                     <p>{countEndu}</p>
                     <button onClick={addStatEndu} className="lessAndMore" type="button">+</button>
                 </form>
+            </div>
+            <div className="resetButton__container">
+
+                <button className="resetButton" onClick={resetButton} type="button">Reset des points</button>
             </div>
         </div >
     );
