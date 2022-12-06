@@ -1,17 +1,21 @@
-.test {
+.restPoint {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 20px;
 }
 
 .statistic--container {
-  width: 100%;
-  background-color: rgb(152, 160, 86);
+  width: 60%;
+  background: url(../assets/scrollBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .statistic_form {
@@ -33,9 +37,39 @@
   justify-content: center;
   align-items: center;
   margin: 10px;
-  background-color: salmon;
   border: 1px solid black;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.lessColor {
+  background: linear-gradient(180deg, rgb(255, 179, 0) 0%, rgb(255, 0, 0) 100%);
+}
+
+.moreColor {
+  background: linear-gradient(180deg, rgb(49, 220, 255) 0%, rgb(76, 175, 80) 100%);
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.lessAndMore:hover {
+  -webkit-animation: rotate-center 0.3s ease-in-out both;
+          animation: rotate-center 0.3s ease-in-out both;
 }
 
 .resetButton__container {
@@ -43,15 +77,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 }
 
 .resetButton {
-  width: 10%;
-  height: 50px;
+  width: 130px;
+  height: 35px;
   background-color: salmon;
   border-radius: 20px;
   transition: 500ms;
-  margin-bottom: 20px;
+  font-family: "Amita", cursive;
 }
 
 .resetButton:hover {
@@ -62,5 +97,7 @@
 body {
   background-color: black;
   margin: 0;
+  padding: 0;
   font-family: "Amita", cursive;
+  font-weight: bold;
 }/*# sourceMappingURL=index.css.map */
