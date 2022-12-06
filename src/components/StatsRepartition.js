@@ -9,7 +9,6 @@ const StatsRepartition = () => {
     const [countIntel, setCounterIntel] = useState(3);
     const [countEndu, setCounterEndu] = useState(3);
 
-    console.log(countTotal)
     // Logique des statistiques
     const deleteStatStr = () => {
         setCounterStr(countStr - 1)
@@ -18,6 +17,7 @@ const StatsRepartition = () => {
     const addStatStr = () => {
         setCounterStr(countStr + 1)
         setCountTotal(countTotal - 1)
+        console.log("test")
     }
     const deleteStatAgi = () => {
         setCounterAgi(countAgi - 1)
@@ -49,7 +49,6 @@ const StatsRepartition = () => {
         setCounterAgi(3)
         setCounterIntel(3)
         setCounterEndu(3)
-        console.log(setCountTotal)
     }
 
     // Rendu
@@ -59,33 +58,33 @@ const StatsRepartition = () => {
             <div className="statistic__unitary">
                 <p>Force</p>
                 <form className="statistic_form">
-                    <button onClick={deleteStatStr} className="lessAndMore" type="button">-</button>
+                    <button onClick={countStr > 1 ? deleteStatStr : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore" type="button">-</button>
                     <p>{countStr}</p>
-                    <button onClick={addStatStr} className="lessAndMore" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatStr : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Agilité</p>
                 <form className="statistic_form">
-                    <button onClick={deleteStatAgi} className="lessAndMore" type="button">-</button>
+                    <button onClick={countAgi > 1 ? deleteStatAgi : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore" type="button">-</button>
                     <p>{countAgi}</p>
-                    <button onClick={addStatAgi} className="lessAndMore" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatAgi : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Intelligence</p>
                 <form className="statistic_form">
-                    <button onClick={deleteStatIntel} className="lessAndMore" type="button">-</button>
+                    <button onClick={countIntel > 1 ? deleteStatIntel : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore" type="button">-</button>
                     <p>{countIntel}</p>
-                    <button onClick={addStatIntel} className="lessAndMore" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatIntel : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Endurance</p>
                 <form className="statistic_form">
-                    <button onClick={deleteEndu} className="lessAndMore" type="button">-</button>
+                    <button onClick={countEndu > 1 ? deleteEndu : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore" type="button">-</button>
                     <p>{countEndu}</p>
-                    <button onClick={addStatEndu} className="lessAndMore" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatEndu : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore" type="button">+</button>
                 </form>
             </div>
             <div className="resetButton__container">
