@@ -57,38 +57,38 @@ const StatsRepartition = () => {
             <div className="statistic__unitary">
                 <p>Force</p>
                 <form className="statistic_form">
-                    <button onClick={countStr > 5 ? deleteStatStr : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore lessColor" type="button">-</button>
+                    <button onClick={countStr > 5 ? deleteStatStr : null} className="lessAndMore lessColor" type="button">-</button>
                     <p>{countStr}</p>
-                    <button onClick={countTotal > 0 ? addStatStr : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore moreColor" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatStr : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Agilité</p>
                 <form className="statistic_form">
-                    <button onClick={countAgi > 5 ? deleteStatAgi : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore lessColor" type="button">-</button>
+                    <button onClick={countAgi > 5 ? deleteStatAgi : null} className="lessAndMore lessColor" type="button">-</button>
                     <p>{countAgi}</p>
-                    <button onClick={countTotal > 0 ? addStatAgi : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore moreColor" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatAgi : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Intelligence</p>
                 <form className="statistic_form">
-                    <button onClick={countIntel > 5 ? deleteStatIntel : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore lessColor" type="button">-</button>
+                    <button onClick={countIntel > 5 ? deleteStatIntel : null} className="lessAndMore lessColor" type="button">-</button>
                     <p>{countIntel}</p>
-                    <button onClick={countTotal > 0 ? addStatIntel : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore moreColor" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatIntel : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">
                 <p>Endurance</p>
                 <form className="statistic_form">
-                    <button onClick={countEndu > 5 ? deleteEndu : console.log("Cette valeur ne peux pas être inférieur à 1")} className="lessAndMore lessColor" type="button">-</button>
+                    <button onClick={countEndu > 5 ? deleteEndu : null} className="lessAndMore lessColor" type="button">-</button>
                     <p>{countEndu}</p>
-                    <button onClick={countTotal > 0 ? addStatEndu : console.log("Veuillez ne pas dépasser la limite de points")} className="lessAndMore moreColor" type="button">+</button>
+                    <button onClick={countTotal > 0 ? addStatEndu : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
             <div className="resetButton__container">
-
                 <button className="resetButton" onClick={resetButton} type="button">Réinitialiser</button>
+                <button className="resetButton" onClick={resetButton} type="button">Ok</button>
             </div>
         </div >
     );
