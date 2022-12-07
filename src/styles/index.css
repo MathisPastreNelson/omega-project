@@ -1,13 +1,5 @@
-.restPoint {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20px;
-}
-
 .statistic--container {
-  width: 60%;
+  width: 30%;
   background: url(../assets/scrollBackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,6 +8,14 @@
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+}
+
+.restPoint {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 .statistic_form {
@@ -87,6 +87,7 @@
   border-radius: 20px;
   transition: 500ms;
   font-family: "Amita", cursive;
+  margin: 0 20px;
 }
 
 .resetButton:hover {
