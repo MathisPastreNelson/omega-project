@@ -1,9 +1,13 @@
 import React from 'react';
-import StatsRepartition from "../components/StatsRepartition"
+import StatsRepartition from "../components/StatsRepartition";
+import StartWeapons from '../components/StartWeapons';
 
 const Home = () => {
     return (
-        <StatsRepartition />
+        <div>
+            <StatsRepartition />
+            <StartWeapons />
+        </div>
     );
 };
 

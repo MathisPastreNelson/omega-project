@@ -1,5 +1,6 @@
 .statistic--container {
   width: 30%;
+  min-width: 300px;
   background: url(../assets/scrollBackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -93,6 +94,20 @@
 .resetButton:hover {
   background-color: rgb(190, 69, 55);
   border-radius: 0px;
+}
+
+.StartWeapons__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test {
+  background-color: salmon;
+  width: 30%;
+  min-width: 300px;
+  text-align: center;
 }
 
 body {
