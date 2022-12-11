@@ -50,6 +50,18 @@ const StatsRepartition = () => {
         setCounterEndu(5)
     }
 
+    const saveStorage = () => {
+        localStorage.setItem("Force", countStr)
+        localStorage.setItem("Agilité", countAgi)
+        localStorage.setItem("Intelligence", countIntel)
+        localStorage.setItem("Endurance", countEndu)
+        console.log("La force est sauvegardé sous la valeur", countStr)
+    }
+
+    const spendAllPoint = () => {
+        alert("Dépensez tous vos points !")
+    }
+
     // Rendu
     return (
         <div className="statistic--container">
@@ -88,7 +100,7 @@ const StatsRepartition = () => {
             </div>
             <div className="resetButton__container">
                 <button className="resetButton" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="resetButton" onClick={resetButton} type="button">Ok</button>
+                <button className="resetButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );
