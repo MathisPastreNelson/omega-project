@@ -99,8 +99,8 @@ const StatsRepartition = () => {
                 </form>
             </div>
             <div className="resetButton__container">
-                <button className="resetButton" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="resetButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
+                <button className="personalButton" onClick={resetButton} type="button">Réinitialiser</button>
+                <button className="personalButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );

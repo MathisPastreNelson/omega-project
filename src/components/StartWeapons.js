@@ -9,6 +9,7 @@ const StartWeapons = () => {
                 <button className='weaponsButtons' type='button'>Masse</button>
                 <button className='weaponsButtons' type='button'>Arc</button>
                 <button className='weaponsButtons' type='button'>Bâton</button>
+                <button className="personalButton" onClick={"test"} type="button">Ok</button>
             </div>
         </div>
     );

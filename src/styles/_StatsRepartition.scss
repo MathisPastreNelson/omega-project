@@ -9,6 +9,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
+    padding: 1rem auto;
 }
 
 .restPoint {
@@ -16,7 +17,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
 }
 
 .statistic_form {
@@ -37,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 0 10px;
     border: 1px solid black;
     border-radius: 10px;
     cursor: pointer;
@@ -73,21 +73,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
 }
 
-.resetButton {
+.personalButton {
     width: 130px;
     height: 35px;
     background-color: salmon;
     border-radius: 20px;
     transition: 500ms;
     font-family: 'Amita', cursive;
-    margin: 0 20px;
     cursor: pointer;
+    margin: 10px auto;
 }
 
-.resetButton:hover {
+.personalButton:hover {
     background-color: rgb(190, 69, 55);
     border-radius: 0px;
 }
