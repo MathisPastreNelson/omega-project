@@ -5,9 +5,28 @@
     align-items: center;
 }
 
-.test {
-    background-color: salmon;
+.StartWeapons__list {
+    background: url(../assets/scrollBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 30%;
     min-width: 300px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.weaponsButtons {
+    width: 50%;
+    margin: 0.5rem auto;
+    transition: ease-in-out 0.4s;
+    border-radius: 20px;
+    height: 30px;
+    background-color: salmon;
+    cursor: pointer;
+}
+
+.weaponsButtons:hover {
+    border-radius: 0px;
+    background-color: rgb(241, 160, 151);
 }
