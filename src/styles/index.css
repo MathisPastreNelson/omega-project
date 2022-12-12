@@ -130,6 +130,21 @@
   background-color: rgb(241, 160, 151);
 }
 
+.errorPage_Container {
+  background: url(../assets/scrollBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 30%;
+  min-width: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 250px auto;
+}
+
 body {
   background-color: black;
   font-weight: bold;
