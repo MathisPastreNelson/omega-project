@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 
-const StartStats = () => {
+const StartStats = (props) => {
     // States des statistiques
     const [countTotal, setCountTotal] = useState(5);
     const [countStr, setCounterStr] = useState(5);
@@ -63,7 +63,8 @@ const StartStats = () => {
         localStorage.setItem("Agilité", countAgi)
         localStorage.setItem("Intelligence", countIntel)
         localStorage.setItem("Endurance", countEndu)
-        console.log("La force est sauvegardé sous la valeur", countStr)
+        // On change le Props Ici
+        props.handleClick("SetupWeapons")
     }
 
     const spendAllPoint = () => {
@@ -109,7 +110,7 @@ const StartStats = () => {
             </div>
             <div className="resetButton__container">
                 <button className="personalButton" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="personalButton" onClick={countTotal === 0 ? saveStorage && changeStyle : spendAllPoint} type="button">Ok</button>
+                <button className="personalButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 
-const StartWeapons = () => {
+const StartWeapons = (props) => {
     const test = () => {
         alert("Dépensez tous vos points !")
     }
@@ -9,7 +9,6 @@ const StartWeapons = () => {
     const [style, setStyle] = useState("movedComp");
     const changeStyle = () => {
         console.log("you just clicked");
-
         setStyle("movedCompNext");
     };
 
@@ -23,6 +22,8 @@ const StartWeapons = () => {
                 <button className='weaponsButtons' type='button'>Arc</button>
                 <button className='weaponsButtons' type='button'>Bâton</button>
                 <button className="personalButton" onClick={test} type="button">Ok</button>
+                {/* Change l'état du props pour revenir au composant précédant */}
+                <button className="personalButton" onClick={props.handleClick("SetupStats")} type="button">Retour</button>
             </div>
         </div>
     );
