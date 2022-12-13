@@ -2,8 +2,9 @@ import React from 'react';
 /* Package pour la création/gestion des routes*/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home"
+import StartStats from "./pages/StartStats"
 import ErrorPage from "./pages/ErrorPage"
+import WeaponAtStart from "./pages/StartWeapons"
 
 /* Definition des routes de l'applications */
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<StartStats />} />
+          <Route path="/WeaponAtStart" element={<WeaponAtStart />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

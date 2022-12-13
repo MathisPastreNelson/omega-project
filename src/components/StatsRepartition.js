@@ -1,13 +1,21 @@
 import React from "react";
 import { useState } from "react";
 
-const StatsRepartition = () => {
+
+const StartStats = () => {
     // States des statistiques
     const [countTotal, setCountTotal] = useState(5);
     const [countStr, setCounterStr] = useState(5);
     const [countAgi, setCounterAgi] = useState(5);
     const [countIntel, setCounterIntel] = useState(5);
     const [countEndu, setCounterEndu] = useState(5);
+
+    const [style, setStyle] = useState("movedComp");
+    const changeStyle = () => {
+        console.log("you just clicked");
+
+        setStyle("movedCompNext");
+    };
 
     // Logique des statistiques
     const deleteStatStr = () => {
@@ -62,9 +70,10 @@ const StatsRepartition = () => {
         alert("Dépensez tous vos points !")
     }
 
+
     // Rendu
     return (
-        <div className="statistic--container">
+        <div className={style} >
             <p className="restPoint">Point restants : {countTotal}</p>
             <div className="statistic__unitary">
                 <p>Force</p>
@@ -100,10 +109,10 @@ const StatsRepartition = () => {
             </div>
             <div className="resetButton__container">
                 <button className="personalButton" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="personalButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
+                <button className="personalButton" onClick={countTotal === 0 ? saveStorage && changeStyle : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );
 };
 
-export default StatsRepartition;
+export default StartStats;

@@ -1,9 +1,6 @@
 .statistic--container {
   width: 30%;
   min-width: 300px;
-  background: url(../assets/scrollBackground.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   justify-content: center;
   align-items: center;
   justify-content: center;
@@ -105,9 +102,6 @@
 }
 
 .StartWeapons__list {
-  background: url(../assets/scrollBackground.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 30%;
   min-width: 300px;
   text-align: center;
@@ -148,10 +142,61 @@
 body {
   background-color: black;
   font-weight: bold;
+  background: url(../assets/scrollBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 * {
   margin: 0;
   padding: 0;
   font-family: "Amita", cursive;
+}
+
+@-webkit-keyframes slide-in-blurred-top {
+  0% {
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform-origin: 50% 0%;
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-blurred-top {
+  0% {
+    transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    transform-origin: 50% 0%;
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+.movedComp {
+  -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  width: 30%;
+  min-width: 300px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 250px auto;
+  padding: 1rem auto;
+}
+
+.movedCompNext {
+  animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) reverse both;
 }/*# sourceMappingURL=index.css.map */
