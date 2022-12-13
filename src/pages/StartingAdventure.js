@@ -4,27 +4,17 @@ import StartStats from "../components/StatsRepartition";
 import StartWeapons from '../components/StartWeapons';
 
 const StatsRepartitionAtStart = () => {
-    const [game, setGame] = useState('SetupStats')
 
-    // On appelle le bon composant grace à ce Hook
-    const handleClick = (gameState) => {
-        setGame(gameState)
-        console.log(game)
-    }
+    const [component, setComponent] = useState(1);
 
     return (
         <div>
-            {(() => {
-                switch (game) {
-                    case 'SetupStats':
-                        return <StartStats handleClick={handleClick} />
-                    case 'SetupWeapons':
-                        return <StartWeapons handleClick={handleClick} />
-                }
-
-            })()};
+            {component === 1 && <StartStats component={component} setComponent={setComponent} />}
+            {component === 2 && <StartWeapons component={component} setComponent={setComponent} />}
+            <button onClick={() => setComponent(component === 1 ? 2 : 1)}>test</button>
         </div>
     )
 }
 
 export default StatsRepartitionAtStart;
+

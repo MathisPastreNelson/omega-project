@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 
-const StartStats = (props) => {
+const StartStats = (component) => {
     // States des statistiques
     const [countTotal, setCountTotal] = useState(5);
     const [countStr, setCounterStr] = useState(5);
@@ -11,11 +11,11 @@ const StartStats = (props) => {
     const [countEndu, setCounterEndu] = useState(5);
 
     const [style, setStyle] = useState("movedComp");
-    const changeStyle = () => {
-        console.log("you just clicked");
+    // const changeStyle = () => {
+    //     console.log("you just clicked");
 
-        setStyle("movedCompNext");
-    };
+    //     setStyle("movedCompNext");
+    // };
 
     // Logique des statistiques
     const deleteStatStr = () => {
@@ -63,12 +63,13 @@ const StartStats = (props) => {
         localStorage.setItem("Agilité", countAgi)
         localStorage.setItem("Intelligence", countIntel)
         localStorage.setItem("Endurance", countEndu)
-        // On change le Props Ici
-        props.handleClick("SetupWeapons")
+        // On change le Props Ici pour passer au composant suivant
+        component.setComponent(2)
     }
 
     const spendAllPoint = () => {
         alert("Dépensez tous vos points !")
+        console.log(component)
     }
 
 
