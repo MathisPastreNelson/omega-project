@@ -46,7 +46,10 @@ body {
     justify-content: center;
     flex-direction: column;
     margin: 250px auto;
-    padding: 1rem auto;
+    padding: 2rem;
+    border: double 8px black;
+    border-radius: 25px;
+    background-color: rgba(146, 19, 19, 0.644);
 }
 
 .movedCompNext {

@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .statistic_form {
@@ -83,10 +84,10 @@
     transition: 500ms;
     font-family: 'Amita', cursive;
     cursor: pointer;
-    margin: 10px auto;
+    margin: 25px 10px;
 }
 
 .personalButton:hover {
-    background-color: rgb(190, 69, 55);
+    background-color: rgb(190, 97, 87);
     border-radius: 0px;
 }

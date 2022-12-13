@@ -1,12 +1,14 @@
 import React from 'react';
+import StartStats from "../components/StatsRepartition";
 import StartWeapons from '../components/StartWeapons';
 
-const WeaponAtStart = () => {
+const StatsRepartitionAtStart = () => {
     return (
         <div>
+            <StartStats />
             <StartWeapons />
         </div>
     );
 };
 
-export default WeaponAtStart;
+export default StatsRepartitionAtStart;
