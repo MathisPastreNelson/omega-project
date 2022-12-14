@@ -75,7 +75,7 @@ const StartStats = (component) => {
 
     // Rendu
     return (
-        <div className={style} >
+        <div className="generalContainer" >
             <p className="restPoint">Point restants : {countTotal}</p>
             <div className="statistic__unitary">
                 <p>Force</p>
@@ -109,7 +109,7 @@ const StartStats = (component) => {
                     <button onClick={countTotal > 0 ? addStatEndu : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
-            <div className="resetButton__container">
+            <div className="personalButton__container">
                 <button className="personalButton" onClick={resetButton} type="button">Réinitialiser</button>
                 <button className="personalButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>

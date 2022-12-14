@@ -23,8 +23,8 @@ const StartWeapons = (component) => {
     };
 
     return (
-        <div className="movedComp">
-            <label>
+        <div className="generalContainer">
+            <label className='StartWeapons__list'>
                 Choisissez votre arme :
                 <select value={selectedWeapon} onChange={handleChange}>
                     <option value="">-- Sélectionnez une arme --</option>
@@ -36,8 +36,10 @@ const StartWeapons = (component) => {
                     <option value="Bâton">Bâton</option>
                 </select>
             </label>
-            <button className='weaponsButtons' onClick={back}>Retour</button>
-            <button className='weaponsButtons' onClick={handleSave}>Sauvegarder</button>
+            <div className="personalButton__container">
+                <button className='personalButton' onClick={back}>Retour</button>
+                <button className='personalButton' onClick={handleSave}>Ok</button>
+            </div>
         </div>
     );
 };

@@ -1,14 +1,18 @@
 import React from 'react';
 import { useState } from "react";
+import Hud from "../components/Hud";
 import StartStats from "../components/StatsRepartition";
 import StartWeapons from '../components/StartWeapons';
 
-const StatsRepartitionAtStart = () => {
+const NewCharacter = () => {
 
     const [component, setComponent] = useState(1);
+    const [data, setData] = useState([]);
+
 
     return (
         <div>
+            <Hud />
             {component === 1 && <StartStats component={component} setComponent={setComponent} />}
             {component === 2 && <StartWeapons component={component} setComponent={setComponent} />}
             {/* Bouton test */}
@@ -17,5 +21,5 @@ const StatsRepartitionAtStart = () => {
     )
 }
 
-export default StatsRepartitionAtStart;
+export default NewCharacter;
 
