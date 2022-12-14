@@ -27,6 +27,9 @@ const LocalStorageData = () => {
                 <p>Endurance : {data.Endurance}</p>
             </div>
             <div>
+                <p>{data.userName}</p>
+            </div>
+            <div className='itemEquipped'>
                 <p>Arme : {data.selectedWeapon}</p>
                 <p>Casque : {data.selectedWeapon}</p>
                 <p>Torse : {data.selectedWeapon}</p>
