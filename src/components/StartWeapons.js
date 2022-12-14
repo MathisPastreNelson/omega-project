@@ -19,7 +19,7 @@ const StartWeapons = (component) => {
     const handleSave = () => {
         localStorage.setItem('selectedWeapon', selectedWeapon);
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent(1)
+        component.setComponent(4)
     };
 
     return (
@@ -27,7 +27,7 @@ const StartWeapons = (component) => {
             <label className='StartWeapons__list'>
                 Choisissez votre arme de départ :
                 <select className='textAlign WeaponsChoose' value={selectedWeapon} onChange={handleChange}>
-                    <option value="">-- Sélectionnez une arme --</option>
+                    <option disabled>-- Sélectionnez une arme --</option>
                     <option value="Epée">Épée</option>
                     <option value="Dague">Dague</option>
                     <option value="Hache">Hache</option>

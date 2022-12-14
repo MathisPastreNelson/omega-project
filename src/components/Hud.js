@@ -1,24 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 
-const LocalStorageData = () => {
-    const [data, setData] = React.useState({});
-
-    React.useEffect(() => {
-        // Récupération de toutes les données du localStorage
-        const data = {};
-        for (let i = 0; i < localStorage.length; i++) {
-            const key = localStorage.key(i);
-            data[key] = localStorage.getItem(key);
-        }
-
-        // Mise à jour de l'état du composant avec les données récupérées
-        setData(data);
-    }, []);
-    console.log(data)
-
-
-
+const LocalStorageData = ({ data }) => {
     // rendu
     return (
         <div className="character__container">
@@ -33,9 +16,9 @@ const LocalStorageData = () => {
             </div>
             <div className='itemEquipped'>
                 <p>Arme : {data.selectedWeapon}</p>
-                <p>Casque : {data.selectedWeapon}</p>
-                <p>Torse : {data.selectedWeapon}</p>
-                <p>Jambe : {data.selectedWeapon}</p>
+                <p>Casque : {data.Casque}</p>
+                <p>Torse : {data.Torse}</p>
+                <p>Jambe : {data.Jambe}</p>
             </div>
         </div>
     );

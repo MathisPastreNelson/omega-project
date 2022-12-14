@@ -14,6 +14,14 @@ body {
   font-family: "Amita", cursive;
 }
 
+.textAlign {
+  text-align: center;
+}
+
+.maxwitdh {
+  width: 100%;
+}
+
 @-webkit-keyframes slide-in-blurred-top {
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -83,7 +91,7 @@ body {
 
 .personalButton:hover {
   background-color: rgb(190, 97, 87);
-  border-radius: 0px;
+  border-radius: 5px;
 }
 
 .character__container {
@@ -93,6 +101,7 @@ body {
   background-color: rgba(146, 19, 19, 0.644);
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 }
 
 .itemEquipped {
@@ -215,11 +224,22 @@ body {
 }
 
 .StartWeapons__list {
-  width: 30%;
+  width: 100%;
   min-width: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.WeaponsChoose {
+  background-color: rgb(255, 207, 202);
+  border-radius: 5px;
+  border: solid 2px black;
+  height: 40px;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .weaponsButtons {
@@ -235,6 +255,15 @@ body {
 .weaponsButtons:hover {
   border-radius: 0px;
   background-color: rgb(241, 160, 151);
+}
+
+.armorChoose {
+  margin: 10px;
+  background-color: rgb(255, 207, 202);
+  border-radius: 5px;
+  border: solid 2px black;
+  height: 40px;
+  font-weight: bold;
 }
 
 .errorPage_Container {
