@@ -11,7 +11,8 @@ const StatsRepartitionAtStart = () => {
         <div>
             {component === 1 && <StartStats component={component} setComponent={setComponent} />}
             {component === 2 && <StartWeapons component={component} setComponent={setComponent} />}
-            <button onClick={() => setComponent(component === 1 ? 2 : 1)}>test</button>
+            {/* Bouton test */}
+            {/* <button onClick={() => setComponent(component === 1 ? 2 : 1)}>test</button> */}
         </div>
     )
 }

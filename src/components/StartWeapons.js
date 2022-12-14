@@ -1,44 +1,45 @@
-import React from 'react';
-import { useState } from "react";
+
+import React, { useState } from 'react';
+
 
 const StartWeapons = (component) => {
     const back = () => {
-        // On change le Props Ici
+        // On change le Props Ici pour passer au composant précédant
         component.setComponent(1)
     }
 
-    const save = () => {
-        // On change le Props Ici
-        component.setComponent(3)
-    }
-
     const [style, setStyle] = useState("movedComp");
-    // const changeStyle = () => {
-    //     console.log("you just clicked");
-    //     setStyle("movedCompNext");
-    // };
 
-    const weapons = [
-        { name: 'épée', damage: 10 },
-        { name: 'hache', damage: 15 },
-        { name: 'arc', damage: 8 },
-    ];
+    const [selectedWeapon, setSelectedWeapon] = useState('');
+
+    const handleChange = (event) => {
+        setSelectedWeapon(event.target.value);
+    };
+
+    const handleSave = () => {
+        localStorage.setItem('selectedWeapon', selectedWeapon);
+        // On change le Props Ici pour passer au composant suivant
+        component.setComponent(1)
+    };
 
     return (
-        <div className={style}>
-            <div className='StartWeapons__list'>
-                <button className='weaponsButtons' type='button'>Epee</button>
-                <button className='weaponsButtons' type='button'>Dague</button>
-                <button className='weaponsButtons' type='button'>Hache à deux mains</button>
-                <button className='weaponsButtons' type='button'>Masse</button>
-                <button className='weaponsButtons' type='button'>Arc</button>
-                <button className='weaponsButtons' type='button'>Bâton</button>
-                <button className="personalButton" onClick={save} type="button">Ok</button>
-                {/* Change l'état du props pour revenir au composant précédant */}
-                <button className="personalButton" onClick={back} type="button">Retour</button>
-            </div>
+        <div className="movedComp">
+            <label>
+                Choisissez votre arme :
+                <select value={selectedWeapon} onChange={handleChange}>
+                    <option value="">-- Sélectionnez une arme --</option>
+                    <option value="Epée">Épée</option>
+                    <option value="Dague">Dague</option>
+                    <option value="Hache">Hache</option>
+                    <option value="Masse">Masse</option>
+                    <option value="Arc">Arc</option>
+                    <option value="Bâton">Bâton</option>
+                </select>
+            </label>
+            <button className='weaponsButtons' onClick={back}>Retour</button>
+            <button className='weaponsButtons' onClick={handleSave}>Sauvegarder</button>
         </div>
     );
 };
 
-export default StartWeapons;
+export default StartWeapons
