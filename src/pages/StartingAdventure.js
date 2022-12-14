@@ -5,6 +5,9 @@ import StartStats from "../components/StatsRepartition";
 import StartWeapons from '../components/StartWeapons';
 import UserNameForm from "../components/WhatIsYourName";
 
+
+
+
 const NewCharacter = () => {
 
     const [component, setComponent] = useState(1);

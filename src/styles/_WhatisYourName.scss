@@ -4,3 +4,19 @@
     justify-content: center;
     align-items: center;
 }
+
+.inputPlaceholder {
+    margin-top: 15px;
+    border: solid 2px black;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgb(255, 207, 202);
+    height: 50px;
+
+}
+
+.inputPlaceholder::placeholder {
+    font-weight: bold;
+    background-color: rgb(255, 207, 202);
+    font-size: 20px;
+}

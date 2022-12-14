@@ -25,8 +25,8 @@ const StartWeapons = (component) => {
     return (
         <div className="generalContainer">
             <label className='StartWeapons__list'>
-                Choisissez votre arme :
-                <select value={selectedWeapon} onChange={handleChange}>
+                Choisissez votre arme de départ :
+                <select className='textAlign WeaponsChoose' value={selectedWeapon} onChange={handleChange}>
                     <option value="">-- Sélectionnez une arme --</option>
                     <option value="Epée">Épée</option>
                     <option value="Dague">Dague</option>

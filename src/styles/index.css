@@ -106,6 +106,33 @@ body {
   align-items: center;
 }
 
+.inputPlaceholder {
+  margin-top: 15px;
+  border: solid 2px black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(255, 207, 202);
+  height: 50px;
+}
+
+.inputPlaceholder::-moz-placeholder {
+  font-weight: bold;
+  background-color: rgb(255, 207, 202);
+  font-size: 20px;
+}
+
+.inputPlaceholder:-ms-input-placeholder {
+  font-weight: bold;
+  background-color: rgb(255, 207, 202);
+  font-size: 20px;
+}
+
+.inputPlaceholder::placeholder {
+  font-weight: bold;
+  background-color: rgb(255, 207, 202);
+  font-size: 20px;
+}
+
 .statistic--container {
   width: 30%;
   min-width: 300px;

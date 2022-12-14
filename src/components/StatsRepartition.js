@@ -76,6 +76,7 @@ const StartStats = (component) => {
     // Rendu
     return (
         <div className="generalContainer" >
+            <p className="textAlign">Séléctionnez vos statistiques de départ</p>
             <p className="restPoint">Point restants : {countTotal}</p>
             <div className="statistic__unitary">
                 <p>Force</p>

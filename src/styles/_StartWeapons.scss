@@ -10,11 +10,22 @@
     // background: url(../assets/scrollBackground.jpg);
     // background-size: cover;
     // background-repeat: no-repeat;
-    width: 30%;
+    width: 100%;
     min-width: 300px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.WeaponsChoose {
+    background-color: rgb(255, 207, 202);
+    border-radius: 5px;
+    border: solid 2px black;
+    height: 40px;
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 .weaponsButtons {
