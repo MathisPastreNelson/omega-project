@@ -67,27 +67,3 @@
 .lessAndMore:hover {
     animation: rotate-center 0.3s ease-in-out both;
 }
-
-
-.resetButton__container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.personalButton {
-    width: 130px;
-    height: 35px;
-    background-color: salmon;
-    border-radius: 20px;
-    transition: 500ms;
-    font-family: 'Amita', cursive;
-    cursor: pointer;
-    margin: 25px 10px;
-}
-
-.personalButton:hover {
-    background-color: rgb(190, 97, 87);
-    border-radius: 0px;
-}
