@@ -52,7 +52,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 250px auto;
+  margin: 100px auto;
   padding: 2rem;
   border: double 8px black;
   border-radius: 25px;
@@ -84,6 +84,15 @@ body {
 .personalButton:hover {
   background-color: rgb(190, 97, 87);
   border-radius: 0px;
+}
+
+.character__container {
+  padding: 1rem;
+  border: double 8px black;
+  border-radius: 25px;
+  background-color: rgba(146, 19, 19, 0.644);
+  display: flex;
+  justify-content: space-between;
 }
 
 .statistic--container {

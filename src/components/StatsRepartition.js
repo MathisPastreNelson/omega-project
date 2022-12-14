@@ -64,7 +64,7 @@ const StartStats = (component) => {
         localStorage.setItem("Intelligence", countIntel)
         localStorage.setItem("Endurance", countEndu)
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent(2)
+        component.setComponent(3)
     }
 
     const spendAllPoint = () => {

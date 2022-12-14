@@ -19,7 +19,7 @@ const LocalStorageData = () => {
 
 
     return (
-        <div>
+        <div className="character__container">
             <div>
                 <p>Force : {data.Force}</p>
                 <p>Agilité : {data.Agilité}</p>
@@ -28,6 +28,9 @@ const LocalStorageData = () => {
             </div>
             <div>
                 <p>Arme : {data.selectedWeapon}</p>
+                <p>Casque : {data.selectedWeapon}</p>
+                <p>Torse : {data.selectedWeapon}</p>
+                <p>Jambe : {data.selectedWeapon}</p>
             </div>
         </div>
     );

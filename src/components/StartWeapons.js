@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 const StartWeapons = (component) => {
     const back = () => {
         // On change le Props Ici pour passer au composant précédant
-        component.setComponent(1)
+        component.setComponent(2)
     }
 
     const [style, setStyle] = useState("movedComp");
