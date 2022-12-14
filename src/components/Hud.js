@@ -17,7 +17,7 @@ const LocalStorageData = () => {
     }, []);
     console.log(data)
 
-
+    // rendu
     return (
         <div className="character__container">
             <div>
