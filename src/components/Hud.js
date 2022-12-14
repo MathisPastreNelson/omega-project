@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const LocalStorageData = () => {
     const [data, setData] = React.useState({});
@@ -16,6 +16,8 @@ const LocalStorageData = () => {
         setData(data);
     }, []);
     console.log(data)
+
+
 
     // rendu
     return (
