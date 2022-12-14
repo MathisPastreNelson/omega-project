@@ -15,7 +15,7 @@ function UserNameForm(component) {
 
     return (
         <form onSubmit={handleSubmit} className="generalContainer">
-            <label>
+            <label className='nameAndInput'>
                 Nom Du personnage :
                 <input type="text" value={userName} onChange={handleChange} />
             </label>
