@@ -17,7 +17,7 @@ const StartWeapons = (component) => {
     };
 
     const handleSave = () => {
-        localStorage.setItem('selectedWeapon', selectedWeapon);
+        localStorage.setItem('Arme', selectedWeapon);
         // On change le Props Ici pour passer au composant suivant
         component.setComponent(4)
     };

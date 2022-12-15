@@ -14,7 +14,7 @@ function ArmorSelector(component) {
         window.localStorage.setItem('Casque', "Casque de " + selectedArmor);
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
-        component.setComponent(1)
+        window.location.assign('/road1');
     };
 
     // Afficher le composant

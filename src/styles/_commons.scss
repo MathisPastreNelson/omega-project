@@ -1,3 +1,4 @@
+// Globale
 .textAlign {
     text-align: center;
 }
@@ -11,8 +12,6 @@
 }
 
 // Mes animations
-
-// Vers le bas
 @keyframes slide-in-blurred-top {
     0% {
         transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -26,6 +25,25 @@
         transform-origin: 50% 50%;
         filter: blur(0);
         opacity: 1;
+    }
+}
+
+// Apparition du texte progressif
+
+.fade-in {
+    animation: fadein 0.4s;
+    animation-delay: calc(1s * nth-child(letter));
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(1000px) scaleY(5.5) scaleX(1);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1) scaleX(1);
     }
 }
 
@@ -48,6 +66,25 @@
     background-color: rgba(146, 19, 19, 0.644);
 }
 
+.adventureContainer {
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    width: 50%;
+    min-width: 200px;
+    // background: url(../assets/scrollBackground.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 80px auto 10px auto;
+    padding: 2rem;
+    border: double 8px black;
+    border-radius: 25px;
+    background-color: rgba(192, 138, 138, 0.644);
+}
+
+// Petit trucs réutilisable
 .movedCompNext {
     animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) reverse both;
 }

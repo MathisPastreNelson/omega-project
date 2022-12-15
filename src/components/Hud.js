@@ -15,7 +15,7 @@ const LocalStorageData = ({ data }) => {
                 <p>{data.userName}</p>
             </div>
             <div className='itemEquipped'>
-                <p>Arme : {data.selectedWeapon}</p>
+                <p>Arme : {data.Arme}</p>
                 <p>Casque : {data.Casque}</p>
                 <p>Torse : {data.Torse}</p>
                 <p>Jambe : {data.Jambe}</p>
