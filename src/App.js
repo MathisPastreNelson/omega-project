@@ -13,7 +13,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/omega-project/" element={<NewCharacter />} />
-          <Route path="/omega-project/road1" element={<Road1 />} />
+          <Route path="/omega-project/road1/" element={<Road1 />} />
           <Route path="/omega-project/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
