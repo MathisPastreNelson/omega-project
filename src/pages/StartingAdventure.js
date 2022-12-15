@@ -6,6 +6,7 @@ import StartWeapons from '../components/StartWeapons';
 import UserNameForm from "../components/WhatIsYourName";
 import ArmorSelector from "../components/ArmorSelector"
 import Test from "../components/Test";
+import Help from "../components/Help"
 
 
 
@@ -39,13 +40,12 @@ const NewCharacter = () => {
     return (
         <div>
             <Hud data={data} />
-            <Test />
+            {/* <Test /> */}
             {component === 1 && <UserNameForm component={component} setComponent={setComponent} />}
             {component === 2 && <StartStats component={component} setComponent={setComponent} />}
             {component === 3 && <StartWeapons component={component} setComponent={setComponent} />}
             {component === 4 && <ArmorSelector component={component} setComponent={setComponent} />}
-            {/* Bouton test */}
-            {/* <button onClick={() => setComponent(component === 1 ? 2 : 1)}>test</button> */}
+            <Help component={component} />
         </div>
     )
 }

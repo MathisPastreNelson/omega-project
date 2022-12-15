@@ -1,0 +1,17 @@
+.help__Container {
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    min-width: 150px;
+    // background: url(../assets/scrollBackground.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    flex-direction: column;
+    border: double 8px black;
+    border-radius: 25px;
+    background-color: rgba(146, 19, 19, 0.644);
+    padding: 2rem;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

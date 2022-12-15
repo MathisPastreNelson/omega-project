@@ -69,7 +69,6 @@ const StartStats = (component) => {
 
     const spendAllPoint = () => {
         alert("Dépensez tous vos points !")
-        console.log(component)
     }
 
 

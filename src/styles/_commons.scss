@@ -6,6 +6,10 @@
     width: 100%;
 }
 
+.flex {
+    display: flex;
+}
+
 // Mes animations
 
 // Vers le bas
@@ -37,7 +41,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin: 100px auto;
+    margin: 80px auto 10px auto;
     padding: 2rem;
     border: double 8px black;
     border-radius: 25px;

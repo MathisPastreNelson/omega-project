@@ -22,6 +22,10 @@ body {
   width: 100%;
 }
 
+.flex {
+  display: flex;
+}
+
 @-webkit-keyframes slide-in-blurred-top {
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -60,7 +64,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 100px auto;
+  margin: 80px auto 10px auto;
   padding: 2rem;
   border: double 8px black;
   border-radius: 25px;
@@ -264,6 +268,22 @@ body {
   border: solid 2px black;
   height: 40px;
   font-weight: bold;
+}
+
+.help__Container {
+  -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  min-width: 150px;
+  flex-direction: column;
+  border: double 8px black;
+  border-radius: 25px;
+  background-color: rgba(146, 19, 19, 0.644);
+  padding: 2rem;
+  margin: auto;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .errorPage_Container {
