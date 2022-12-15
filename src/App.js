@@ -12,9 +12,9 @@ const App = () => {
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path="/omega-project/" element={<NewCharacter />} />
-          <Route path="/omega-project/road1/" element={<Road1 />} />
-          <Route path="/omega-project/*" element={<ErrorPage />} />
+          <Route path="/" element={<NewCharacter />} />
+          <Route path="/road1/" element={<Road1 />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
