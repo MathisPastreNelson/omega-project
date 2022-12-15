@@ -8,8 +8,6 @@ const StartWeapons = (component) => {
         component.setComponent(2)
     }
 
-    const [style, setStyle] = useState("movedComp");
-
     const [selectedWeapon, setSelectedWeapon] = useState('');
 
     const handleChange = (event) => {
@@ -17,17 +15,22 @@ const StartWeapons = (component) => {
     };
 
     const handleSave = () => {
-        localStorage.setItem('Arme', selectedWeapon);
-        // On change le Props Ici pour passer au composant suivant
-        component.setComponent(4)
+        if (!selectedWeapon) {
+            alert("Veuillez choisir une arme.")
+        }
+        else {
+            localStorage.setItem('Arme', selectedWeapon);
+            // On change le Props Ici pour passer au composant suivant
+            component.setComponent(4)
+        }
     };
 
     return (
         <div className="generalContainer">
             <label className='StartWeapons__list'>
                 Choisissez votre arme de départ :
-                <select className='textAlign WeaponsChoose' value={selectedWeapon} onChange={handleChange}>
-                    <option disabled>-- Sélectionnez une arme --</option>
+                <select required className='textAlign WeaponsChoose' value={selectedWeapon} onChange={handleChange}>
+                    <option value="">-- Sélectionnez une arme --</option>
                     <option value="Epée">Épée</option>
                     <option value="Dague">Dague</option>
                     <option value="Hache">Hache</option>

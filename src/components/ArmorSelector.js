@@ -14,7 +14,7 @@ function ArmorSelector(component) {
         window.localStorage.setItem('Casque', "Casque de " + selectedArmor);
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
-        window.location.assign('/omega-project/road1');
+        window.location.assign('/road1/');
     };
 
     // Afficher le composant
