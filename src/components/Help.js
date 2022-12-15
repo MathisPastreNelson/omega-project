@@ -32,7 +32,9 @@ const Help = (component) => {
     else if (actualComponent === 4) {
         return (
             <div className='help__Container'>
-                <p className='textAlign'>Une armure légère augmente vos dégats, une armure lourde augmente votre défense, une armure moyenne est équilibrée.</p>
+                <p className='textAlign'>Une armure légère augmente vos dégats.</p>
+                <p className='textAlign'>Une armure moyenne est équilibrée.</p>
+                <p className='textAlign'>Une armure lourde augmente votre défense.</p>
             </div>
         );
     }
