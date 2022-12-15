@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function Test() {
     // Ce composant est fait pour tester des fonction et des modules

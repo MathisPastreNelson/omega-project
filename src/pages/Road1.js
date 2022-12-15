@@ -1,10 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 
+// Différents composants
 import Hud from '../components/Hud';
 import Start01 from "../components/Start01"
+// import Test from "../components/Test";
 
 const Road1 = () => {
+    const [component, setComponent] = useState(1);
+
     const [localStorageValues, setLocalStorageValues] = useState({});
 
     // Utiliser l'Hook useEffect pour exécuter du code chaque fois que la valeur du local storage change
@@ -29,7 +33,8 @@ const Road1 = () => {
     return (
         <div>
             <Hud data={data} />
-            <Start01 />
+            {component === 1 && <Start01 component={component} setComponent={setComponent} />}
+            {component === 2 && <Start01 component={component} setComponent={setComponent} />}
         </div>
     );
 };

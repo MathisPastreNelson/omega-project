@@ -11,3 +11,11 @@
 .itemEquipped {
     justify-content: flex-end;
 }
+
+@media only screen and (max-width: 600px) {
+    .character__container {
+        font-size: 14px;
+        flex-direction: column;
+        text-align: center;
+    }
+}

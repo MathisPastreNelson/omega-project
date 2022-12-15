@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState, useEffect } from "react";
+
+// Différents composants
 import Hud from "../components/Hud";
 import StartStats from "../components/StatsRepartition";
 import StartWeapons from '../components/StartWeapons';
 import UserNameForm from "../components/WhatIsYourName";
 import ArmorSelector from "../components/ArmorSelector"
-import Test from "../components/Test";
 import Help from "../components/Help"
+// import Test from "../components/Test";
 
 
 

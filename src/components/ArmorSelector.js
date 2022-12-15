@@ -14,7 +14,12 @@ function ArmorSelector(component) {
         window.localStorage.setItem('Casque', "Casque de " + selectedArmor);
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
-        window.location.assign('/road1');
+        // console.log("Combien de stat ?", window.localStorage.length)
+        if (window.localStorage.length === 9) {
+            window.location.assign('/road1');
+        } else {
+            component.setComponent(1)
+        }
     };
 
     // Afficher le composant
