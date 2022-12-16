@@ -14,7 +14,7 @@ const App = () => {
     <React.StrictMode>
       <BrowserRouter basename='/omega-project'>
         <Routes>
-          <Route exact path='/' element={<StartingGame />} />
+          <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
           {/* <Route path="/*" element={<ErrorPage />} /> */}
