@@ -16,9 +16,7 @@ const App = () => {
           <Route path="/" element={<StartingGame />} />
           <Route path="/omega-project/" element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
-          <Route path="/omega-project/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
-          <Route path="/omega-project/road1" element={<Road1 />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
