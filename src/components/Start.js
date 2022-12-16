@@ -10,7 +10,7 @@ function Start() {
     const SavedGame = () => {
         if (window.localStorage.length >= 9) {
             console.log("bon")
-            window.location.assign('/road1')
+            window.location.assign('/omega-project/road1')
         };
     }
 
