@@ -10,14 +10,6 @@ const StartStats = (component) => {
     const [countIntel, setCounterIntel] = useState(5);
     const [countEndu, setCounterEndu] = useState(5);
 
-    const [style, setStyle] = useState("movedComp");
-    // const changeStyle = () => {
-    //     console.log("you just clicked");
-
-    //     setStyle("movedCompNext");
-    // };
-
-    // Logique des statistiques
     const deleteStatStr = () => {
         setCounterStr(countStr - 1)
         setCountTotal(countTotal + 1)

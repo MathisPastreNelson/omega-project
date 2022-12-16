@@ -55,6 +55,34 @@ body {
     opacity: 1;
   }
 }
+.fade-in {
+  -webkit-animation: fadein 0.4s;
+          animation: fadein 0.4s;
+  -webkit-animation-delay: calc(1s * nth-child(letter));
+          animation-delay: calc(1s * nth-child(letter));
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(1000px) scaleY(5.5) scaleX(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(1000px) scaleY(5.5) scaleX(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+}
 .generalContainer {
   -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
           animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -69,6 +97,58 @@ body {
   border: double 8px black;
   border-radius: 25px;
   background-color: rgba(146, 19, 19, 0.644);
+}
+
+.adventure__Container {
+  -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  width: 50%;
+  min-width: 200px;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 80px auto 10px auto;
+  padding: 2rem;
+  border: double 8px black;
+  border-radius: 25px;
+  background-color: rgba(192, 138, 138, 0.644);
+}
+
+.adventure__Button__Container {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adventure__Button {
+  border: double 6px black;
+  border-radius: 5px;
+  width: 140px;
+  height: 50px;
+  background-color: rgba(65, 160, 62, 0.637);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.adventure__Button:hover {
+  background-color: rgba(40, 214, 34, 0.637);
+  transform: scale(1.2);
+}
+
+.adventure__Button__Arrow {
+  color: rgba(62, 194, 10, 0.589);
+  background: linear-gradient(180deg, rgba(52, 49, 255, 0.877) 0%, rgb(76, 175, 80) 100%);
+  background-color: rgba(65, 160, 62, 0.637);
+  border-radius: 50%;
+  font-size: 30px;
+  border: double 1px black;
 }
 
 .movedCompNext {
@@ -108,10 +188,37 @@ body {
   margin: 10px;
 }
 
+.character__consommable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .itemEquipped {
   justify-content: flex-end;
 }
 
+.bandage__Button {
+  border: double 6px black;
+  border-radius: 5px;
+  width: 140px;
+  height: 40px;
+  background-color: rgba(65, 160, 62, 0.247);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .character__container {
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
 .nameAndInput {
   display: flex;
   flex-direction: column;
@@ -284,6 +391,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .errorPage_Container {

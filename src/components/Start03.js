@@ -2,22 +2,19 @@ import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
-function Start01(component) {
+function Start03(component) {
     const nextComponent = () => {
         // On change le Props Ici pour passer au composant suivant
-        if (window.localStorage.length >= 9) {
-            component.setComponent(2)
-        } else {
-            window.location.assign('/')
-        }
+        component.setComponent(4)
     }
 
 
     return (
         <div className="adventure__Container">
-            <p className="fade-in textAlign">Voici le début de l'histoire.</p>
+            <p className="fade-in textAlign">
+                Celui-ci est composé de 2 bandages de fortune et d'un kit pour établir un bivouac.</p>
             <div className='adventure__Button__Container'>
-                <button onClick={nextComponent} className='adventure__Button'>
+                <button className='adventure__Button' onClick={nextComponent}>
                     Suivant
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
@@ -28,4 +25,4 @@ function Start01(component) {
 
 
 
-export default Start01;
+export default Start03;
