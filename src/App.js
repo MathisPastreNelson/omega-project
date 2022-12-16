@@ -12,9 +12,9 @@ import ErrorPage from "./pages/ErrorPage"
 const App = () => {
   return (
     <React.StrictMode>
-      <BrowserRouter basename='/'>
+      <BrowserRouter basename='/omega-project'>
         <Routes>
-          <Route path='/' element={<StartingGame />} />
+          <Route exact path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
           {/* <Route path="/*" element={<ErrorPage />} /> */}
