@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/omega-project/static/css/main.d9b40d0c.css",
-    "main.js": "/omega-project/static/js/main.8a1fe4eb.js",
+    "main.js": "/omega-project/static/js/main.7d5bcf00.js",
     "static/media/scrollBackground.jpg": "/omega-project/static/media/scrollBackground.0edf03d7df8e22ced75b.jpg",
     "index.html": "/omega-project/index.html",
     "main.d9b40d0c.css.map": "/omega-project/static/css/main.d9b40d0c.css.map",
-    "main.8a1fe4eb.js.map": "/omega-project/static/js/main.8a1fe4eb.js.map"
+    "main.7d5bcf00.js.map": "/omega-project/static/js/main.7d5bcf00.js.map"
   },
   "entrypoints": [
     "static/css/main.d9b40d0c.css",
-    "static/js/main.8a1fe4eb.js"
+    "static/js/main.7d5bcf00.js"
   ]
 }
