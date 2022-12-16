@@ -1,6 +1,7 @@
 import React from 'react';
 /* Package pour la création/gestion des routes*/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import StartingGame from './pages/StartingGame';
 import NewCharacter from "./pages/StartingAdventure"
@@ -11,13 +12,12 @@ import ErrorPage from "./pages/ErrorPage"
 const App = () => {
   return (
     <React.StrictMode>
-      <BrowserRouter basename='/omega-project'>
+      <BrowserRouter basename='/'>
         <Routes>
-          <Route path="/" element={<StartingGame />} />
-          <Route path="/omega-project" element={<StartingGame />} />
+          <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
-          <Route path="/*" element={<ErrorPage />} />
+          {/* <Route path="/*" element={<ErrorPage />} /> */}
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
