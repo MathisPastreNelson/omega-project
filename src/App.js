@@ -14,6 +14,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<StartingGame />} />
+          <Route path="/omega-project/" element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
           <Route path="/*" element={<ErrorPage />} />
