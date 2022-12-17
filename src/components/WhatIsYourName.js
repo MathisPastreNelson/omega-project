@@ -14,14 +14,14 @@ function UserNameForm(component) {
     }
 
     // Définissez l'indication qui sera affichée pour indiquer qu'un regex doit être utilisé
-    const regexIndication = "Minimum 4 lettres";
+    const regexIndication = "4-10 lettres";
 
 
     return (
         <form onSubmit={handleSubmit} className="generalContainer">
             <label className='nameAndInput'>
                 Nom du personnage :
-                <input className='inputPlaceholder' placeholder={regexIndication} type="text" pattern="^\S[A-Za-z]{3,}$" value={userName} onChange={handleChange} required />
+                <input className='inputPlaceholder' placeholder={regexIndication} type="text" pattern="^\S[A-Za-z]{3,10}$" value={userName} onChange={handleChange} required />
             </label>
             <div className='personalButton__container'>
                 <button className='personalButton' type="submit">OK</button>

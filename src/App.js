@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import StartingGame from './pages/StartingGame';
 import NewCharacter from "./pages/StartingAdventure"
 import Road1 from "./pages/Road1"
+import ErrorPage from "./pages/ErrorPage"
 
 /* Definition des routes de l'applications */
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
           <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
-          {/* <Route path="/*" element={<ErrorPage />} /> */}
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     </React.StrictMode>

@@ -23,7 +23,8 @@ const LocalStorageData = ({ data }) => {
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.userName}</p>
-                <button id='bandage' className='bandage__Button' onClick={bandageUse}> Bandage(s) : {data.Bandage}</button>
+                {/* Si il y a bandage on affiche le bouton sinon on affiche rien */}
+                {data.Bandage > 0 ? <button id='bandage' className='bandage__Button' onClick={bandageUse}> Bandage(s) = {data.Bandage}</button> : <p>Pas de bandage</p>}
             </div>
             <div className='itemEquipped'>
                 <p>Arme : {data.Arme}</p>
