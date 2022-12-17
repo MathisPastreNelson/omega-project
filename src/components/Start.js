@@ -7,7 +7,7 @@ function Start() {
         window.location.assign('/NewCharacter');
     }
     // LA SAUVEGARDE DE L'AVENTURE SERA CONTENU ICI
-    const SavedGame = () => {
+    const savedGame = () => {
         if (window.localStorage.length >= 9) {
             console.log("bon")
             window.location.assign('/road1')
@@ -19,7 +19,7 @@ function Start() {
             <div className="adventure__Container">
                 <p className="fade-in textAlign">Reprendre votre aventure.</p>
                 <div className='adventure__Button__Container'>
-                    <button onClick={SavedGame} className='adventure__Button'>
+                    <button onClick={savedGame} className='adventure__Button'>
                         Reprendre
                         <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                     </button>

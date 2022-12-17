@@ -256,10 +256,20 @@ body {
   justify-content: flex-end;
 }
 
-.bandage__Button {
+.hpBar {
+  background-color: rgba(40, 214, 34, 0.637);
   border: double 6px black;
   border-radius: 5px;
   width: 140px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bandage__Button {
+  border: double 6px black;
+  border-radius: 5px;
+  width: 152px;
   height: 40px;
   background-color: rgba(65, 160, 62, 0.247);
   display: flex;

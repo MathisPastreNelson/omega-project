@@ -40,7 +40,7 @@ const Road1 = () => {
     // }, [window.localStorage]); // La condition met à jour le DOM si la valeur du local storage change
 
     const data = window.localStorage
-    console.log("Data = ", window.localStorage)
+    // console.log("Data = ", window.localStorage)
     // Il faut absolument avoir crée son personnage pour commencer l'aventure
     if (window.localStorage.length >= 9) {
         return (
