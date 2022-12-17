@@ -1,12 +1,10 @@
 import React from 'react';
 /* Package pour la création/gestion des routes*/
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom';
 
 import StartingGame from './pages/StartingGame';
 import NewCharacter from "./pages/StartingAdventure"
 import Road1 from "./pages/Road1"
-import ErrorPage from "./pages/ErrorPage"
 
 /* Definition des routes de l'applications */
 const App = () => {
