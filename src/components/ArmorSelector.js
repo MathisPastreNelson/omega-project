@@ -16,7 +16,7 @@ function ArmorSelector(component) {
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
         // console.log("Combien de stat ?", window.localStorage.length)
         if (window.localStorage.length >= 9) {
-            window.location.assign('/omega-project/road1');
+            window.location.assign('/road1');
         } else {
             component.setComponent(1)
         }

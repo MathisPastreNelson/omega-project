@@ -4,13 +4,13 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Start() {
     const startGame = () => {
-        window.location.assign('/omega-project/NewCharacter');
+        window.location.assign('/NewCharacter');
     }
     // LA SAUVEGARDE DE L'AVENTURE SERA CONTENU ICI
     const SavedGame = () => {
         if (window.localStorage.length >= 9) {
             console.log("bon")
-            window.location.assign('/omega-project/road1')
+            window.location.assign('/road1')
         };
     }
 
