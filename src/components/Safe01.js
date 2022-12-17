@@ -3,13 +3,13 @@ import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Safe01(component) {
-    const nextComponentSafe01 = () => {
+    const nextComponentSafe02 = () => {
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("safe02")
     }
-    const nextComponentDangerous01 = () => {
+    const nextComponentDangerous02 = () => {
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("safe02")
+        component.setComponent("dangerous02")
     }
 
 
@@ -25,18 +25,16 @@ function Safe01(component) {
                 Le vieil homme vous explique qu'il est à la recherche de sa fille Clarisse, partie la veille à la recherche de "Shlabodules",
                 une plante réputée pour ses vertus nourrissantes. Il vous implore de l'aider à la retrouver et vous hésitez un instant, ne sachant quoi faire.
 
-                Dois-je abandonner ma quête et aider ce vieil homme à retrouver sa fille ?
+                Dois-je abandonner ma route et aider ce vieil homme à retrouver sa fille ?
                 Ou bien dois-je poursuivre mon voyage et espérer que tout se passera bien pour lui ? La décision vous appartient,
                 et vous devrez en assumer les conséquences.
-
-
             </p>
             <div className='adventure__ChooseButton__Container'>
-                <button className='adventure__ChooseButton' onClick={nextComponentSafe01}>
+                <button className='adventure__ChooseButton' onClick={nextComponentSafe02}>
                     Refuser d'aider
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
-                <button className='adventure__ChooseButton' onClick={nextComponentDangerous01}>
+                <button className='adventure__ChooseButton' onClick={nextComponentDangerous02}>
                     Accepter d'aider
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>

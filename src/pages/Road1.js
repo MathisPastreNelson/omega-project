@@ -8,7 +8,10 @@ import Start02 from "../components/Start02"
 import Start03 from '../components/Start03';
 import Start04 from '../components/Start04';
 import Safe01 from '../components/Safe01';
+import Safe02 from '../components/Safe02';
 import Dangerous01 from "../components/Dangerous01"
+import Dangerous02 from "../components/Dangerous02"
+import Dangerous03 from "../components/Dangerous03"
 // import Test from "../components/Test";
 
 const Road1 = () => {
@@ -46,8 +49,11 @@ const Road1 = () => {
                 {component === 2 && <Start02 component={component} setComponent={setComponent} />}
                 {component === 3 && <Start03 component={component} setComponent={setComponent} />}
                 {component === 4 && <Start04 component={component} setComponent={setComponent} />}
-                {component === "safe01" ? <Safe01 component={component} setComponent={setComponent} /> :
-                    component === "dangerous01" && <Dangerous01 component={component} setComponent={setComponent} />}
+                {component === "safe01" && <Safe01 component={component} setComponent={setComponent} />}
+                {component === "safe02" && <Safe02 component={component} setComponent={setComponent} />}
+                {component === "dangerous01" && <Dangerous01 component={component} setComponent={setComponent} />}
+                {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
+                {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
             </div>
         );
     } else {

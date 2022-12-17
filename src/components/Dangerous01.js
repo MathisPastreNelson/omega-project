@@ -5,11 +5,11 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 function Dangerous01(component) {
     const dangerousDecline = () => {
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("dangerousDecline")
+        component.setComponent("safe01")
     }
-    const nextComponentDangerous02 = () => {
+    const nextComponentDangerous03 = () => {
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("dangerous02")
+        component.setComponent("dangerous03")
     }
 
 
@@ -28,14 +28,15 @@ function Dangerous01(component) {
 
                 Espérons que vous arriverez à destination sans trop de problèmes... ou que vous trouverez
                 une solution pour en sortir si vous vous retrouvez dans une impasse.
+                Voulez vous rebrousser chemin et choisir la route des pélerins ou vous obstiner dans cette voie ?
             </p>
             <div className='adventure__ChooseButton__Container'>
                 <button className='adventure__ChooseButton' onClick={dangerousDecline}>
-                    Refuser d'aider
+                    Rebrousser chemin.
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
-                <button className='adventure__ChooseButton' onClick={nextComponentDangerous02}>
-                    Accepter d'aider
+                <button className='adventure__ChooseButton' onClick={nextComponentDangerous03}>
+                    Continuer le chemin.
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
             </div>
