@@ -19,13 +19,27 @@
 }
 
 .hpBar {
-    background-color: rgba(40, 214, 34, 0.637);
+    background: linear-gradient(180deg, rgba(52, 49, 255, 0.377) 0%, rgba(64, 197, 69, 0.671) 100%);
     border: double 6px black;
     border-radius: 5px;
     width: 140px;
     margin-bottom: 8px;
     text-align: center;
     font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hpBar>* {
+    margin: 0 5px;
+}
+
+
+.hpBarHeart {
+    background-image: linear-gradient(60deg, #E21143, #FFB03A);
+    background-clip: text;
+    color: #ff0000be;
 }
 
 .bandage__Button {

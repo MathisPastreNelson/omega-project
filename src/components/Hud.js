@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useState, useEffect } from "react";
+import { FaHeartbeat } from 'react-icons/fa';
 
 const LocalStorageData = ({ data }) => {
 
@@ -23,7 +23,7 @@ const LocalStorageData = ({ data }) => {
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.userName}</p>
-                {data.maxPv && <p className='hpBar'>{data.maxPv} PV</p>}
+                {data.maxPv && <p className='hpBar'><p>{data.maxPv}</p> <FaHeartbeat className='hpBarHeart' /></p>}
                 {/* Si il y a bandage on affiche le bouton sinon on affiche rien */}
                 {data.Bandage > 0 ? <button id='bandage' className='bandage__Button' onClick={bandageUse}> Bandage(s) = {data.Bandage}</button> : <p>Pas de bandage</p>}
             </div>
