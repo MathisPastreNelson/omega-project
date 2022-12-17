@@ -17,7 +17,7 @@ import Dangerous04 from "../components/Dangerous04"
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
-    const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 4) + 50);
+    const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
     const [actualHp, setActualHp] = useState(maxHp);
 
     console.log("PV du personnage =", maxHp)

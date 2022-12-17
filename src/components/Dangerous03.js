@@ -6,7 +6,7 @@ function Dangerous03(component) {
     const nextComponentDangerous04 = () => {
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("dangerous04")
-        window.localStorage.setItem('maxPv', window.localStorage.Endurance * 4 + 50);
+        window.localStorage.setItem('maxPv', window.localStorage.Endurance * 5 + 50);
     }
 
     return (

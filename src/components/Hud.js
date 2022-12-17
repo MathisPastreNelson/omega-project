@@ -1,16 +1,23 @@
 import React from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
-const LocalStorageData = ({ data, maxHp, actualHp }) => {
+const LocalStorageData = ({ data, maxHp, actualHp, setMaxHp, setActualHp }) => {
 
     // La logique d'utilisation du bandage
     const bandageUse = () => {
         let actualValueOfBandage = parseInt(localStorage.getItem('Bandage'));
         let newValueOfBandage = actualValueOfBandage - 1;
-        if (newValueOfBandage >= 0) {
-            localStorage.setItem('Bandage', newValueOfBandage);
+        // Si on ades bandage et qu'on a plus de 20 hp manquant on change le nombre de bandage et on heal
+        if (newValueOfBandage >= 0 && actualHp + 20 < maxHp) {
+            localStorage.setItem('Bandage', newValueOfBandage)
+            setActualHp(actualHp + 20)
+        }//Sinon on heal au maximum
+        else {
+            localStorage.setItem('Bandage', newValueOfBandage)
+            setActualHp(maxHp)
         }
     }
+
 
     // rendu
     return (
