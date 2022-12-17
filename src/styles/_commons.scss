@@ -92,6 +92,14 @@
     align-items: center;
 }
 
+.adventure__ChooseButton__Container {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .adventure__Button {
     border: double 6px black;
     border-radius: 5px;
@@ -107,6 +115,26 @@
 }
 
 .adventure__Button:hover {
+    background-color: rgba(40, 214, 34, 0.637);
+    transform: scale(1.2);
+}
+
+.adventure__ChooseButton {
+    border: double 6px black;
+    border-radius: 5px;
+    width: 180px;
+    min-height: 80px;
+    background-color: rgba(65, 160, 62, 0.637);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    transition: 0.2s;
+    cursor: pointer;
+    margin: 30px auto;
+}
+
+.adventure__ChooseButton:hover {
     background-color: rgba(40, 214, 34, 0.637);
     transform: scale(1.2);
 }
@@ -146,4 +174,18 @@
 .personalButton:hover {
     background-color: rgb(190, 97, 87);
     border-radius: 5px;
+}
+
+@media only screen and (max-width: 750px) {
+    .adventure__ChooseButton__Container {
+        flex-direction: column;
+    }
+
+    .adventure__ChooseButton {
+        margin: 10px auto;
+    }
+
+    .adventure__Button__Arrow {
+        font-size: 20px;
+    }
 }

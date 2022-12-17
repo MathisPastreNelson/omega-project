@@ -30,6 +30,13 @@
     font-weight: bold;
     transition: 0.2s;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.bandage__Button:hover {
+    border: double 6px black;
+    border-radius: 2px;
+    background-color: rgba(70, 201, 66, 0.534);
 }
 
 @media only screen and (max-width: 600px) {

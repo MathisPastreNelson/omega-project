@@ -13,27 +13,24 @@ function Start02(component) {
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">
-                Votre voyage vous a conduit jusqu'à l'Ile de la
-                Flèche Noire, à l'est de Khul. Arrivé à bon port,
-                le prestigieux Régiment du Tigre Blanc a été
-                ravi d'accueillir en son sein un mercenaire de
-                votre réputation, et si ses officiers recruteurs ont
-                un peu toussé lorsque vous leur avez indiqué le
-                montant de la solde que vous exigiez en regard
-                de vos exceptionnels états de service, ils l'ont
-                finalement accepté sans marchander, à votre
-                grande satisfaction. Mais c'est aujourd'hui que
-                votre engagement touche à sa fin... et que vos
-                ennuis commencent. Vous achevez de
-                boucler votre paquetage avant de quitter Port
-                Fanal.</p>
+                Le soleil se lève à peine sur la prairie et vous vous réveillez, nerveux à l'idée de votre première véritable aventure.
+                Vous êtes un jeune débutant, peu habitué aux dangers et aux incertitudes de la vie de mercenaire.
+                Mais vous êtes déterminé à vous faire une place dans ce monde et à prouver votre valeur.
+                La forêt Tourbe-Burnes vous attend, une dense et mystérieuse forêt où vous espérez trouver votre premier contrat.
+                La nature vous entoure de toutes parts et vous vous sentez un peu perdu, loin de la sécurité de votre foyer.
+                Mais attention, la forêt Tourbe-Burnes est réputée pour être dangereuse et peuplée de créatures féroces.
+                Vous devrez être vigilant et prêt à tout moment à dégainer votre arme.
+                Qui sait ce que vous réserve cette journée d'aventures ?
+                Peut-être trouverez-vous votre premier contrat ou bien vous devrez affronter des ennemis redoutables.
+                Quoi qu'il arrive, vous êtes déterminé à réaliser votre objectif et à vous faire une place dans ce monde.
+            </p>
             <div className='adventure__Button__Container'>
                 <button className='adventure__Button' onClick={nextComponent}>
                     Suivant
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
             </div>
-        </div>
+        </div >
     );
 }
 
