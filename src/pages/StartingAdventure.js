@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Différents composants
 import Hud from "../components/Hud";
@@ -17,24 +17,26 @@ const NewCharacter = () => {
 
     const [component, setComponent] = useState(1);
 
-    const [localStorageValues, setLocalStorageValues] = useState({});
+    // const [localStorageValues, setLocalStorageValues] = useState({});
 
     // Utiliser l'Hook useEffect pour exécuter du code chaque fois que la valeur du local storage change
-    useEffect(() => {
-        // Obtenir un tableau de toutes les clés du local storage
-        const localStorageKeys = Object.keys(window.localStorage);
+    // useEffect(() => {
+    //     // Obtenir un tableau de toutes les clés du local storage
+    //     const localStorageKeys = Object.keys(window.localStorage);
 
-        // Parcourir le tableau des clés pour obtenir la valeur associée à chaque clé
-        localStorageKeys.forEach(key => {
-            const localStorageValue = window.localStorage.getItem(key);
+    //     // Parcourir le tableau des clés pour obtenir la valeur associée à chaque clé
+    //     localStorageKeys.forEach(key => {
+    //         const localStorageValue = window.localStorage.getItem(key);
 
-            // Mettre à jour l'objet de valeurs du local storage
-            setLocalStorageValues({
-                ...localStorageValues,
-                [key]: localStorageValue
-            });
-        });
-    }, [window.localStorage]); // La condition met à jour le DOM si la valeur du local storage change
+    //         // Mettre à jour l'objet de valeurs du local storage
+    //         setLocalStorageValues({
+    //             ...localStorageValues,
+    //             [key]: localStorageValue
+    //         });
+    //     });
+    // LE BUG VIEN d'ICI
+    // [ j'ai remplacé l'array vide par window.localStorage]
+    // }, [window.localStorage]); // La condition met à jour le DOM si la valeur du local storage change
 
     const data = window.localStorage
     console.log("Data = ", data)
