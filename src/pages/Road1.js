@@ -17,8 +17,11 @@ import Dangerous04 from "../components/Dangerous04"
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
-    const [maxHp, setMaxHp] = useState(window.localStorage.Endurance * 3 + 50);
+    const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 4) + 50);
+    const [actualHp, setActualHp] = useState(maxHp);
+
     console.log("PV du personnage =", maxHp)
+    console.log("PV actuel du personnage =", actualHp)
     // const [localStorageValues, setLocalStorageValues] = useState({});
 
     // Utiliser l'Hook useEffect pour exécuter du code chaque fois que la valeur du local storage change
@@ -46,7 +49,7 @@ const Road1 = () => {
     if (window.localStorage.length >= 9) {
         return (
             <div>
-                <Hud data={data} />
+                <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Start01 component={component} setComponent={setComponent} />}
                 {component === 2 && <Start02 component={component} setComponent={setComponent} />}
                 {component === 3 && <Start03 component={component} setComponent={setComponent} />}
