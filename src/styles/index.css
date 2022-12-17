@@ -165,6 +165,25 @@ body {
   margin: 30px auto;
 }
 
+.battle__ChooseButton {
+  border: double 6px black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 80px;
+  background-color: rgba(160, 62, 62, 0.637);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 30px auto;
+}
+
+.battle__ChooseButton:hover {
+  background-color: rgba(218, 40, 40, 0.637);
+}
+
 .adventure__ChooseButton:hover {
   background-color: rgba(40, 214, 34, 0.637);
   transform: scale(1.2);

@@ -12,6 +12,7 @@ import Safe02 from '../components/Safe02';
 import Dangerous01 from "../components/Dangerous01"
 import Dangerous02 from "../components/Dangerous02"
 import Dangerous03 from "../components/Dangerous03"
+import Dangerous04 from "../components/Dangerous04"
 // import Test from "../components/Test";
 
 const Road1 = () => {
@@ -54,6 +55,7 @@ const Road1 = () => {
                 {component === "dangerous01" && <Dangerous01 component={component} setComponent={setComponent} />}
                 {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
                 {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
+                {component === "dangerous04" && <Dangerous04 component={component} setComponent={setComponent} />}
             </div>
         );
     } else {

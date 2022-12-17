@@ -14,7 +14,7 @@ function Safe02(component) {
             <p className="fade-in textAlign">
                 "Ah oui, bien sûr, vous êtes trop occupés à courir après votre propre petit bonheur pour vous préoccuper des
                 autres.
-                Vous êtes vraiment pitoyables, tous autant que vous êtes."
+                Vous êtes vraiment pitoyable."
                 A la suite de ces remarques désobligeante vous reprenez votre route... Après tout vous n'êtes pas au service du
                 premier venu...
             </p>
