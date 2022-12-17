@@ -23,7 +23,7 @@ const LocalStorageData = ({ data }) => {
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.userName}</p>
-                {data.maxPv && <p className='hpBar'><p>{data.maxPv}</p> <FaHeartbeat className='hpBarHeart' /></p>}
+                {data.maxPv && <div className='hpBar'><p>{data.maxPv}</p> <FaHeartbeat className='hpBarHeart' /></div>}
                 {/* Si il y a bandage on affiche le bouton sinon on affiche rien */}
                 {data.Bandage > 0 ? <button id='bandage' className='bandage__Button' onClick={bandageUse}> Bandage(s) = {data.Bandage}</button> : <p>Pas de bandage</p>}
             </div>
