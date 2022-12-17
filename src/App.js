@@ -10,7 +10,7 @@ import Road1 from "./pages/Road1"
 const App = () => {
   return (
     <React.StrictMode>
-      <BrowserRouter basename='/omega-project'>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
