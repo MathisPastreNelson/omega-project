@@ -5,29 +5,37 @@ import { useEffect } from 'react';
 import { FaFulcrum } from 'react-icons/fa';
 
 function Battle01(component) {
-    const { actualHp, setActualHp } = component;
+    const { setActualHp } = component;
+
+
     const nextComponentBattle01 = () => {
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("battle01")
     }
-
-
+    //Math floor pour arrondire Math random pour l'aléatoire
 
     useEffect(() => {
         const interval = setInterval(() => {
-            //Math floor pour arrondire Math random pour l'aléatoire
             let damage = Math.floor(Math.random() * (3 + 8))
+            setActualHp(prevActualHp => {
 
-            // component.setActualHp(50)
-            console.log("maxhp=", component.maxHp)
-            console.log("actualHp=", actualHp)
-            setActualHp(actualHp - damage)
-            console.log("dégat=", damage)
-            console.log("vie apres dégat=", actualHp)
-        }, 4000)
-        return () => clearInterval(interval)
-    })
+                if (prevActualHp - damage <= 0) {
+                    clearInterval(interval);
+                    console.log("Vous etes mort")
+                    window.location.assign('/GameOver');
+                    return 0;
+                } else {
+                    console.log("Vous recevez ", damage, "dégat")
+                    return prevActualHp - damage;
+                }
+            });
+        }, 3000);
+    });
 
+    // console.log("maxhp=", component.maxHp)
+    // console.log("actualHp=", actualHp)
+    // console.log("dégat=", damage)
+    // console.log("vie apres dégat=", actualHp)
 
     return (
         <div className="adventure__Container">

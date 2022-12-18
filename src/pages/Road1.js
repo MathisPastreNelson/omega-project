@@ -22,10 +22,10 @@ const Road1 = () => {
     const [actualHp, setActualHp] = useState(50)
     const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
 
-    console.log("PV max du personnage =", maxHp)
-    console.log("PV actuel du personnage =", actualHp)
-    console.log("bugaa", localStorage.getItem('Bandage'))
     const data = window.localStorage
+    // console.log("PV max du personnage =", maxHp)
+    // console.log("PV actuel du personnage =", actualHp)
+    // console.log("Bandage", localStorage.getItem('Bandage'))
     // console.log("Data = ", window.localStorage)
     // Il faut absolument avoir crée son personnage pour commencer l'aventure
     if (window.localStorage.length >= 9) {
