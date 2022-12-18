@@ -13,6 +13,7 @@ import Dangerous01 from "../components/Dangerous01"
 import Dangerous02 from "../components/Dangerous02"
 import Dangerous03 from "../components/Dangerous03"
 import Dangerous04 from "../components/Dangerous04"
+import Battle01 from "../components/Battle01"
 // import Test from "../components/Test";
 
 const Road1 = () => {
@@ -20,47 +21,28 @@ const Road1 = () => {
     const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
     const [actualHp, setActualHp] = useState(maxHp);
 
-    console.log("PV du personnage =", maxHp)
+    console.log("PV max du personnage =", maxHp)
     console.log("PV actuel du personnage =", actualHp)
-    // const [localStorageValues, setLocalStorageValues] = useState({});
-
-    // Utiliser l'Hook useEffect pour exécuter du code chaque fois que la valeur du local storage change
-    // LE BUG VIEN d'ICI
-    // [ j'ai remplacé l'array vide par window.localStorage]
-    // useEffect(() => {
-    //     // Obtenir un tableau de toutes les clés du local storage
-    //     const localStorageKeys = Object.keys(window.localStorage);
-
-    //     // Parcourir le tableau des clés pour obtenir la valeur associée à chaque clé
-    //     localStorageKeys.forEach(key => {
-    //         const localStorageValue = window.localStorage.getItem(key);
-
-    //         // Mettre à jour l'objet de valeurs du local storage
-    //         setLocalStorageValues({
-    //             ...localStorageValues,
-    //             [key]: localStorageValue
-    //         });
-    //     });
-    // }, [window.localStorage]); // La condition met à jour le DOM si la valeur du local storage change
-
+    console.log("bugaa", localStorage.getItem('Bandage'))
     const data = window.localStorage
     // console.log("Data = ", window.localStorage)
     // Il faut absolument avoir crée son personnage pour commencer l'aventure
     if (window.localStorage.length >= 9) {
-        return (
-            <div>
-                <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-                {component === 1 && <Start01 component={component} setComponent={setComponent} />}
-                {component === 2 && <Start02 component={component} setComponent={setComponent} />}
-                {component === 3 && <Start03 component={component} setComponent={setComponent} />}
-                {component === 4 && <Start04 component={component} setComponent={setComponent} />}
-                {component === "safe01" && <Safe01 component={component} setComponent={setComponent} />}
-                {component === "safe02" && <Safe02 component={component} setComponent={setComponent} />}
-                {component === "dangerous01" && <Dangerous01 component={component} setComponent={setComponent} />}
-                {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
-                {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
-                {component === "dangerous04" && <Dangerous04 component={component} setComponent={setComponent} />}
-            </div>
+        return (<div>
+            <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+            {component === 1 && <Start01 component={component} setComponent={setComponent} />}
+            {/* On obtiens les bandages ici ce qui permet la premiere save */}
+            {component === 2 && <Start02 component={component} setComponent={setComponent} />}
+            {component === 3 && <Start03 component={component} setComponent={setComponent} />}
+            {component === 4 && <Start04 component={component} setComponent={setComponent} />}
+            {component === "safe01" && <Safe01 component={component} setComponent={setComponent} />}
+            {component === "safe02" && <Safe02 component={component} setComponent={setComponent} />}
+            {component === "dangerous01" && <Dangerous01 component={component} setComponent={setComponent} />}
+            {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
+            {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
+            {component === "dangerous04" && <Dangerous04 component={component} setComponent={setComponent} />}
+            {component === "battle01" && <Battle01 component={component} setComponent={setComponent} />}
+        </div>
         );
     } else {
         window.location.assign('/');

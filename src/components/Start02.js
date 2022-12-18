@@ -2,11 +2,12 @@ import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
-function Start02(component) {
+function Start02(component, { bandageNumber }) {
     const nextComponent = () => {
         // On change le Props Ici pour passer au composant suivant
-        window.localStorage.setItem('Bandage', 2);
+        window.localStorage.setItem('Bandage', "OK");
         component.setComponent(3)
+        console.log(bandageNumber)
     }
 
 
