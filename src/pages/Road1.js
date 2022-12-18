@@ -19,8 +19,8 @@ import Battle01 from "../components/Battle01"
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
-    const [actualHp, setActualHp] = useState(50)
     const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
+    const [actualHp, setActualHp] = useState(maxHp)
 
     const data = window.localStorage
     // console.log("PV max du personnage =", maxHp)
