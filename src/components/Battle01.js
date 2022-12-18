@@ -16,7 +16,7 @@ function Battle01({ component, maxHp, actualHp }) {
             console.log(actualHpAfterShock)
         }, 4000)
         return () => clearInterval(interval)
-    }, [])
+    })
 
 
     return (
