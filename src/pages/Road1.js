@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+// import { useRef } from "react";
 
 // Différents composants
 import Hud from '../components/Hud';
@@ -18,8 +19,8 @@ import Battle01 from "../components/Battle01"
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
+    const [actualHp, setActualHp] = useState(50)
     const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
-    const [actualHp, setActualHp] = useState(maxHp);
 
     console.log("PV max du personnage =", maxHp)
     console.log("PV actuel du personnage =", actualHp)
@@ -47,7 +48,8 @@ const Road1 = () => {
                 maxHp={maxHp}
                 setMaxHp={setMaxHp}
                 actualHp={actualHp}
-                setActualHp={setActualHp} />}
+                setActualHp={setActualHp}
+            />}
         </div>
         );
     } else {
