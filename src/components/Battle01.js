@@ -1,12 +1,22 @@
 import React from 'react';
+import { useEffect } from 'react';
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
 
-function Battle01(component) {
+function Battle01({ component, maxHp, actualHp }) {
     const nextComponentBattle01 = () => {
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("battle01")
     }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            //Math floor pour arrondire Math random pour l'aléatoire
+            let damage = Math.floor(Math.random() * (3 + 8))
+            let actualHpAfterShock = actualHp - damage
+            console.log(actualHpAfterShock)
+        }, 4000)
+        return () => clearInterval(interval)
+    }, [])
 
 
     return (

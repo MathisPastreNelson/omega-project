@@ -41,7 +41,13 @@ const Road1 = () => {
             {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
             {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
             {component === "dangerous04" && <Dangerous04 component={component} setComponent={setComponent} />}
-            {component === "battle01" && <Battle01 component={component} setComponent={setComponent} />}
+            {component === "battle01" && <Battle01
+                component={component}
+                setComponent={setComponent}
+                maxHp={maxHp}
+                setMaxHp={setMaxHp}
+                actualHp={actualHp}
+                setActualHp={setActualHp} />}
         </div>
         );
     } else {

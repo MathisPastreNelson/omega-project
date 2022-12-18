@@ -6,9 +6,9 @@ const LocalStorageData = ({ data, maxHp, actualHp, setMaxHp, setActualHp, bandag
     // La logique d'utilisation du bandage
     const bandageUse = () => {
         // Si on ades bandage et qu'on a plus de 20 hp manquant on change le nombre de bandage et on heal
-        if (actualHp + 20 < maxHp) {
+        if (actualHp + 8 < maxHp) {
             console.log("Bandage utilisé")
-            setActualHp(actualHp + 20)
+            setActualHp(actualHp + 8)
         }//Sinon on heal au maximum
         else {
             console.log("Full Vie")
