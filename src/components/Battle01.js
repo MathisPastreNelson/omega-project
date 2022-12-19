@@ -6,7 +6,7 @@ import { FaFulcrum } from 'react-icons/fa';
 
 function Battle01(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp, setEnemyMaxHp] = useState(50)
+    const [enemyMaxHp] = useState(50)
     const [enemyHp, setEnemyHp] = useState(50)
 
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
@@ -15,9 +15,10 @@ function Battle01(component) {
     const [buttonAttack1Text, setButtonAttack1Text] = useState('Attaque 1');
     const [buttonAttack2Text, setButtonAttack2Text] = useState('Attaque 2');
     const [buttonAttack3Text, setButtonAttack3Text] = useState('Attaque 3');
-    const nextComponentBattle01 = () => {
-        component.setComponent("battle01")
-    }
+    const [running] = useState(true);
+    // const nextComponentBattle01 = () => {
+    //     component.setComponent("battle01")
+    // }
 
 
     const attackOne = () => {
@@ -30,6 +31,9 @@ function Battle01(component) {
 
         // Initialisez un compteur à 3
         let counter = 3;
+
+        // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+        setButtonAttack1Text(` Récupération(${counter}s)`);
 
         // Mise à jour du compteur toutes les secondes
         const interval = setInterval(() => {
@@ -48,14 +52,17 @@ function Battle01(component) {
 
     const attackTwo = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * (3 + 7));
+        const damage = Math.floor(Math.random() * (4 + 7));
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         // Désactivez le bouton
         setButtonAttack2Disabled(true);
 
         // Initialisez un compteur à 3
-        let counter = 8;
+        let counter = 6;
+
+        // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+        setButtonAttack2Text(` Récupération(${counter}s)`);
 
         // Mise à jour du compteur toutes les secondes
         const interval = setInterval(() => {
@@ -73,7 +80,7 @@ function Battle01(component) {
 
     const attackThree = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * (6 + 11));
+        const damage = Math.floor(Math.random() * (6 + 10));
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         // Désactivez le bouton
@@ -82,10 +89,13 @@ function Battle01(component) {
         // Initialisez un compteur à 3
         let counter = 12;
 
+        // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+        setButtonAttack3Text(` Récupération(${counter}s)`);
+
         // Mise à jour du compteur toutes les secondes
         const interval = setInterval(() => {
             counter--;
-            setButtonAttack3Text(` Récupération(${counter}s)`);
+            setButtonAttack1Text(` Récupération(${counter}s)`);
 
             // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
             if (counter === 0) {
@@ -102,13 +112,13 @@ function Battle01(component) {
     }
 
 
+
     useEffect(() => {
         const interval = setInterval(() => {
             //Math floor pour arrondire Math random pour l'aléatoire
             let damage = Math.floor(Math.random() * (5 + 11))
             setActualHp(prevActualHp => {
                 if (prevActualHp - damage <= 0) {
-                    clearInterval(interval);
                     console.log("Vous etes mort")
                     // window.location.assign('/GameOver');
                     return 0;
@@ -117,11 +127,9 @@ function Battle01(component) {
                     return prevActualHp - damage;
                 }
             });
-        }, 5000);
-        // La fonction de nettoyage est exécutée lorsque l'effet n'est plus nécessaire
+        }, 3500);
         return () => clearInterval(interval);
-    }); // Pas de dépendance, donc l'effet n'est exécuté qu'une seule fois
-
+    }, [running, setActualHp]);
     // console.log("maxhp=", component.maxHp)
     // console.log("actualHp=", actualHp)
     // console.log("dégat=", damage)
