@@ -6,7 +6,8 @@ import StartingGame from './pages/StartingGame';
 import NewCharacter from "./pages/StartingAdventure"
 import Road1 from "./pages/Road1"
 import ErrorPage from "./pages/ErrorPage"
-import GameOver from "./pages/GameOver"
+import GameOverPage from "./pages/GameOverPage"
+import SuccessBattlePage from "./pages/SuccessBattlePage"
 
 /* Definition des routes de l'applications */
 const App = () => {
@@ -17,7 +18,8 @@ const App = () => {
           <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
-          <Route path="/GameOver" element={<GameOver />} />
+          <Route path="/GameOver" element={<GameOverPage />} />
+          <Route path="/SuccessBattle" element={<SuccessBattlePage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

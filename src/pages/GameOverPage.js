@@ -1,7 +1,8 @@
 import React from 'react';
+
 import GameOver from '../components/GameOver';
 
-const Home = () => {
+const GameOverPage = () => {
     return (
         <div>
             <GameOver />
@@ -9,4 +10,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default GameOverPage;

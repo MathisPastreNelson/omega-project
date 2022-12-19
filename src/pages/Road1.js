@@ -15,6 +15,7 @@ import Dangerous02 from "../components/Dangerous02"
 import Dangerous03 from "../components/Dangerous03"
 import Dangerous04 from "../components/Dangerous04"
 import Battle01 from "../components/Battle01"
+import Test from "../components/Test"
 // import Test from "../components/Test";
 
 const Road1 = () => {
@@ -23,12 +24,13 @@ const Road1 = () => {
     const [actualHp, setActualHp] = useState(maxHp)
 
     const data = window.localStorage
+    console.log(data.length)
     // console.log("PV max du personnage =", maxHp)
     // console.log("PV actuel du personnage =", actualHp)
     // console.log("Bandage", localStorage.getItem('Bandage'))
     // console.log("Data = ", window.localStorage)
     // Il faut absolument avoir crée son personnage pour commencer l'aventure
-    if (window.localStorage.length >= 9) {
+    if (data.length >= 9 && data.length < 12) {
         return (<div>
             <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
             {component === 1 && <Start01 component={component} setComponent={setComponent} />}
@@ -52,7 +54,15 @@ const Road1 = () => {
             />}
         </div>
         );
+    } else if (data.length > 12) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />;
+                {component === 1 && <Test />}
+            </div>
+        );
     } else {
+
         window.location.assign('/');
     }
 };

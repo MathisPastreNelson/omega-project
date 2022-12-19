@@ -33,7 +33,7 @@ function Battle01(component) {
         const damage = Math.floor(Math.random() * (3 + 4));
         // Cette condition me permet de win le combat
         if (enemyHp - damage < 1) {
-            window.location.assign('/GameOver');
+            window.location.assign('/SuccessBattle');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
@@ -70,6 +70,10 @@ function Battle01(component) {
         const damage = Math.floor(Math.random() * (4 + 7));
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
+        if (enemyHp - damage < 1) {
+            window.location.assign('/SuccessBattle');
+        }
+
         if (buttonAttack2.current) {
             // Désactivez le bouton et ajoutez la classe de recharge
             setButtonAttack2Disabled(true);
@@ -102,6 +106,10 @@ function Battle01(component) {
         const damage = Math.floor(Math.random() * (6 + 10));
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
+        if (enemyHp - damage < 1) {
+            window.location.assign('/SuccessBattle');
+        }
+
 
         if (buttonAttack3.current) {
             // Désactivez le bouton et ajoutez la classe de recharge
@@ -132,7 +140,40 @@ function Battle01(component) {
 
 
     const healEnemy = () => {
-        setEnemyHp(50);
+        // Générez une valeur aléatoire entre 3 et 10
+        const damage = Math.floor(Math.random() * (800 + 900));
+        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+
+        if (enemyHp - damage < 1) {
+            window.location.assign('/SuccessBattle');
+        }
+
+
+        if (buttonAttack3.current) {
+            // Désactivez le bouton et ajoutez la classe de recharge
+            setButtonAttack3Disabled(true);
+            buttonAttack3.current.classList.add('recharging');
+        }
+
+        // Initialisez un compteur à 3
+        let counter = 12;
+
+        // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+        setButtonAttack3Text(` Récupération(${counter}s)`);
+
+        // Mise à jour du compteur toutes les secondes
+        const interval = setInterval(() => {
+            counter--;
+            setButtonAttack3Text(` Récupération(${counter}s)`);
+
+            // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
+            if (counter === 0) {
+                clearInterval(interval);
+                setButtonAttack3Text('Attaque 3');
+                setButtonAttack3Disabled(false);
+                buttonAttack3.current.classList.remove('recharging');
+            }
+        }, 1000);
     }
 
 
@@ -145,7 +186,7 @@ function Battle01(component) {
             setActualHp(prevActualHp => {
                 if (prevActualHp - newDamage <= 0) {
                     console.log("Vous etes mort");
-                    // window.location.assign('/GameOver');
+                    window.location.assign('/GameOver');
                     return 0;
                 } else {
                     console.log("Vous recevez ", newDamage, "dégat");

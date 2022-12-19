@@ -28,6 +28,11 @@ const Hud = (data) => {
                 <p>Intelligence : {data.data.Intelligence}</p>
                 <p>Endurance : {data.data.Endurance}</p>
             </div>
+            <div className='character__level__container'>
+                <p className='character__level'>
+                    Niveau 1
+                </p>
+            </div>
             <div className="character__consommable">
                 <p>Personnage : {data.data.userName}</p>
                 {data.data.maxPv && <div className='hpBar'><p>{actualHp}/{data.maxHp}</p> <FaHeartbeat className='hpBarHeart' /></div>}
@@ -42,6 +47,11 @@ const Hud = (data) => {
                 ) : (
                     <p>Pas de bandage</p>
                 )}
+            </div>
+            <div className='character__gold__container'>
+                <p className='character__gold'>
+                    Or : {data.data.Or}
+                </p>
             </div>
             <div className='itemEquipped'>
                 <p>Arme : {data.data.Arme}</p>

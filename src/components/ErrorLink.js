@@ -6,7 +6,7 @@ const ErrorLink = () => {
     }
     return (
         <div className='adventure__Container'>
-            <p>Désolé, cette page n'existe pas ou n'est pas reconnu</p>
+            <p className='textAlign '>Désolé, cette page n'existe pas ou n'est pas reconnu</p>
             <div className='adventure__Button__Container'>
                 <button className='adventure__Button' onClick={mainScreen}>Page d'accueil</button>
             </div>
