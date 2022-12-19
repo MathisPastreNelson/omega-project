@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
 // import { useRef } from "react";
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
