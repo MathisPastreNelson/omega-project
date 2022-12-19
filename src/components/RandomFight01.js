@@ -6,7 +6,7 @@ import { useRef } from 'react';
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
 
-function Battle01(component) {
+function RandomFight01(component) {
     const { setActualHp } = component;
     const [enemyMaxHp] = useState(50)
     const [enemyHp, setEnemyHp] = useState(50)
@@ -22,22 +22,23 @@ function Battle01(component) {
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
+    const totalGold = window.localStorage.getItem("Or")
+    const parseIntGoldStorage = parseInt(totalGold)
+    const totalXp = window.localStorage.getItem("Xp")
+    const parseIntXpStorage = parseInt(totalXp)
     let goldEarned = Math.floor(Math.random() * 3) + 1;
     let xpEarned = Math.floor(Math.random() * 2) + 1;
-    // const nextComponentBattle01 = () => {
-    //     component.setComponent("battle01")
-    // }
-
+    let totalGoldNew = goldEarned + parseIntGoldStorage
+    let totalXpNew = xpEarned + parseIntXpStorage
 
     const attackOne = () => {
-        console.log(enemyHp)
         // Générez une valeur aléatoire entre 3 et 10
         const damage = Math.floor(Math.random() * 5) + 1;
         // Cette condition me permet de win le combat
         if (enemyHp - damage < 1) {
-            localStorage.setItem("Or", goldEarned)
-            localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            localStorage.setItem("Or", totalGoldNew)
+            localStorage.setItem("Xp", totalXpNew)
+            window.location.assign('/SuccessRandomBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
@@ -75,9 +76,9 @@ function Battle01(component) {
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         if (enemyHp - damage < 1) {
-            localStorage.setItem("Or", goldEarned)
-            localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            localStorage.setItem("Or", totalGoldNew)
+            localStorage.setItem("Xp", totalXpNew)
+            window.location.assign('/SuccessRandomBattle01');
         }
 
         if (buttonAttack2.current) {
@@ -113,9 +114,11 @@ function Battle01(component) {
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         if (enemyHp - damage < 1) {
-            localStorage.setItem("Or", goldEarned)
-            localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            localStorage.setItem("Or", totalGoldNew)
+            localStorage.setItem("Xp", totalXpNew)
+            console.log("LA THUNE", totalGoldNew)
+            window.location.assign('/SuccessRandomBattle01');
+            // window.location.assign('/SuccessRandomBattle01');
         }
 
 
@@ -153,6 +156,8 @@ function Battle01(component) {
     //     setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
     //     if (enemyHp - damage < 1) {
+    //         localStorage.setItem("Or", totalGoldNew)
+    //         localStorage.setItem("Xp", totalXpNew)
     //         window.location.assign('/SuccessBattle');
     //     }
 
@@ -233,11 +238,11 @@ function Battle01(component) {
                 </button>
             </div>
             {/* <button className='battle__ChooseButton' onClick={LeBoutonTriche}>
-               CHEATBUTTON
+                CHEATBUTTON
                 <FaFulcrum className='adventure__Button__Arrow' />
             </button> */}
         </div>
     );
 }
 
-export default Battle01;
+export default RandomFight01;

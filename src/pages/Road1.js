@@ -15,8 +15,10 @@ import Dangerous02 from "../components/Dangerous02"
 import Dangerous03 from "../components/Dangerous03"
 import Dangerous04 from "../components/Dangerous04"
 import Battle01 from "../components/Battle01"
-import Test from "../components/Test"
-// import Test from "../components/Test";
+import Safe03 from '../components/Safe03';
+import RandomFight01 from "../components/RandomFight01"
+// import Test from "../components/Test"
+
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
@@ -58,7 +60,14 @@ const Road1 = () => {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />;
-                {component === 1 && <Test />}
+                {component === 1 && <Safe03 component={component} setComponent={setComponent} />}
+                {component === "RandomFight01" && <RandomFight01
+                    component={component}
+                    setComponent={setComponent}
+                    maxHp={maxHp}
+                    setMaxHp={setMaxHp}
+                    actualHp={actualHp}
+                    setActualHp={setActualHp} />}
             </div>
         );
     } else {
