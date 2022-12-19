@@ -325,7 +325,7 @@ body {
 .character__gold {
   border: double 6px black;
   border-radius: 2px;
-  background-color: rgba(179, 255, 0, 0.37);
+  background-image: linear-gradient(180deg, rgba(135, 226, 17, 0.337254902), rgba(255, 176, 58, 0.8));
   width: 90px;
   height: 30px;
   text-align: center;
@@ -335,7 +335,7 @@ body {
 .character__level {
   border: double 6px black;
   border-radius: 2px;
-  background-color: rgba(199, 25, 54, 0.26);
+  background-image: linear-gradient(180deg, rgba(226, 17, 66, 0.337254902), rgba(255, 176, 58, 0.4117647059));
   width: 90px;
   height: 30px;
   text-align: center;

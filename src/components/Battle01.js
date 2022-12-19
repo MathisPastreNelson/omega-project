@@ -30,7 +30,7 @@ function Battle01(component) {
     const attackOne = () => {
         console.log(enemyHp)
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * (3 + 4));
+        const damage = Math.floor(Math.random() * 5) + 1;
         // Cette condition me permet de win le combat
         if (enemyHp - damage < 1) {
             window.location.assign('/SuccessBattle');
@@ -67,7 +67,7 @@ function Battle01(component) {
 
     const attackTwo = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * (4 + 7));
+        const damage = Math.floor(Math.random() * 9) + 1;
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         if (enemyHp - damage < 1) {
@@ -103,7 +103,7 @@ function Battle01(component) {
 
     const attackThree = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * (6 + 10));
+        const damage = Math.floor(Math.random() * 12) + 1;
         setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
         if (enemyHp - damage < 1) {

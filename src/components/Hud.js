@@ -29,9 +29,9 @@ const Hud = (data) => {
                 <p>Endurance : {data.data.Endurance}</p>
             </div>
             <div className='character__level__container'>
-                <p className='character__level'>
+                {data.data.Xp && <p className='character__level'>
                     Niveau 1
-                </p>
+                </p>}
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.data.userName}</p>
@@ -49,9 +49,9 @@ const Hud = (data) => {
                 )}
             </div>
             <div className='character__gold__container'>
-                <p className='character__gold'>
+                {data.data.Or && <p className='character__gold'>
                     Or : {data.data.Or}
-                </p>
+                </p>}
             </div>
             <div className='itemEquipped'>
                 <p>Arme : {data.data.Arme}</p>
