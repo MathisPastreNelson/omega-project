@@ -1,0 +1,8 @@
+button.attack {
+    /* Autres propriétés de style du bouton */
+    transition: background-color 0.5s ease-in-out;
+}
+
+button.attack.recharging {
+    background-color: #ccc;
+}

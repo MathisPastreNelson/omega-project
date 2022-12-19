@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: black;
   font-weight: bold;
@@ -464,6 +465,15 @@ body {
   border: solid 2px black;
   height: 40px;
   font-weight: bold;
+}
+
+button.attack {
+  /* Autres propriétés de style du bouton */
+  transition: background-color 0.5s ease-in-out;
+}
+
+button.attack.recharging {
+  background-color: #ccc;
 }
 
 .help__Container {
