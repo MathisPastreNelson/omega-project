@@ -6,7 +6,7 @@ const GameOver = () => {
     }
     return (
         <div className='adventure__Container'>
-            <p>Vous avez perdu désolé.. Reprendre au dernier point de sauvegarde ?</p>
+            <p className='textAlign '>Vous avez perdu désolé.. Reprendre au dernier point de sauvegarde ?</p>
             <div className='adventure__Button__Container'>
                 <button className='adventure__Button' onClick={mainScreen}>Page d'accueil</button>
             </div>
