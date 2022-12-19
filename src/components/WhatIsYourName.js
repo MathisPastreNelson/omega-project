@@ -24,7 +24,7 @@ function UserNameForm(component) {
                 <input className='inputPlaceholder' placeholder={regexIndication} type="text" pattern="^\S[A-Za-z]{3,10}$" value={userName} onChange={handleChange} required />
             </label>
             <div className='personalButton__container'>
-                <button className='personalButton' type="submit">OK</button>
+                <button className='adventure__Button' type="submit">OK</button>
             </div>
         </form>
     );

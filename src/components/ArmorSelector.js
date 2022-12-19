@@ -34,7 +34,7 @@ function ArmorSelector(component) {
                 </select>
             </label>
             <p className='textAlign'>Vous commencerez avec une tenue en {selectedArmor}.</p>
-            <button className='personalButton' onClick={handleSave}>Commencer</button>
+            <button className='adventure__Button' onClick={handleSave}>Commencer</button>
         </div>
     );
 }

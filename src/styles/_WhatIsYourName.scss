@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .inputPlaceholder {
@@ -12,11 +13,11 @@
     text-align: center;
     background-color: rgb(255, 207, 202);
     height: 50px;
-
 }
 
 .inputPlaceholder::placeholder {
     font-weight: bold;
     background-color: rgb(255, 207, 202);
     font-size: 20px;
+    text-align: center;
 }

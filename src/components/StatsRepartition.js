@@ -102,8 +102,8 @@ const StartStats = (component) => {
                 </form>
             </div>
             <div className="personalButton__container">
-                <button className="personalButton" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="personalButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
+                <button className="adventure__Button" onClick={resetButton} type="button">Réinitialiser</button>
+                <button className="adventure__Button" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );

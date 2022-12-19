@@ -216,7 +216,7 @@ function Battle01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-
+                <p>J'inflige {damage} dégats</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>

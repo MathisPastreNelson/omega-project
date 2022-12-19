@@ -40,8 +40,8 @@ const StartWeapons = (component) => {
                 </select>
             </label>
             <div className="personalButton__container">
-                <button className='personalButton' onClick={back}>Retour</button>
-                <button className='personalButton' onClick={handleSave}>Ok</button>
+                <button className='adventure__Button' onClick={back}>Retour</button>
+                <button className='adventure__Button' onClick={handleSave}>Ok</button>
             </div>
         </div>
     );
