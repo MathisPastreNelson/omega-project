@@ -3,6 +3,8 @@ import { FaHeartbeat } from 'react-icons/fa';
 
 const Hud = (data) => {
     const { maxHp, actualHp, setActualHp } = data;
+    // Vérifiez si actualHp est inférieur à 20 % de maxHp
+    const isLowHp = actualHp / maxHp < 0.2;
     // La logique d'utilisation du bandage
     const bandageUse = () => {
         // Si on ades bandage et qu'on a plus de 20 hp manquant on change le nombre de bandage et on heal
@@ -29,8 +31,17 @@ const Hud = (data) => {
             <div className="character__consommable">
                 <p>Personnage : {data.data.userName}</p>
                 {data.data.maxPv && <div className='hpBar'><p>{actualHp}/{data.maxHp}</p> <FaHeartbeat className='hpBarHeart' /></div>}
-                {/* Si il y a bandage on affiche le bouton sinon on affiche rien */}
-                {data.data.Bandage ? <button id='bandage' className='bandage__Button' onClick={bandageUse}> Bandage</button> : <p>Pas de bandage</p>}
+                {data.data.Bandage ? (
+                    <button
+                        id='bandage'
+                        className={`bandage__Button ${isLowHp ? 'low-hp' : ''}`}
+                        onClick={bandageUse}
+                    >
+                        Bandage
+                    </button>
+                ) : (
+                    <p>Pas de bandage</p>
+                )}
             </div>
             <div className='itemEquipped'>
                 <p>Arme : {data.data.Arme}</p>

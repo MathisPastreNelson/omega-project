@@ -55,6 +55,8 @@
     transition: 0.2s;
     cursor: pointer;
     transition: 0.2s;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
 }
 
 .bandage__Button:hover {
@@ -63,10 +65,69 @@
     background-color: rgba(70, 201, 66, 0.534);
 }
 
+.low-hp {
+    -webkit-animation: vibrate-1 0.5s linear infinite both;
+    animation: vibrate-1 0.5s linear infinite both;
+}
+
 @media only screen and (max-width: 600px) {
     .character__container {
         font-size: 14px;
         flex-direction: column;
         text-align: center;
     }
+}
+
+//Animation d'urgence 
+@keyframes vibrate-1 {
+    0% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+
+    20% {
+        -webkit-transform: translate(-1px, 1px);
+        transform: translate(-1px, 1px);
+        border-radius: 10px;
+    }
+
+    40% {
+        -webkit-transform: translate(-1px, -1px);
+        transform: translate(-1px, -1px);
+        background-color: rgba(15, 249, 7, 0.534);
+    }
+
+    60% {
+        -webkit-transform: translate(1px, 1px);
+        transform: translate(1px, 1px);
+        border-radius: 5px;
+    }
+
+    80% {
+        -webkit-transform: translate(1px, -1px);
+        transform: translate(1px, -1px);
+    }
+
+    100% {
+        -webkit-transform: translate(0);
+        transform: translate(0);
+    }
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useRef } from 'react';
+import { CSSTransition } from 'react-transition-group';
 // import { useRef } from "react";
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
@@ -9,6 +10,7 @@ function Battle01(component) {
     const { setActualHp } = component;
     const [enemyMaxHp] = useState(50)
     const [enemyHp, setEnemyHp] = useState(50)
+    const [damage, setDamage] = useState(0);
 
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
     const [buttonAttack2Disabled, setButtonAttack2Disabled] = useState(false);
@@ -134,19 +136,20 @@ function Battle01(component) {
     }
 
 
-
     useEffect(() => {
         const interval = setInterval(() => {
-            //Math floor pour arrondire Math random pour l'aléatoire
-            let damage = Math.floor(Math.random() * (5 + 11))
+            // Calcul des dégâts
+            let newDamage = Math.floor(Math.random() * (5 + 11));
+            setDamage(newDamage);
+
             setActualHp(prevActualHp => {
-                if (prevActualHp - damage <= 0) {
-                    console.log("Vous etes mort")
+                if (prevActualHp - newDamage <= 0) {
+                    console.log("Vous etes mort");
                     // window.location.assign('/GameOver');
                     return 0;
                 } else {
-                    console.log("Vous recevez ", damage, "dégat")
-                    return prevActualHp - damage;
+                    console.log("Vous recevez ", newDamage, "dégat");
+                    return prevActualHp - newDamage;
                 }
             });
         }, 3500);
@@ -154,14 +157,18 @@ function Battle01(component) {
     }, [running, setActualHp]);
     // console.log("maxhp=", component.maxHp)
     // console.log("actualHp=", actualHp)
-    // console.log("dégat=", damage)
     // console.log("vie apres dégat=", actualHp)
+    // console.log("dégat=", damage)
 
     return (
         <div className="adventure__Container">
-            <p className="fade-in textAlign">
-                Monstre {enemyHp} / {enemyMaxHp} Pv
-            </p>
+            <div className='textAlign'>
+                <p className="fade-in textAlign">
+                    Monstre {enemyHp} / {enemyMaxHp} Pv
+                </p>
+                <p>J'encaisse {damage} dégats</p>
+
+            </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>
                     {buttonAttack1Text}
