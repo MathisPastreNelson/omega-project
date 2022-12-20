@@ -4,7 +4,7 @@ import { useRef } from 'react';
 // import { CSSTransition } from 'react-transition-group';
 // import { useRef } from "react";
 // Import FontAwesome Component
-import { FaFulcrum } from 'react-icons/fa';
+import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
 
 function RandomFight01(component) {
     const { setActualHp } = component;
@@ -16,9 +16,12 @@ function RandomFight01(component) {
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
     const [buttonAttack2Disabled, setButtonAttack2Disabled] = useState(false);
     const [buttonAttack3Disabled, setButtonAttack3Disabled] = useState(false);
-    const [buttonAttack1Text, setButtonAttack1Text] = useState('Attaque 1');
-    const [buttonAttack2Text, setButtonAttack2Text] = useState('Attaque 2');
-    const [buttonAttack3Text, setButtonAttack3Text] = useState('Attaque 3');
+
+    const [buttonAttack1Text, setButtonAttack1Text] = useState('Frappe rapide');
+    const [buttonAttack2Text, setButtonAttack2Text] = useState('Frappe lourde');
+    const [buttonAttack3Text, setButtonAttack3Text] = useState('Estoc percante');
+    const [buttonAttack3AlternativeText, setbuttonAttack3AlternativeText] = useState("Fendoir");
+
     const [running] = useState(true);
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
@@ -186,16 +189,22 @@ function RandomFight01(component) {
 
         // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
         setButtonAttack3Text(` Récupération(${counter}s)`);
+        setbuttonAttack3AlternativeText(` Récupération(${counter}s)`)
 
         // Mise à jour du compteur toutes les secondes
         const interval = setInterval(() => {
             counter--;
             setButtonAttack3Text(` Récupération(${counter}s)`);
+            setbuttonAttack3AlternativeText(` Récupération(${counter}s)`)
 
             // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
             if (counter === 0) {
                 clearInterval(interval);
-                setButtonAttack3Text('Attaque 3');
+                if (window.localStorage.getItem("Arme") === "Epée") {
+                    setButtonAttack3Text('Estoc');
+                } else {
+                    setbuttonAttack3AlternativeText("Fendoir")
+                }
                 setButtonAttack3Disabled(false);
                 buttonAttack3.current.classList.remove('recharging');
             }
@@ -269,29 +278,36 @@ function RandomFight01(component) {
 
     return (
         <div className="battle__Container">
-            <div className='textAlign'>
+            <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-                <p>Ma dernière attaque rapide a infligé {randomNumber1} dégats</p>
-                <p>Ma dernière attaque lourde a infligé {randomNumber2} dégats</p>
-                <p>Ma dernière attaque spécial a infligé  {randomNumber3} dégats</p>
-                <p>test</p>
+            </div>
+            <div className='textAlign battle__Container__Damage'>
+                <p>Dernière attaque rapide : {randomNumber1} dégats</p>
+                <p>Dernière attaque lourde : {randomNumber2} dégats</p>
+                <p>Dernière attaque spécial : {randomNumber3} dégats</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>
                     {buttonAttack1Text}
-                    <FaFulcrum className='adventure__Button__Arrow' />
+                    <FaSith className='adventure__Button__Arrow' />
                 </button>
                 <button ref={buttonAttack2} className='battle__ChooseButton attack' onClick={attackTwo} disabled={buttonAttack2Disabled}>
                     {buttonAttack2Text}
-                    <FaFulcrum className='adventure__Button__Arrow' />
+                    <FaPhoenixSquadron className='adventure__Button__Arrow' />
                 </button>
-                <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAttack3Disabled}>
-                    {buttonAttack3Text}
-                    <FaFulcrum className='adventure__Button__Arrow' />
-                </button>
+                {window.localStorage.getItem("Arme") === "Epée" ?
+                    <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAttack3Disabled}>
+                        {buttonAttack3Text}
+                        <FaAudible className='adventure__Button__Arrow' />
+                    </button>
+                    :
+                    <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAttack3Disabled}>
+                        {buttonAttack3AlternativeText}
+                        <FaServicestack className='adventure__Button__Arrow' />
+                    </button>}
             </div>
             {/* <button className='battle__ChooseButton' onClick={LeBoutonTriche}>
                 CHEATBUTTON

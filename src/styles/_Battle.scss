@@ -15,6 +15,20 @@
     margin: 10px auto;
 }
 
+.battle__Container__Box {
+    background-color: rgba(102, 4, 4, 0.349);
+    border-radius: 5px;
+    border: double 6px black;
+    margin: 1rem 0;
+}
+
+.battle__Container__Damage {
+    background-color: rgba(197, 186, 36, 0.336);
+    border-radius: 5px;
+    border: double 6px black;
+    margin: 1rem 0;
+}
+
 @media only screen and (max-width: 800px) {
     .battle__Container {
         width: 80%;
