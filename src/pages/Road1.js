@@ -32,7 +32,7 @@ const Road1 = () => {
     // console.log("Bandage", localStorage.getItem('Bandage'))
     // console.log("Data = ", window.localStorage)
     // Il faut absolument avoir crée son personnage pour commencer l'aventure
-    if (data.length >= 7 && data.length < 10) {
+    if (data.length >= 6 && data.length < 9) {
         return (<div>
             <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
             {component === 1 && <Start01 component={component} setComponent={setComponent} />}
@@ -56,7 +56,7 @@ const Road1 = () => {
             />}
         </div>
         );
-    } else if (data.length > 10) {
+    } else if (data.length > 9) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />

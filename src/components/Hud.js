@@ -25,7 +25,6 @@ const Hud = (data) => {
             <div className='statEquipped'>
                 <p>Statistiques</p>
                 <p>Force : {data.data.Force}</p>
-                <p>Agilité : {data.data.Agilité}</p>
                 <p>Endurance : {data.data.Endurance}</p>
             </div>
             <div className='character__level__container'>

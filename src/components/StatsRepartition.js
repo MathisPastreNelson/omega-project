@@ -6,7 +6,6 @@ const StartStats = (component) => {
     // States des statistiques
     const [countTotal, setCountTotal] = useState(5);
     const [countStr, setCounterStr] = useState(5);
-    const [countAgi, setCounterAgi] = useState(5);
     const [countEndu, setCounterEndu] = useState(5);
 
     const deleteStatStr = () => {
@@ -15,14 +14,6 @@ const StartStats = (component) => {
     }
     const addStatStr = () => {
         setCounterStr(countStr + 1)
-        setCountTotal(countTotal - 1)
-    }
-    const deleteStatAgi = () => {
-        setCounterAgi(countAgi - 1)
-        setCountTotal(countTotal + 1)
-    }
-    const addStatAgi = () => {
-        setCounterAgi(countAgi + 1)
         setCountTotal(countTotal - 1)
     }
     const deleteEndu = () => {
@@ -36,13 +27,11 @@ const StartStats = (component) => {
     const resetButton = () => {
         setCountTotal(5)
         setCounterStr(5)
-        setCounterAgi(5)
         setCounterEndu(5)
     }
 
     const saveStorage = () => {
         localStorage.setItem("Force", countStr)
-        localStorage.setItem("Agilité", countAgi)
         localStorage.setItem("Endurance", countEndu)
         // On change le Props Ici pour passer au composant suivant
         component.setComponent(3)
@@ -64,14 +53,6 @@ const StartStats = (component) => {
                     <button onClick={countStr > 5 ? deleteStatStr : null} className="lessAndMore lessColor" type="button">-</button>
                     <p>{countStr}</p>
                     <button onClick={countTotal > 0 ? addStatStr : null} className="lessAndMore moreColor" type="button">+</button>
-                </form>
-            </div>
-            <div className="statistic__unitary">
-                <p>Agilité</p>
-                <form className="statistic_form">
-                    <button onClick={countAgi > 5 ? deleteStatAgi : null} className="lessAndMore lessColor" type="button">-</button>
-                    <p>{countAgi}</p>
-                    <button onClick={countTotal > 0 ? addStatAgi : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
             <div className="statistic__unitary">

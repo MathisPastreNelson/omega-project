@@ -33,8 +33,6 @@ const StartWeapons = (component) => {
                     <option value="">-- Sélectionnez une arme --</option>
                     <option value="Epée">Épée</option>
                     <option value="Hache">Hache</option>
-                    <option value="Dague">Dague</option>
-                    <option value="Arc">Arc</option>
                 </select>
             </label>
             <div className="adventure__ChooseButton__Container">

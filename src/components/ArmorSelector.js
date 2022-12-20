@@ -14,7 +14,7 @@ function ArmorSelector(component) {
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
         // console.log("Combien de stat ?", window.localStorage.length)
-        if (window.localStorage.length >= 7) {
+        if (window.localStorage.length >= 6) {
             window.location.assign('/road1');
         } else {
             component.setComponent(1)

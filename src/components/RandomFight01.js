@@ -36,27 +36,57 @@ function RandomFight01(component) {
     let totalGoldNew = goldEarned + parseIntGoldStorage;
     let totalXpNew = xpEarned + parseIntXpStorage;
 
+    const forceNotParsed = window.localStorage.getItem("Force")
+    const force = parseInt(forceNotParsed)
+
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
     const [randomNumber3, setRandomNumber3] = useState(null);
-    // Générez une valeur aléatoire entre 1 et 4
+    // Générez une valeur aléatoire pour les d2gqt de l4qttqaue 1
     function getRandomNumber1() {
-        const newRandomNumber1 = Math.floor(Math.random() * 4) + 1;
-        setRandomNumber1(newRandomNumber1);
-        return parseInt(newRandomNumber1);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber1 = Math.floor(Math.random() * force);
+            setRandomNumber1(newRandomNumber1);
+            return newRandomNumber1;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber1 = Math.floor(Math.random() * force);
+            setRandomNumber1(newRandomNumber1);
+            return newRandomNumber1;
+        }
     }
 
-    // Générez une valeur aléatoire entre 3 et 10
+    // Générez une valeur aléatoire entre 5 et 8 avec 5 de force 
     function getRandomNumber2() {
-        const newRandomNumber2 = Math.floor(Math.random() * 8) + 3;
-        setRandomNumber2(newRandomNumber2);
-        return parseInt(newRandomNumber2);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
+            setRandomNumber2(newRandomNumber2);
+            return newRandomNumber2;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
+            setRandomNumber2(newRandomNumber2);
+            return newRandomNumber2;
+        }
     }
-    // Générez une valeur aléatoire entre 6 et 17
+    // Générez une valeur aléatoire entre 6 et 17 avec 5 de force
     function getRandomNumber3() {
-        const newRandomNumber3 = Math.floor(Math.random() * 12) + 6;
-        setRandomNumber3(newRandomNumber3);
-        return parseInt(newRandomNumber3);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
+            setRandomNumber3(newRandomNumber3);
+            return newRandomNumber3;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
+            setRandomNumber3(newRandomNumber3);
+            return newRandomNumber3;
+        }
     }
 
     const attackOne = () => {
@@ -88,7 +118,7 @@ function RandomFight01(component) {
             // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
             if (counter === 0) {
                 clearInterval(interval);
-                setButtonAttack1Text('Attaque 1');
+                setButtonAttack1Text('Attaque rapide');
                 setButtonAttack1Disabled(false);
                 buttonAttack1.current.classList.remove('recharging');
             }
@@ -125,7 +155,7 @@ function RandomFight01(component) {
             // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
             if (counter === 0) {
                 clearInterval(interval);
-                setButtonAttack2Text('Attaque 2');
+                setButtonAttack2Text('Attaque lourde');
                 setButtonAttack2Disabled(false);
                 buttonAttack2.current.classList.remove('recharging');
             }
@@ -243,9 +273,10 @@ function RandomFight01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-                <p>J'inflige {randomNumber1} dégats</p>
-                <p>J'inflige {randomNumber2} dégats</p>
-                <p>J'inflige {randomNumber3} dégats</p>
+                <p>Ma dernière attaque rapide a infligé {randomNumber1} dégats</p>
+                <p>Ma dernière attaque lourde a infligé {randomNumber2} dégats</p>
+                <p>Ma dernière attaque spécial a infligé  {randomNumber3} dégats</p>
+                <p>test</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>
