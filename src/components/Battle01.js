@@ -24,7 +24,8 @@ function Fight01(component) {
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
 
-
+    const forceNotParsed = window.localStorage.getItem("Force")
+    const force = parseInt(forceNotParsed)
 
     // Les gains apres combat sont ici
     let goldEarned = Math.floor(Math.random() * 3) + 1;
@@ -33,24 +34,50 @@ function Fight01(component) {
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
     const [randomNumber3, setRandomNumber3] = useState(null);
-    // Générez une valeur aléatoire entre 1 et 4
     function getRandomNumber1() {
-        const newRandomNumber1 = Math.floor(Math.random() * 4) + 1;
-        setRandomNumber1(newRandomNumber1);
-        return parseInt(newRandomNumber1);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber1 = Math.floor(Math.random() * force);
+            setRandomNumber1(newRandomNumber1);
+            return newRandomNumber1;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber1 = Math.floor(Math.random() * force);
+            setRandomNumber1(newRandomNumber1);
+            return newRandomNumber1;
+        }
     }
 
-    // Générez une valeur aléatoire entre 3 et 10
+
     function getRandomNumber2() {
-        const newRandomNumber2 = Math.floor(Math.random() * 8) + 3;
-        setRandomNumber2(newRandomNumber2);
-        return parseInt(newRandomNumber2);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
+            setRandomNumber2(newRandomNumber2);
+            return newRandomNumber2;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
+            setRandomNumber2(newRandomNumber2);
+            return newRandomNumber2;
+        }
     }
-    // Générez une valeur aléatoire entre 6 et 17
+
     function getRandomNumber3() {
-        const newRandomNumber3 = Math.floor(Math.random() * 12) + 6;
-        setRandomNumber3(newRandomNumber3);
-        return parseInt(newRandomNumber3);
+        // Epée
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
+            setRandomNumber3(newRandomNumber3);
+            return newRandomNumber3;
+        }
+        // Hache
+        else if (window.localStorage.getItem("Arme") === "Hache") {
+            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
+            setRandomNumber3(newRandomNumber3);
+            return newRandomNumber3;
+        }
     }
 
     const attackOne = () => {

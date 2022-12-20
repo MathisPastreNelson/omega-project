@@ -42,7 +42,8 @@ function RandomFight01(component) {
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
     const [randomNumber3, setRandomNumber3] = useState(null);
-    // Générez une valeur aléatoire pour les d2gqt de l4qttqaue 1
+
+
     function getRandomNumber1() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
@@ -58,7 +59,7 @@ function RandomFight01(component) {
         }
     }
 
-    // Générez une valeur aléatoire entre 5 et 8 avec 5 de force 
+
     function getRandomNumber2() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
@@ -73,7 +74,7 @@ function RandomFight01(component) {
             return newRandomNumber2;
         }
     }
-    // Générez une valeur aléatoire entre 6 et 17 avec 5 de force
+
     function getRandomNumber3() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
