@@ -288,7 +288,7 @@ function Fight01(component) {
             setActualHp(prevActualHp => {
                 if (prevActualHp - newDamage <= 0) {
                     console.log("Vous etes mort");
-                    // window.location.assign('/GameOver');
+                    window.location.assign('/GameOver');
                     return 0;
                 } else {
                     console.log("Vous recevez ", newDamage, "dégat");
