@@ -44,5 +44,9 @@ button.attack {
 }
 
 button.attack.recharging {
-    background-color: #ccc;
+    background-color: rgba(49, 241, 255, 0.541);
+}
+
+button.attack.spamThis {
+    background-color: rgba(49, 255, 59, 0.253);
 }

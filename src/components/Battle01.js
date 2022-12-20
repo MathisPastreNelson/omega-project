@@ -17,22 +17,24 @@ function Fight01(component) {
     const [buttonAttack2Disabled, setButtonAttack2Disabled] = useState(false);
     const [buttonAttack3Disabled, setButtonAttack3Disabled] = useState(false);
 
+    const [buttonAlternativeAttack3Disabled, setButtonAlternativeAttack3Disabled] = useState(enemyHp > (enemyMaxHp / 3));
+
     const [buttonAttack1Text, setButtonAttack1Text] = useState('Frappe rapide');
     const [buttonAttack2Text, setButtonAttack2Text] = useState('Frappe lourde');
     const [buttonAttack3Text, setButtonAttack3Text] = useState('Estoc percante');
-    const [buttonAttack3AlternativeText, setbuttonAttack3AlternativeText] = useState("Fendoir");
+    const [buttonAttack3AlternativeText, setButtonAttack3AlternativeText] = useState('Fendoir');
 
     const [running] = useState(true);
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
 
-    const forceNotParsed = window.localStorage.getItem("Force")
-    const force = parseInt(forceNotParsed)
 
-    // Les gains apres combat sont ici
     let goldEarned = Math.floor(Math.random() * 3) + 1;
     let xpEarned = Math.floor(Math.random() * 2) + 1;
+
+    const forceNotParsed = window.localStorage.getItem("Force")
+    const force = parseInt(forceNotParsed)
 
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
@@ -62,7 +64,7 @@ function Fight01(component) {
         }
         // Hache
         else if (window.localStorage.getItem("Arme") === "Hache") {
-            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
+            const newRandomNumber2 = Math.floor(Math.random() * force) + 1;
             setRandomNumber2(newRandomNumber2);
             return newRandomNumber2;
         }
@@ -77,7 +79,7 @@ function Fight01(component) {
         }
         // Hache
         else if (window.localStorage.getItem("Arme") === "Hache") {
-            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
+            const newRandomNumber3 = Math.floor(Math.random() * force) + 1;
             setRandomNumber3(newRandomNumber3);
             return newRandomNumber3;
         }
@@ -157,48 +159,79 @@ function Fight01(component) {
     }
 
     const attackThree = () => {
-        // Générez une valeur aléatoire entre 3 et 10
-        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
+        if (window.localStorage.getItem("Arme") === "Epée") {
+            // Générez une valeur aléatoire entre 3 et 10
+            setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
 
-        if (enemyHp - getRandomNumber3() < 1) {
-            localStorage.setItem("Or", goldEarned)
-            localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessRandomBattle01');
-            // window.location.assign('/SuccessRandomBattle01');
-        }
-
-
-        if (buttonAttack3.current) {
-            // Désactivez le bouton et ajoutez la classe de recharge
-            setButtonAttack3Disabled(true);
-            buttonAttack3.current.classList.add('recharging');
-        }
-
-        // Initialisez un compteur à 3
-        let counter = 12;
-
-        // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
-        setButtonAttack3Text(` Récupération(${counter}s)`);
-        setbuttonAttack3AlternativeText(` Récupération(${counter}s)`)
-
-        // Mise à jour du compteur toutes les secondes
-        const interval = setInterval(() => {
-            counter--;
-            setButtonAttack3Text(` Récupération(${counter}s)`);
-            setbuttonAttack3AlternativeText(` Récupération(${counter}s)`)
-
-            // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
-            if (counter === 0) {
-                clearInterval(interval);
-                if (window.localStorage.getItem("Arme") === "Epée") {
-                    setButtonAttack3Text('Estoc');
-                } else {
-                    setbuttonAttack3AlternativeText("Fendoir")
-                }
-                setButtonAttack3Disabled(false);
-                buttonAttack3.current.classList.remove('recharging');
+            if (enemyHp - getRandomNumber3() < 1) {
+                localStorage.setItem("Or", goldEarned)
+                localStorage.setItem("Xp", xpEarned)
+                window.location.assign('/SuccessRandomBattle01');
+                // window.location.assign('/SuccessRandomBattle01');
             }
-        }, 1000);
+
+            if (buttonAttack3.current) {
+                // Désactivez le bouton et ajoutez la classe de recharge
+                setButtonAttack3Disabled(true);
+                buttonAttack3.current.classList.add('recharging');
+            }
+
+            // Initialisez un compteur à 3
+            let counter = 12;
+
+            // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+            setButtonAttack3Text(` Récupération(${counter}s)`);
+
+            // Mise à jour du compteur toutes les secondes
+            const interval = setInterval(() => {
+                counter--;
+                setButtonAttack3Text(` Récupération(${counter}s)`);
+
+                // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
+                if (counter === 0) {
+                    clearInterval(interval);
+                    setButtonAttack3Text('Estoc percante');
+                    setButtonAttack3Disabled(false);
+                    buttonAttack3.current.classList.remove('recharging');
+                }
+            }, 1000);
+        } else {
+            // Générez une valeur aléatoire entre 3 et 10
+            setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
+
+            if (enemyHp - getRandomNumber3() < 1) {
+                localStorage.setItem("Or", goldEarned)
+                localStorage.setItem("Xp", xpEarned)
+                window.location.assign('/SuccessRandomBattle01');
+                // window.location.assign('/SuccessRandomBattle01');
+            }
+
+            if (buttonAttack3.current) {
+                // Désactivez le bouton et ajoutez la classe de recharge
+                setButtonAlternativeAttack3Disabled(true);
+                buttonAttack3.current.classList.add('spamThis');
+            }
+
+            // Initialisez un compteur à 3
+            let counter = 12;
+
+            // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+            setButtonAttack3AlternativeText(`Fendre à mort`);
+
+            // Mise à jour du compteur toutes les secondes
+            const interval = setInterval(() => {
+                counter--;
+                setButtonAttack3AlternativeText(`Fendre à mort`);
+
+                // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
+                if (counter === 0) {
+                    clearInterval(interval);
+                    setButtonAttack3AlternativeText('Fendoir');
+                    setButtonAlternativeAttack3Disabled(false);
+                    buttonAttack3.current.classList.remove('spamThis');
+                }
+            }, 1000);
+        };
     }
 
 
@@ -243,6 +276,10 @@ function Fight01(component) {
 
 
     useEffect(() => {
+        setButtonAlternativeAttack3Disabled(enemyHp > (enemyMaxHp / 4));
+    }, [enemyHp, enemyMaxHp]);
+
+    useEffect(() => {
         const interval = setInterval(() => {
             // Calcul des dégâts
             let newDamage = Math.floor(Math.random() * (5 + 11));
@@ -251,7 +288,7 @@ function Fight01(component) {
             setActualHp(prevActualHp => {
                 if (prevActualHp - newDamage <= 0) {
                     console.log("Vous etes mort");
-                    window.location.assign('/GameOver');
+                    // window.location.assign('/GameOver');
                     return 0;
                 } else {
                     console.log("Vous recevez ", newDamage, "dégat");
@@ -268,11 +305,13 @@ function Fight01(component) {
 
     return (
         <div className="battle__Container">
-            <div className='textAlign'>
+            <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
+            </div>
+            <div className='textAlign battle__Container__Damage'>
                 <p>Dernière attaque rapide : {randomNumber1} dégats</p>
                 <p>Dernière attaque lourde : {randomNumber2} dégats</p>
                 <p>Dernière attaque spécial : {randomNumber3} dégats</p>
@@ -292,7 +331,7 @@ function Fight01(component) {
                         <FaAudible className='adventure__Button__Arrow' />
                     </button>
                     :
-                    <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAttack3Disabled}>
+                    <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAlternativeAttack3Disabled}>
                         {buttonAttack3AlternativeText}
                         <FaServicestack className='adventure__Button__Arrow' />
                     </button>}
