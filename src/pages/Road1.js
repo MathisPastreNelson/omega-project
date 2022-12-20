@@ -59,7 +59,7 @@ const Road1 = () => {
     } else if (data.length > 12) {
         return (
             <div>
-                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />;
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Safe03 component={component} setComponent={setComponent} />}
                 {component === "RandomFight01" && <RandomFight01
                     component={component}

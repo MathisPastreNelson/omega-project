@@ -13,6 +13,10 @@ function Start() {
             window.location.assign('/road1')
         };
     }
+    const clearSavedGame = () => {
+        localStorage.clear();
+        window.location.assign('/NewCharacter');
+    };
 
     if (window.localStorage.length >= 9) {
         return (
@@ -21,6 +25,10 @@ function Start() {
                 <div className='adventure__Button__Container'>
                     <button onClick={savedGame} className='adventure__Button'>
                         Reprendre
+                        <FaArrowAltCircleRight className='adventure__Button__Arrow' />
+                    </button>
+                    <button onClick={clearSavedGame} className='adventure__Button'>
+                        Supprimer le personnage
                         <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                     </button>
                 </div>

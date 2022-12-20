@@ -54,10 +54,10 @@ const Hud = (data) => {
                 </p>}
             </div>
             <div className='itemEquipped'>
-                <p>Arme : {data.data.Arme}</p>
-                <p>Casque : {data.data.Casque}</p>
-                <p>Torse : {data.data.Torse}</p>
-                <p>Jambe : {data.data.Jambe}</p>
+                <p> {data.data.Arme}</p>
+                <p> {data.data.Casque}</p>
+                <p> {data.data.Torse}</p>
+                <p> {data.data.Jambe}</p>
             </div>
         </div>
     );
