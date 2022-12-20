@@ -22,10 +22,10 @@ const Hud = (data) => {
     // rendu
     return (
         <div className="character__container">
-            <div>
+            <div className='statEquipped'>
+                <p>Statistiques</p>
                 <p>Force : {data.data.Force}</p>
                 <p>Agilité : {data.data.Agilité}</p>
-                <p>Intelligence : {data.data.Intelligence}</p>
                 <p>Endurance : {data.data.Endurance}</p>
             </div>
             <div className='character__level__container'>
@@ -54,8 +54,8 @@ const Hud = (data) => {
                 </p>}
             </div>
             <div className='itemEquipped'>
+                <p>Equipement : </p>
                 <p> {data.data.Arme}</p>
-                <p> {data.data.Casque}</p>
                 <p> {data.data.Torse}</p>
                 <p> {data.data.Jambe}</p>
             </div>

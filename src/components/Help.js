@@ -14,9 +14,8 @@ const Help = (component) => {
     else if (actualComponent === 2) {
         return (
             <div className='help__Container'>
-                <p className='textAlign'>La force détermine tes dégats au corps à corps.</p>
-                <p className='textAlign'>L'agilité détermine tes chances de coups critiques.</p>
-                <p className='textAlign'>L'intelligence détermine tes dégats magiques.</p>
+                <p className='textAlign'>La force détermine tes dégats à l'épée et à la hache.</p>
+                <p className='textAlign'>L'agilité détermine tes dégats à la dague et à l'arc.</p>
                 <p className='textAlign'>L'endurance détermine ta santé maximum.</p>
             </div>
         );

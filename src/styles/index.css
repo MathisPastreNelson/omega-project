@@ -130,10 +130,10 @@ div.adventure__Container p {
 
 .adventure__ChooseButton__Container {
   width: 100%;
-  margin-top: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 15px;
 }
 
 .adventure__Button {
@@ -246,7 +246,10 @@ div.adventure__Container p {
   .adventure__ChooseButton__Container {
     flex-direction: column;
     width: 250px;
-    margin: 0px auto;
+    margin: 15px auto;
+  }
+  .adventure__Button {
+    margin: 5px auto;
   }
   div.adventure__Container p {
     padding: 1rem 1rem;
@@ -281,8 +284,18 @@ div.adventure__Container p {
   align-items: center;
 }
 
+.statEquipped {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .itemEquipped {
-  text-align: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hpBar {
@@ -618,6 +631,11 @@ div.adventure__Container p {
   border: solid 2px black;
   height: 40px;
   font-weight: bold;
+}
+
+.armorChoose__container {
+  display: flex;
+  flex-direction: column;
 }
 
 button.attack {

@@ -30,17 +30,20 @@ function RandomFight01(component) {
     let xpEarned = Math.floor(Math.random() * 2) + 1;
     let totalGoldNew = goldEarned + parseIntGoldStorage
     let totalXpNew = xpEarned + parseIntXpStorage
-
+    // Générez une valeur aléatoire entre 3 et 10
+    const damage1 = Math.floor(Math.random() * 5) + 1;
+    // Générez une valeur aléatoire entre 3 et 10
+    const damage2 = Math.floor(Math.random() * 9) + 1;
+    // Générez une valeur aléatoire entre 3 et 10
+    const damage3 = Math.floor(Math.random() * 12) + 1;
     const attackOne = () => {
-        // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 5) + 1;
         // Cette condition me permet de win le combat
         if (enemyHp - damage < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
             window.location.assign('/SuccessRandomBattle01');
         }
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - damage1);
 
         if (buttonAttack1.current) {
             // Désactivez le bouton et ajoutez la classe de recharge
@@ -71,9 +74,7 @@ function RandomFight01(component) {
 
 
     const attackTwo = () => {
-        // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 9) + 1;
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - damage2);
 
         if (enemyHp - damage < 1) {
             localStorage.setItem("Or", totalGoldNew)
@@ -110,8 +111,7 @@ function RandomFight01(component) {
 
     const attackThree = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 12) + 1;
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - damage3);
 
         if (enemyHp - damage < 1) {
             localStorage.setItem("Or", totalGoldNew)
@@ -221,7 +221,7 @@ function RandomFight01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-
+                <p>J'inflige {damage1}</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>

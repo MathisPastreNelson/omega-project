@@ -32,14 +32,12 @@ const StartWeapons = (component) => {
                 <select required className='textAlign WeaponsChoose' value={selectedWeapon} onChange={handleChange}>
                     <option value="">-- Sélectionnez une arme --</option>
                     <option value="Epée">Épée</option>
-                    <option value="Dague">Dague</option>
                     <option value="Hache">Hache</option>
-                    <option value="Masse">Masse</option>
+                    <option value="Dague">Dague</option>
                     <option value="Arc">Arc</option>
-                    <option value="Bâton">Bâton</option>
                 </select>
             </label>
-            <div className="personalButton__container">
+            <div className="adventure__ChooseButton__Container">
                 <button className='adventure__Button' onClick={back}>Retour</button>
                 <button className='adventure__Button' onClick={handleSave}>Ok</button>
             </div>

@@ -16,9 +16,18 @@
     align-items: center;
 }
 
-.itemEquipped {
+.statEquipped {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-    text-align: end;
+.itemEquipped {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .hpBar {
@@ -116,7 +125,6 @@
     }
 
     .itemEquipped {
-
         text-align: center;
     }
 

@@ -7,7 +7,6 @@ const StartStats = (component) => {
     const [countTotal, setCountTotal] = useState(5);
     const [countStr, setCounterStr] = useState(5);
     const [countAgi, setCounterAgi] = useState(5);
-    const [countIntel, setCounterIntel] = useState(5);
     const [countEndu, setCounterEndu] = useState(5);
 
     const deleteStatStr = () => {
@@ -26,14 +25,6 @@ const StartStats = (component) => {
         setCounterAgi(countAgi + 1)
         setCountTotal(countTotal - 1)
     }
-    const deleteStatIntel = () => {
-        setCounterIntel(countIntel - 1)
-        setCountTotal(countTotal + 1)
-    }
-    const addStatIntel = () => {
-        setCounterIntel(countIntel + 1)
-        setCountTotal(countTotal - 1)
-    }
     const deleteEndu = () => {
         setCounterEndu(countEndu - 1)
         setCountTotal(countTotal + 1)
@@ -46,14 +37,12 @@ const StartStats = (component) => {
         setCountTotal(5)
         setCounterStr(5)
         setCounterAgi(5)
-        setCounterIntel(5)
         setCounterEndu(5)
     }
 
     const saveStorage = () => {
         localStorage.setItem("Force", countStr)
         localStorage.setItem("Agilité", countAgi)
-        localStorage.setItem("Intelligence", countIntel)
         localStorage.setItem("Endurance", countEndu)
         // On change le Props Ici pour passer au composant suivant
         component.setComponent(3)
@@ -86,14 +75,6 @@ const StartStats = (component) => {
                 </form>
             </div>
             <div className="statistic__unitary">
-                <p>Intelligence</p>
-                <form className="statistic_form">
-                    <button onClick={countIntel > 5 ? deleteStatIntel : null} className="lessAndMore lessColor" type="button">-</button>
-                    <p>{countIntel}</p>
-                    <button onClick={countTotal > 0 ? addStatIntel : null} className="lessAndMore moreColor" type="button">+</button>
-                </form>
-            </div>
-            <div className="statistic__unitary">
                 <p>Endurance</p>
                 <form className="statistic_form">
                     <button onClick={countEndu > 5 ? deleteEndu : null} className="lessAndMore lessColor" type="button">-</button>
@@ -101,9 +82,9 @@ const StartStats = (component) => {
                     <button onClick={countTotal > 0 ? addStatEndu : null} className="lessAndMore moreColor" type="button">+</button>
                 </form>
             </div>
-            <div className="personalButton__container">
-                <button className="adventure__Button" onClick={resetButton} type="button">Réinitialiser</button>
-                <button className="adventure__Button" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
+            <div className="adventure__ChooseButton__Container">
+                <button className="adventure__ChooseButton" onClick={resetButton} type="button">Réinitialiser</button>
+                <button className="adventure__ChooseButton" onClick={countTotal === 0 ? saveStorage : spendAllPoint} type="button">Ok</button>
             </div>
         </div >
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 // Import FontAwesome Component
-import { FaArrowAltCircleRight } from 'react-icons/fa';
+import { FaArrowAltCircleRight, FaTrash } from 'react-icons/fa';
 
 function Start() {
     const startGame = () => {
@@ -8,7 +8,7 @@ function Start() {
     }
     // LA SAUVEGARDE DE L'AVENTURE SERA CONTENU ICI
     const savedGame = () => {
-        if (window.localStorage.length >= 9) {
+        if (window.localStorage.length >= 7) {
             console.log("bon")
             window.location.assign('/road1')
         };
@@ -18,18 +18,18 @@ function Start() {
         window.location.assign('/NewCharacter');
     };
 
-    if (window.localStorage.length >= 9) {
+    if (window.localStorage.length >= 7) {
         return (
             <div className="adventure__Container">
                 <p className="fade-in textAlign">Reprendre votre aventure.</p>
-                <div className='adventure__Button__Container'>
-                    <button onClick={savedGame} className='adventure__Button'>
+                <div className='adventure__ChooseButton__Container'>
+                    <button onClick={savedGame} className='adventure__ChooseButton'>
                         Reprendre
                         <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                     </button>
-                    <button onClick={clearSavedGame} className='adventure__Button'>
-                        Supprimer le personnage
-                        <FaArrowAltCircleRight className='adventure__Button__Arrow' />
+                    <button onClick={clearSavedGame} className='battle__ChooseButton'>
+                        Effacer sauvegarde
+                        <FaTrash className='adventure__Button__Arrow' />
                     </button>
                 </div>
             </div>
@@ -38,8 +38,8 @@ function Start() {
         return (
             <div className="adventure__Container">
                 <p className="fade-in textAlign">Commencer votre aventure ici.</p>
-                <div className='adventure__Button__Container'>
-                    <button onClick={startGame} className='adventure__Button'>
+                <div className='adventure__ChooseButton__Container'>
+                    <button onClick={startGame} className='adventure__ChooseButton'>
                         Commencer
                         <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                     </button>

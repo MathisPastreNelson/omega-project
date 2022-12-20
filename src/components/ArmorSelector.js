@@ -11,11 +11,10 @@ function ArmorSelector(component) {
 
     // Enregistrer la sélection dans le local storage
     const handleSave = () => {
-        window.localStorage.setItem('Casque', "Casque de " + selectedArmor);
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
         // console.log("Combien de stat ?", window.localStorage.length)
-        if (window.localStorage.length >= 9) {
+        if (window.localStorage.length >= 7) {
             window.location.assign('/road1');
         } else {
             component.setComponent(1)
@@ -25,7 +24,7 @@ function ArmorSelector(component) {
     // Afficher le composant
     return (
         <div className='generalContainer textAlign'>
-            <label>
+            <label className='armorChoose__container'>
                 Choisissez votre type d'armure :
                 <select className='armorChoose' value={selectedArmor} onChange={handleChange}>
                     <option value="tissu">Tenue en tissu</option>
@@ -34,7 +33,9 @@ function ArmorSelector(component) {
                 </select>
             </label>
             <p className='textAlign'>Vous commencerez avec une tenue en {selectedArmor}.</p>
-            <button className='adventure__Button' onClick={handleSave}>Commencer</button>
+            <div className='adventure__ChooseButton__Container'>
+                <button className='adventure__Button' onClick={handleSave}>Commencer</button>
+            </div>
         </div>
     );
 }

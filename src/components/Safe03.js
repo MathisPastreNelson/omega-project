@@ -17,9 +17,9 @@ function Safe03(component) {
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">
-                Félicitations, vous avez remporté votre premier combat !
+                Félicitations, vous avez remporté votre combat !
                 Votre bravoure et votre habileté au combat ont été mises à l'épreuve et vous avez réussi à triompher de votre adversaire.
-                Vous pouvez être fiers de vous et de votre performance.
+                Vous pouvez être fier de vous et de votre performance.
                 Maintenant, vous vous rendez compte que cet environnement est hostile et propice à un entraînement intense.
                 Vous vous demandez si vous devriez rester dans les parages pour progresser encore plus, ou si vous devriez continuer votre route.
                 Quelle décision allez-vous prendre ?
