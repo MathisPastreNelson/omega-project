@@ -10,6 +10,7 @@ function RandomFight01(component) {
     const { setActualHp } = component;
     const [enemyMaxHp] = useState(50)
     const [enemyHp, setEnemyHp] = useState(50)
+    // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
@@ -24,6 +25,7 @@ function RandomFight01(component) {
     const buttonAttack3 = useRef(null);
 
 
+
     // Les gains apres combat sont ici
     const totalGold = window.localStorage.getItem("Or")
     const parseIntGoldStorage = parseInt(totalGold)
@@ -34,28 +36,36 @@ function RandomFight01(component) {
     let totalGoldNew = goldEarned + parseIntGoldStorage
     let totalXpNew = xpEarned + parseIntXpStorage
 
-    const [result, setResult] = useState(0);
-    // Générez une valeur aléatoire entre 3 et 10
+    const [randomNumber1, setRandomNumber1] = useState(null);
+    const [randomNumber2, setRandomNumber2] = useState(null);
+    const [randomNumber3, setRandomNumber3] = useState(null);
+    // Générez une valeur aléatoire entre 1 et 4
     function getRandomNumber1() {
-        return parseInt(Math.random() * 10) + 1;
+        const newRandomNumber1 = Math.floor(Math.random() * 4) + 1;
+        setRandomNumber1(newRandomNumber1);
+        return parseInt(newRandomNumber1);
     }
+
     // Générez une valeur aléatoire entre 3 et 10
     function getRandomNumber2() {
-        return parseInt(Math.random() * 10) + 1;
+        const newRandomNumber2 = Math.floor(Math.random() * 8) + 3;
+        setRandomNumber2(newRandomNumber2);
+        return parseInt(newRandomNumber2);
     }
-    // Générez une valeur aléatoire entre 3 et 10
+    // Générez une valeur aléatoire entre 6 et 17
     function getRandomNumber3() {
-        return parseInt(Math.random() * 10) + 1;
+        const newRandomNumber3 = Math.floor(Math.random() * 12) + 6;
+        setRandomNumber3(newRandomNumber3);
+        return parseInt(newRandomNumber3);
     }
 
     const attackOne = () => {
         // Cette condition me permet de win le combat
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
             window.location.assign('/SuccessRandomBattle01');
         }
-        setResult(prevResult => prevResult - getRandomNumber1());
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
         if (buttonAttack1.current) {
@@ -89,7 +99,7 @@ function RandomFight01(component) {
     const attackTwo = () => {
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber2());
 
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
             window.location.assign('/SuccessRandomBattle01');
@@ -126,10 +136,9 @@ function RandomFight01(component) {
         // Générez une valeur aléatoire entre 3 et 10
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
 
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber3() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
-            console.log("LA THUNE", totalGoldNew)
             window.location.assign('/SuccessRandomBattle01');
             // window.location.assign('/SuccessRandomBattle01');
         }
@@ -234,7 +243,9 @@ function RandomFight01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-                <p>J'inflige {result} dégats</p>
+                <p>J'inflige {randomNumber1} dégats</p>
+                <p>J'inflige {randomNumber2} dégats</p>
+                <p>J'inflige {randomNumber3} dégats</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>

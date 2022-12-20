@@ -6,10 +6,11 @@ import { useRef } from 'react';
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
 
-function Battle01(component) {
+function Fight01(component) {
     const { setActualHp } = component;
     const [enemyMaxHp] = useState(50)
     const [enemyHp, setEnemyHp] = useState(50)
+    // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
@@ -22,24 +23,44 @@ function Battle01(component) {
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
+
+
+
+    // Les gains apres combat sont ici
     let goldEarned = Math.floor(Math.random() * 3) + 1;
     let xpEarned = Math.floor(Math.random() * 2) + 1;
-    // const nextComponentBattle01 = () => {
-    //     component.setComponent("battle01")
-    // }
 
+    const [randomNumber1, setRandomNumber1] = useState(null);
+    const [randomNumber2, setRandomNumber2] = useState(null);
+    const [randomNumber3, setRandomNumber3] = useState(null);
+    // Générez une valeur aléatoire entre 1 et 4
+    function getRandomNumber1() {
+        const newRandomNumber1 = Math.floor(Math.random() * 4) + 1;
+        setRandomNumber1(newRandomNumber1);
+        return parseInt(newRandomNumber1);
+    }
+
+    // Générez une valeur aléatoire entre 3 et 10
+    function getRandomNumber2() {
+        const newRandomNumber2 = Math.floor(Math.random() * 8) + 3;
+        setRandomNumber2(newRandomNumber2);
+        return parseInt(newRandomNumber2);
+    }
+    // Générez une valeur aléatoire entre 6 et 17
+    function getRandomNumber3() {
+        const newRandomNumber3 = Math.floor(Math.random() * 12) + 6;
+        setRandomNumber3(newRandomNumber3);
+        return parseInt(newRandomNumber3);
+    }
 
     const attackOne = () => {
-        console.log(enemyHp)
-        // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 5) + 1;
         // Cette condition me permet de win le combat
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            window.location.assign('/SuccessBattle01');
         }
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
         if (buttonAttack1.current) {
             // Désactivez le bouton et ajoutez la classe de recharge
@@ -70,14 +91,12 @@ function Battle01(component) {
 
 
     const attackTwo = () => {
-        // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 9) + 1;
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber2());
 
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            window.location.assign('/SuccessBattle01');
         }
 
         if (buttonAttack2.current) {
@@ -109,13 +128,12 @@ function Battle01(component) {
 
     const attackThree = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        const damage = Math.floor(Math.random() * 12) + 1;
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
 
-        if (enemyHp - damage < 1) {
+        if (enemyHp - getRandomNumber3() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessBattle');
+            window.location.assign('/SuccessBattle01');
         }
 
 
@@ -153,6 +171,8 @@ function Battle01(component) {
     //     setEnemyHp(prevEnemyHp => prevEnemyHp - damage);
 
     //     if (enemyHp - damage < 1) {
+    //         localStorage.setItem("Or", totalGoldNew)
+    //         localStorage.setItem("Xp", totalXpNew)
     //         window.location.assign('/SuccessBattle');
     //     }
 
@@ -216,7 +236,9 @@ function Battle01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-                <p>J'inflige {damage} dégats</p>
+                <p>J'inflige {randomNumber1} dégats</p>
+                <p>J'inflige {randomNumber2} dégats</p>
+                <p>J'inflige {randomNumber3} dégats</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>
@@ -233,11 +255,11 @@ function Battle01(component) {
                 </button>
             </div>
             {/* <button className='battle__ChooseButton' onClick={LeBoutonTriche}>
-               CHEATBUTTON
+                CHEATBUTTON
                 <FaFulcrum className='adventure__Button__Arrow' />
             </button> */}
         </div>
     );
 }
 
-export default Battle01;
+export default Fight01;

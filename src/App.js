@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
           <Route path="/GameOver" element={<GameOverPage />} />
-          <Route path="/SuccessBattle" element={<SuccessBattlePage />} />
+          <Route path="/SuccessBattle01" element={<SuccessBattlePage />} />
           <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
