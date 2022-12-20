@@ -61,7 +61,7 @@ const Road1 = () => {
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Safe03 component={component} setComponent={setComponent} />}
-                {component === "RandomFight01" && <RandomFight01
+                {component === "randomFight01" && <RandomFight01
                     component={component}
                     setComponent={setComponent}
                     maxHp={maxHp}

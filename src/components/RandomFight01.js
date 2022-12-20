@@ -22,6 +22,9 @@ function RandomFight01(component) {
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
+
+
+    // Les gains apres combat sont ici
     const totalGold = window.localStorage.getItem("Or")
     const parseIntGoldStorage = parseInt(totalGold)
     const totalXp = window.localStorage.getItem("Xp")
@@ -30,12 +33,21 @@ function RandomFight01(component) {
     let xpEarned = Math.floor(Math.random() * 2) + 1;
     let totalGoldNew = goldEarned + parseIntGoldStorage
     let totalXpNew = xpEarned + parseIntXpStorage
+
+    const [result, setResult] = useState(0);
     // Générez une valeur aléatoire entre 3 et 10
-    const damage1 = Math.floor(Math.random() * 5) + 1;
+    function getRandomNumber1() {
+        return parseInt(Math.random() * 10) + 1;
+    }
     // Générez une valeur aléatoire entre 3 et 10
-    const damage2 = Math.floor(Math.random() * 9) + 1;
+    function getRandomNumber2() {
+        return parseInt(Math.random() * 10) + 1;
+    }
     // Générez une valeur aléatoire entre 3 et 10
-    const damage3 = Math.floor(Math.random() * 12) + 1;
+    function getRandomNumber3() {
+        return parseInt(Math.random() * 10) + 1;
+    }
+
     const attackOne = () => {
         // Cette condition me permet de win le combat
         if (enemyHp - damage < 1) {
@@ -43,7 +55,8 @@ function RandomFight01(component) {
             localStorage.setItem("Xp", totalXpNew)
             window.location.assign('/SuccessRandomBattle01');
         }
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage1);
+        setResult(prevResult => prevResult - getRandomNumber1());
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
         if (buttonAttack1.current) {
             // Désactivez le bouton et ajoutez la classe de recharge
@@ -74,7 +87,7 @@ function RandomFight01(component) {
 
 
     const attackTwo = () => {
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage2);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber2());
 
         if (enemyHp - damage < 1) {
             localStorage.setItem("Or", totalGoldNew)
@@ -111,7 +124,7 @@ function RandomFight01(component) {
 
     const attackThree = () => {
         // Générez une valeur aléatoire entre 3 et 10
-        setEnemyHp(prevEnemyHp => prevEnemyHp - damage3);
+        setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
 
         if (enemyHp - damage < 1) {
             localStorage.setItem("Or", totalGoldNew)
@@ -221,7 +234,7 @@ function RandomFight01(component) {
                     Monstre {enemyHp} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
-                <p>J'inflige X dégats</p>
+                <p>J'inflige {result} dégats</p>
             </div>
             <div className='adventure__ChooseButton__Container'>
                 <button ref={buttonAttack1} className='battle__ChooseButton attack' onClick={attackOne} disabled={buttonAttack1Disabled}>

@@ -6,7 +6,7 @@ import { FaFulcrum } from 'react-icons/fa';
 function Safe03(component) {
     const nextComponentRandomFight01 = () => {
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("RandomFight01")
+        component.setComponent("randomFight01")
     }
     const nextComponentSafe04 = () => {
         // On change le Props Ici pour passer au composant suivant
