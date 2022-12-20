@@ -1,3 +1,29 @@
+.battle__Container {
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    width: 50%;
+    // background: url(../assets/scrollBackground.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(241, 0, 0, 0.507);
+    justify-content: center;
+    border: double 8px black;
+    border-radius: 25px;
+    padding: 1rem;
+    margin: 10px auto;
+}
+
+@media only screen and (max-width: 800px) {
+    .battle__Container {
+        width: 80%;
+        margin: 10px auto;
+        min-width: auto;
+        font-size: 14px;
+    }
+}
+
 button.attack {
     /* Autres propriétés de style du bouton */
     transition: background-color 0.5s ease-in-out;

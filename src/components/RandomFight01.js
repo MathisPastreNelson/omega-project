@@ -33,8 +33,8 @@ function RandomFight01(component) {
     const parseIntXpStorage = parseInt(totalXp)
     let goldEarned = Math.floor(Math.random() * 3) + 1;
     let xpEarned = Math.floor(Math.random() * 2) + 1;
-    let totalGoldNew = goldEarned + parseIntGoldStorage
-    let totalXpNew = xpEarned + parseIntXpStorage
+    let totalGoldNew = goldEarned + parseIntGoldStorage;
+    let totalXpNew = xpEarned + parseIntXpStorage;
 
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
@@ -221,7 +221,7 @@ function RandomFight01(component) {
             setActualHp(prevActualHp => {
                 if (prevActualHp - newDamage <= 0) {
                     console.log("Vous etes mort");
-                    window.location.assign('/GameOver');
+                    // window.location.assign('/GameOver');
                     return 0;
                 } else {
                     console.log("Vous recevez ", newDamage, "dégat");
@@ -237,7 +237,7 @@ function RandomFight01(component) {
     // console.log("dégat=", damage)
 
     return (
-        <div className="adventure__Container">
+        <div className="battle__Container">
             <div className='textAlign'>
                 <p className="fade-in textAlign">
                     Monstre {enemyHp} / {enemyMaxHp} Pv

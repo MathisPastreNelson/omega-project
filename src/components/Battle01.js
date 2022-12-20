@@ -230,7 +230,7 @@ function Fight01(component) {
     // console.log("dégat=", damage)
 
     return (
-        <div className="adventure__Container">
+        <div className="battle__Container">
             <div className='textAlign'>
                 <p className="fade-in textAlign">
                     Monstre {enemyHp} / {enemyMaxHp} Pv

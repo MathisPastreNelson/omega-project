@@ -17,7 +17,7 @@ function Start01(component) {
         <div className="adventure__Container">
             <p className="fade-in textAlign">Voici le début de l'histoire.</p>
             <div className='adventure__Button__Container'>
-                <button onClick={nextComponent} className='adventure__ChooseButton'>
+                <button onClick={nextComponent} className='adventure__Button'>
                     Suivant
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
