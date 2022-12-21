@@ -53,9 +53,7 @@ const Hud = (data) => {
                 {data.data.Xp && <p>Exp : {parsedXp}/ {xpForNextLevel}</p>}
             </div>
             <div className='character__level__container'>
-                <p className='character__level'>
-                    Niveau {parsedLevel}
-                </p>
+                {data.data.Xp && <p className='character__level'>Niveau {parsedLevel}</p>}
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.data.userName}</p>
