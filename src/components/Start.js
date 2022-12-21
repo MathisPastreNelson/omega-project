@@ -8,7 +8,7 @@ function Start() {
     }
     // LA SAUVEGARDE DE L'AVENTURE SERA CONTENU ICI
     const savedGame = () => {
-        if (window.localStorage.length >= 6) {
+        if (window.localStorage.length >= 9) {
             console.log("bon")
             window.location.assign('/road1')
         };
@@ -18,7 +18,7 @@ function Start() {
         window.location.assign('/NewCharacter');
     };
 
-    if (window.localStorage.length >= 6) {
+    if (window.localStorage.length >= 9) {
         return (
             <div className="adventure__Container">
                 <p className="fade-in textAlign">Reprendre votre aventure.</p>

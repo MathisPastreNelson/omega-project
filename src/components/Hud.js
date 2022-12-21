@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
 const Hud = (data) => {
@@ -17,20 +18,54 @@ const Hud = (data) => {
             setActualHp(maxHp)
         }
     }
+    /*/////*/////////////////////////////////////////////////////////////////////////////////////
+    const parsedLevel = parseInt(data.data.Level)
+    const parsedXp = parseInt(data.data.Xp)
+    // État du niveau et de l'XP
+    const [level, setLevel] = useState(parsedLevel);
+    const [xp, setXp] = useState(parsedXp);
 
+    // Demande d'XP pour le prochain niveau
+    const xpForNextLevel = 40 * level;
+
+    useEffect(() => {
+        // Récupération du niveau et de l'XP du localStorage lorsque le composant est monté
+        const levelFromStorage = data.data.Level;
+        const xpFromStorage = data.data.Xp;
+        if (levelFromStorage) {
+            setLevel(levelFromStorage);
+        }
+        if (xpFromStorage) {
+            setXp(xpFromStorage);
+        }
+    }, [data.data.Xp, data.data.Level]);
+
+    useEffect(() => {
+        // Mise à jour du niveau et de l'XP dans le localStorage lorsque le niveau ou l'XP du composant change
+        localStorage.setItem('Level', level);
+        localStorage.setItem('Xp', xp);
+    }, [level, xp]);
+
+    // Fonction de niveau supérieur qui met à jour le niveau et l'XP
+    const levelUp = () => {
+        setLevel(parsedLevel + 1);
+        setXp(xp - xpForNextLevel);
+    };
+    /*/////*/////////////////////////////////////////////////////////////////////////////////////
 
     // rendu
     return (
         <div className="character__container">
             <div className='statEquipped'>
-                <p>Statistiques</p>
                 <p>Force : {data.data.Force}</p>
                 <p>Endurance : {data.data.Endurance}</p>
+                <p>Exp : {xp}/ {xpForNextLevel}</p>
             </div>
             <div className='character__level__container'>
                 {data.data.Xp && <p className='character__level'>
-                    Niveau 1
+                    Niveau {parsedLevel}
                 </p>}
+                {xp >= xpForNextLevel && <button onClick={levelUp}>Niveau supérieur</button>}
             </div>
             <div className="character__consommable">
                 <p>Personnage : {data.data.userName}</p>
