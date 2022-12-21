@@ -15,7 +15,6 @@ const Help = (component) => {
         return (
             <div className='help__Container'>
                 <p className='textAlign'>La force détermine tes dégats à l'épée et à la hache.</p>
-                <p className='textAlign'>L'agilité détermine tes dégats à la dague et à l'arc.</p>
                 <p className='textAlign'>L'endurance détermine ta santé maximum.</p>
             </div>
         );
@@ -31,7 +30,6 @@ const Help = (component) => {
         return (
             <div className='help__Container'>
                 <p className='textAlign'>Une armure légère augmente vos dégats.</p>
-                <p className='textAlign'>Une armure moyenne est équilibrée.</p>
                 <p className='textAlign'>Une armure lourde augmente votre défense.</p>
             </div>
         );

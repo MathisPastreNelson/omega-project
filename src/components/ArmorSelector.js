@@ -28,7 +28,6 @@ function ArmorSelector(component) {
                 Choisissez votre type d'armure :
                 <select className='armorChoose' value={selectedArmor} onChange={handleChange}>
                     <option value="tissu">Tenue en tissu</option>
-                    <option value="cuir">Tenue en cuir</option>
                     <option value="maille">Tenue en maille</option>
                 </select>
             </label>
