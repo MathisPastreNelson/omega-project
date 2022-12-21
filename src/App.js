@@ -7,7 +7,7 @@ import NewCharacter from "./pages/StartingAdventure"
 import Road1 from "./pages/Road1"
 import ErrorPage from "./pages/ErrorPage"
 import GameOverPage from "./pages/GameOverPage"
-import SuccessBattlePage from "./pages/SuccessBattlePage"
+import SuccessBattlePage01 from "./pages/SuccessBattlePage"
 import SuccessRandomFightPage01 from "./pages/SuccessRandomFightPage01"
 
 /* Definition des routes de l'applications */
@@ -20,7 +20,7 @@ const App = () => {
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
           <Route path="/GameOver" element={<GameOverPage />} />
-          <Route path="/SuccessBattle01" element={<SuccessBattlePage />} />
+          <Route path="/SuccessBattle01" element={<SuccessBattlePage01 />} />
           <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>

@@ -90,7 +90,7 @@ function Fight01(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
@@ -128,7 +128,7 @@ function Fight01(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
 
         if (buttonAttack2.current) {
@@ -166,7 +166,7 @@ function Fight01(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
                 // window.location.assign('/SuccessRandomBattle01');
             }
 
@@ -202,7 +202,7 @@ function Fight01(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
                 // window.location.assign('/SuccessRandomBattle01');
             }
 
