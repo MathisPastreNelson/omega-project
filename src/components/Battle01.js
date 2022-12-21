@@ -13,80 +13,99 @@ function Fight01(component) {
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
+    // Le state de l'activation des boutons attaques
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
     const [buttonAttack2Disabled, setButtonAttack2Disabled] = useState(false);
     const [buttonAttack3Disabled, setButtonAttack3Disabled] = useState(false);
-
     const [buttonAlternativeAttack3Disabled, setButtonAlternativeAttack3Disabled] = useState(enemyHp > (enemyMaxHp / 3));
 
+    // Le state du textes des boutons attaques
     const [buttonAttack1Text, setButtonAttack1Text] = useState('Frappe rapide');
     const [buttonAttack2Text, setButtonAttack2Text] = useState('Frappe lourde');
     const [buttonAttack3Text, setButtonAttack3Text] = useState('Estoc percante');
     const [buttonAttack3AlternativeText, setButtonAttack3AlternativeText] = useState('Fendoir');
 
-    const [running] = useState(true);
+    // Le useRef des Attaques
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
 
+    // Le state du useEffect  pour le rythme des dégats subit
+    const [running] = useState(true);
 
+    // Les gains apres combat sont ici
     let goldEarned = Math.floor(Math.random() * 3) + 1;
     let xpEarned = Math.floor(Math.random() * 2) + 1;
 
+    // Récupération de la force pour l'ajustement des dégats
     const forceNotParsed = window.localStorage.getItem("Force")
     const force = parseInt(forceNotParsed)
 
+    // Les states de génération de dégat aléatoire pour les 3 attaques
     const [randomNumber1, setRandomNumber1] = useState(null);
     const [randomNumber2, setRandomNumber2] = useState(null);
     const [randomNumber3, setRandomNumber3] = useState(null);
+
+    // Pour la réduction de dégat infligé et reçu lié à l'armure Lourde
+    let damageReductionCoefficient = 1;
+    if (window.localStorage.getItem("Torse") === "Haubert de maille") {
+        damageReductionCoefficient = 0.85;
+    } else {
+        damageReductionCoefficient = 1;
+    }
+
+
+    /****************************** CALCUL DEGAT ATAQUE LEGERE  ******************************/
     function getRandomNumber1() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
-            const newRandomNumber1 = Math.floor(Math.random() * force);
-            setRandomNumber1(newRandomNumber1);
+            const newRandomNumber1 = Math.floor(Math.random() * force) * damageReductionCoefficient;
+            setRandomNumber1(Math.floor(newRandomNumber1));
             return newRandomNumber1;
         }
         // Hache
         else if (window.localStorage.getItem("Arme") === "Hache") {
-            const newRandomNumber1 = Math.floor(Math.random() * force);
-            setRandomNumber1(newRandomNumber1);
+            const newRandomNumber1 = Math.floor(Math.random() * force) * damageReductionCoefficient;
+            setRandomNumber1(Math.floor(newRandomNumber1));
             return newRandomNumber1;
         }
     }
 
-
+    /****************************** CALCUL DEGAT ATAQUE LOURDE  ******************************/
     function getRandomNumber2() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
-            const newRandomNumber2 = Math.floor(Math.random() * force) + 2;
-            setRandomNumber2(newRandomNumber2);
+            const newRandomNumber2 = Math.floor(Math.random() * force + 2) * damageReductionCoefficient;
+            setRandomNumber2(Math.floor(newRandomNumber2));
             return newRandomNumber2;
         }
         // Hache
         else if (window.localStorage.getItem("Arme") === "Hache") {
-            const newRandomNumber2 = Math.floor(Math.random() * force) + 1;
-            setRandomNumber2(newRandomNumber2);
+            const newRandomNumber2 = Math.floor(Math.random() * force) * damageReductionCoefficient;
+            setRandomNumber2(Math.floor(newRandomNumber2));
             return newRandomNumber2;
         }
     }
 
+    /****************************** CALCUL DEGAT ATAQUE SPECIAL  ******************************/
     function getRandomNumber3() {
         // Epée
         if (window.localStorage.getItem("Arme") === "Epée") {
-            const newRandomNumber3 = Math.floor(Math.random() * force) + 5;
-            setRandomNumber3(newRandomNumber3);
+            const newRandomNumber3 = Math.floor(Math.random() * force + 5) * damageReductionCoefficient;
+            setRandomNumber3(Math.floor(newRandomNumber3));
             return newRandomNumber3;
         }
         // Hache
         else if (window.localStorage.getItem("Arme") === "Hache") {
-            const newRandomNumber3 = Math.floor(Math.random() * force) + 1;
-            setRandomNumber3(newRandomNumber3);
+            const newRandomNumber3 = Math.floor(Math.random() * force + 3) * damageReductionCoefficient;
+            setRandomNumber3(Math.floor(newRandomNumber3));
             return newRandomNumber3;
         }
     }
 
+    /******************************  DEFINITION ATAQUE LEGERE  ******************************/
     const attackOne = () => {
-        // Cette condition me permet de win le combat
+        // Condition de victoire du combat
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
@@ -101,7 +120,7 @@ function Fight01(component) {
             buttonAttack1.current.classList.add('recharging');
         }
 
-        // Initialisez un compteur à 3
+        // Cooldown de l'attaque
         let counter = 3;
 
         // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
@@ -122,10 +141,11 @@ function Fight01(component) {
         }, 1000);
     }
 
-
+    /******************************  DEFINITION ATAQUE LOURDE  ******************************/
     const attackTwo = () => {
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber2());
 
+        // Condition de victoire du combat
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
@@ -139,7 +159,7 @@ function Fight01(component) {
             buttonAttack2.current.classList.add('recharging');
         }
 
-        // Initialisez un compteur à 3
+        // Cooldown de l'attaque
         let counter = 6;
 
         // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
@@ -160,17 +180,19 @@ function Fight01(component) {
         }, 1000);
     }
 
+    /******************************  DEFINITION ATAQUE SPECIAL  ******************************/
     const attackThree = () => {
+        /*********************** POUR L'EPEE ***************************/
         if (window.localStorage.getItem("Arme") === "Epée") {
             // Générez une valeur aléatoire entre 3 et 10
-            setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
+            setEnemyHp((prevEnemyHp) => prevEnemyHp - getRandomNumber3());
 
+            // Condition de victoire du combat
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
                 localStorage.setItem("Level", 1)
                 window.location.assign('/SuccessBattle01');
-                // window.location.assign('/SuccessRandomBattle01');
             }
 
             if (buttonAttack3.current) {
@@ -179,7 +201,7 @@ function Fight01(component) {
                 buttonAttack3.current.classList.add('recharging');
             }
 
-            // Initialisez un compteur à 3
+            // Cooldown de l'attaque
             let counter = 12;
 
             // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
@@ -198,10 +220,10 @@ function Fight01(component) {
                     buttonAttack3.current.classList.remove('recharging');
                 }
             }, 1000);
-        } else {
-            // Générez une valeur aléatoire entre 3 et 10
+        }
+        /*********************** POUR LA HACHE ***************************/
+        else {
             setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber3());
-
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
@@ -215,8 +237,7 @@ function Fight01(component) {
                 setButtonAlternativeAttack3Disabled(true);
                 buttonAttack3.current.classList.add('spamThis');
             }
-
-            // Initialisez un compteur à 3
+            // Cooldown de l'attaque
             let counter = 12;
 
             // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
@@ -237,7 +258,6 @@ function Fight01(component) {
             }, 1000);
         };
     }
-
 
     // const LeBoutonTriche = () => {
     //     // Générez une valeur aléatoire entre 3 et 10
@@ -278,15 +298,17 @@ function Fight01(component) {
     //     }, 1000);
     // }
 
-
+    /*********************** USEEFFECTS ***************************/
+    // useEffect qui se déclanche a 1/4 de la vie de l'adversaire pour les éxecution(attaque)
     useEffect(() => {
         setButtonAlternativeAttack3Disabled(enemyHp > (enemyMaxHp / 4));
     }, [enemyHp, enemyMaxHp]);
 
+    // useEffect qui définie les dégats de l'adversaire et le rythme de ses coups
     useEffect(() => {
         const interval = setInterval(() => {
-            // Calcul des dégâts
-            let newDamage = Math.floor(Math.random() * (5 + 11));
+            //*********************  Calcul des dégâts du monstre ***********************//
+            let newDamage = Math.floor(Math.random() * (5 + 11) * damageReductionCoefficient);
             setDamage(newDamage);
 
             setActualHp(prevActualHp => {
@@ -301,17 +323,13 @@ function Fight01(component) {
             });
         }, 3500);
         return () => clearInterval(interval);
-    }, [running, setActualHp]);
-    // console.log("maxhp=", component.maxHp)
-    // console.log("actualHp=", actualHp)
-    // console.log("vie apres dégat=", actualHp)
-    // console.log("dégat=", damage)
+    }, [running, setActualHp, damageReductionCoefficient]);
 
     return (
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Monstre {enemyHp} / {enemyMaxHp} Pv
+                    Monstre {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>
