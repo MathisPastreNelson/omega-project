@@ -17,7 +17,7 @@ function Fight01(component) {
     const [buttonAttack1Disabled, setButtonAttack1Disabled] = useState(false);
     const [buttonAttack2Disabled, setButtonAttack2Disabled] = useState(false);
     const [buttonAttack3Disabled, setButtonAttack3Disabled] = useState(false);
-    const [buttonAlternativeAttack3Disabled, setButtonAlternativeAttack3Disabled] = useState(enemyHp > (enemyMaxHp / 3));
+    const [buttonAlternativeAttack3Disabled, setButtonAlternativeAttack3Disabled] = useState(enemyHp > (enemyMaxHp / 4));
 
     // Le state du textes des boutons attaques
     const [buttonAttack1Text, setButtonAttack1Text] = useState('Frappe rapide');
@@ -29,6 +29,7 @@ function Fight01(component) {
     const buttonAttack1 = useRef(null);
     const buttonAttack2 = useRef(null);
     const buttonAttack3 = useRef(null);
+    const buttonAttack3Alt = useRef(null)
 
     // Le state du useEffect  pour le rythme des dégats subit
     const [running] = useState(true);
@@ -184,7 +185,6 @@ function Fight01(component) {
     const attackThree = () => {
         /*********************** POUR L'EPEE ***************************/
         if (window.localStorage.getItem("Arme") === "Epée") {
-            // Générez une valeur aléatoire entre 3 et 10
             setEnemyHp((prevEnemyHp) => prevEnemyHp - getRandomNumber3());
 
             // Condition de victoire du combat
@@ -229,33 +229,10 @@ function Fight01(component) {
                 localStorage.setItem("Xp", xpEarned)
                 localStorage.setItem("Level", 1)
                 window.location.assign('/SuccessBattle01');
-                // window.location.assign('/SuccessRandomBattle01');
             }
-
-            if (buttonAttack3.current) {
-                // Désactivez le bouton et ajoutez la classe de recharge
-                setButtonAlternativeAttack3Disabled(true);
-                buttonAttack3.current.classList.add('spamThis');
-            }
-            // Cooldown de l'attaque
-            let counter = 12;
-
-            // Mise à jour du texte du bouton avant de démarrer l'intervalle de temps
+            // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
             setButtonAttack3AlternativeText(`Fendre à mort`);
-
-            // Mise à jour du compteur toutes les secondes
-            const interval = setInterval(() => {
-                counter--;
-                setButtonAttack3AlternativeText(`Fendre à mort`);
-
-                // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
-                if (counter === 0) {
-                    clearInterval(interval);
-                    setButtonAttack3AlternativeText('Fendoir');
-                    setButtonAlternativeAttack3Disabled(false);
-                    buttonAttack3.current.classList.remove('spamThis');
-                }
-            }, 1000);
+            buttonAttack3Alt.current.classList.add('spamThis');
         };
     }
 
@@ -353,7 +330,7 @@ function Fight01(component) {
                         <FaAudible className='adventure__Button__Arrow' />
                     </button>
                     :
-                    <button ref={buttonAttack3} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAlternativeAttack3Disabled}>
+                    <button ref={buttonAttack3Alt} className='battle__ChooseButton attack' onClick={attackThree} disabled={buttonAlternativeAttack3Disabled}>
                         {buttonAttack3AlternativeText}
                         <FaServicestack className='adventure__Button__Arrow' />
                     </button>}
