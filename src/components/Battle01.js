@@ -36,7 +36,7 @@ function Fight01(component) {
 
     // Les gains apres combat sont ici
     let goldEarned = Math.floor(Math.random() * 3) + 1;
-    let xpEarned = Math.floor(Math.random() * 2) + 1;
+    let xpEarned = Math.floor(Math.random() * 2) + 3;
 
     // Récupération de la force pour l'ajustement des dégats
     const forceNotParsed = window.localStorage.getItem("Force")

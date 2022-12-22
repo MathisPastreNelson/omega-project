@@ -40,7 +40,7 @@ function RandomFight01(component) {
     const totalXp = window.localStorage.getItem("Xp")
     const parseIntXpStorage = parseInt(totalXp)
     let goldEarned = Math.floor(Math.random() * 3) + 1;
-    let xpEarned = Math.floor(Math.random() * 2) + 1;
+    let xpEarned = Math.floor(Math.random() * 2) + 3;
     let totalGoldNew = goldEarned + parseIntGoldStorage;
     let totalXpNew = xpEarned + parseIntXpStorage;
 
