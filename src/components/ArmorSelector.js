@@ -4,7 +4,7 @@ function ArmorSelector(component) {
     // Déclarer une variable d'état pour stocker le type d'armure sélectionné
     const [selectedArmor, setSelectedArmor] = useState('tissu');
 
-    // Gérer les changements de sélection dans la balise select
+    // On récupère la value qui correspond à l'armure choisis
     const handleChange = event => {
         setSelectedArmor(event.target.value);
     };
@@ -13,7 +13,7 @@ function ArmorSelector(component) {
     const handleSave = () => {
         window.localStorage.setItem('Torse', "Haubert de " + selectedArmor);
         window.localStorage.setItem('Jambe', "Jambière de " + selectedArmor);
-        // console.log("Combien de stat ?", window.localStorage.length)
+        // Si j'ai plus de 6 data dans le localStorage je peux continuer l'aventure
         if (window.localStorage.length >= 6) {
             window.location.assign('/road1');
         } else {
@@ -21,7 +21,6 @@ function ArmorSelector(component) {
         }
     };
 
-    // Afficher le composant
     return (
         <div className='generalContainer textAlign'>
             <label className='armorChoose__container'>

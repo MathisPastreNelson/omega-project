@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ErrorLink = () => {
+    // Retour en page d'accueil
     const mainScreen = () => {
         window.location.assign('/')
     }

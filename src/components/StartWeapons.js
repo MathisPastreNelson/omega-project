@@ -1,24 +1,23 @@
-
 import React, { useState } from 'react';
 
-
 const StartWeapons = (component) => {
+    const [selectedWeapon, setSelectedWeapon] = useState('');
+
     const back = () => {
         // On change le Props Ici pour passer au composant précédant
         component.setComponent(2)
     }
 
-    const [selectedWeapon, setSelectedWeapon] = useState('');
-
+    // On récupère la value qui correspond à l'arme choisis
     const handleChange = (event) => {
         setSelectedWeapon(event.target.value);
     };
 
+    // Fonction obligeant l'utilisateur à choisir
     const handleSave = () => {
         if (!selectedWeapon) {
             alert("Veuillez choisir une arme.")
-        }
-        else {
+        } else {
             localStorage.setItem('Arme', selectedWeapon);
             // On change le Props Ici pour passer au composant suivant
             component.setComponent(4)

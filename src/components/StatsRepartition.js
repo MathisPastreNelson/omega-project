@@ -8,6 +8,7 @@ const StartStats = (component) => {
     const [countStr, setCounterStr] = useState(5);
     const [countEndu, setCounterEndu] = useState(5);
 
+    // Les changement de states des statistiques sont attribués au click sur les boutons
     const deleteStatStr = () => {
         setCounterStr(countStr - 1)
         setCountTotal(countTotal + 1)
@@ -30,6 +31,7 @@ const StartStats = (component) => {
         setCounterEndu(5)
     }
 
+    // Sauvegarde des statistiques dans le localStorage
     const saveStorage = () => {
         localStorage.setItem("Force", countStr)
         localStorage.setItem("Endurance", countEndu)
@@ -37,12 +39,11 @@ const StartStats = (component) => {
         component.setComponent(3)
     }
 
+    // Obligation de dépensez tous les points de statistiques
     const spendAllPoint = () => {
         alert("Dépensez tous vos points !")
     }
 
-
-    // Rendu
     return (
         <div className="generalContainer" >
             <p className="textAlign">Séléctionnez vos statistiques de départ</p>

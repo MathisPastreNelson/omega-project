@@ -12,7 +12,6 @@ function Dangerous01(component) {
         component.setComponent("dangerous03")
     }
 
-
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">

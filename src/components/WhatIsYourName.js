@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 
 function UserNameForm(component) {
+    // State du pseudo de l'utilisateur
     const [userName, setUserName] = useState('');
 
+    // On récupère la valeur de l'input (Le pseudo)
     function handleChange(event) {
         setUserName(event.target.value);
     }
 
+    // On sauvegarde le pseudo dans le localStorage
     function handleSubmit(event) {
         event.preventDefault();
         localStorage.setItem('userName', userName);
         component.setComponent(2)
     }
 
-    // Définissez l'indication qui sera affichée pour indiquer qu'un regex doit être utilisé
+    // Indication qui sera affichée pour indiquer qu'un regex doit être utilisé
     const regexIndication = "4-10 lettres";
-
 
     return (
         <form onSubmit={handleSubmit} className="generalContainer">

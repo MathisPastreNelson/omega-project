@@ -8,7 +8,6 @@ function Start03(component) {
         component.setComponent(4)
     }
 
-
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">

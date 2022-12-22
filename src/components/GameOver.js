@@ -1,6 +1,7 @@
 import React from 'react';
 
 const GameOver = () => {
+    // Retour en page d'accueil
     const mainScreen = () => {
         window.location.assign('/')
     }

@@ -3,6 +3,16 @@ import React from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
 const Hud = (data) => {
+    // Variable nécéssaire au levelUp
+    let parsedLevel = parseInt(data.data.Level)
+    let parsedXp = parseInt(data.data.Xp)
+    let parsedForce = parseInt(data.data.Force)
+    let parsedEndurance = parseInt(data.data.Endurance)
+
+    // Demande d'XP pour le prochain niveau
+    let xpForNextLevel = 20;
+    xpForNextLevel = parsedLevel * (xpForNextLevel * 1.2);
+
     const { maxHp, actualHp, setActualHp } = data;
     // Vérifiez si actualHp est inférieur à 20 % de maxHp
     const isLowHp = actualHp / maxHp < 0.2;
@@ -12,22 +22,14 @@ const Hud = (data) => {
         if (actualHp + 8 < maxHp) {
             console.log("Bandage utilisé")
             setActualHp(actualHp + 8)
-        }//Sinon on heal au maximum
+        }//Sinon on heal au maximum    
         else {
             console.log("Full Vie, bandage inutilisable")
             setActualHp(maxHp)
         }
     }
-    /*/////*/////////////////////////////////////////////////////////////////////////////////////
-    let parsedLevel = parseInt(data.data.Level)
-    let parsedXp = parseInt(data.data.Xp)
-    let parsedForce = parseInt(data.data.Force)
-    let parsedEndurance = parseInt(data.data.Endurance)
 
 
-    // Demande d'XP pour le prochain niveau
-    let xpForNextLevel = 20;
-    xpForNextLevel = parsedLevel * (xpForNextLevel * 1.2);
     // Condition de levelUp
     if (parsedXp >= xpForNextLevel) {
         parsedLevel += 1;
@@ -40,11 +42,6 @@ const Hud = (data) => {
         window.localStorage.setItem('Endurance', parsedEndurance);
     }
 
-
-
-    /*/////*/////////////////////////////////////////////////////////////////////////////////////
-
-    // rendu
     return (
         <div className="character__container">
             <div className='statEquipped'>

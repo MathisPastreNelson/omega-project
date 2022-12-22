@@ -3,6 +3,7 @@ import React from 'react';
 
 const SuccessBattle = (component) => {
     const mainScreen = () => {
+        // On change le Props Ici pour passer au composant suivant
         window.location.assign('/road1')
     }
     return (

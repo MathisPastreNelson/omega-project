@@ -4,12 +4,11 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Start02(component, { bandageNumber }) {
     const nextComponent = () => {
-        // On change le Props Ici pour passer au composant suivant
+        // Attribution du Bandage
         window.localStorage.setItem('Bandage', "OK");
+        // On change le Props Ici pour passer au composant suivant
         component.setComponent(3)
-        console.log(bandageNumber)
     }
-
 
     return (
         <div className="adventure__Container">

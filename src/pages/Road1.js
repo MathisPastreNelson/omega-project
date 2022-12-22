@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-// import { useRef } from "react";
 
-// Différents composants
+// Importation des différents composants
 import Hud from '../components/Hud';
 import Start01 from "../components/Start01"
 import Start02 from "../components/Start02"
@@ -22,21 +21,20 @@ import RandomFight01 from "../components/RandomFight01"
 
 const Road1 = () => {
     const [component, setComponent] = useState(1);
+
+    // Les points de vies maximum sont le résultat du nombre d'endurance dans le localStorage et du calcul
     const [maxHp, setMaxHp] = useState((window.localStorage.Endurance * 5) + 50);
     const [actualHp, setActualHp] = useState(maxHp)
 
+    // Importation de toutes les données du localStorage
     const data = window.localStorage
-    console.log(data.length)
-    // console.log("PV max du personnage =", maxHp)
-    // console.log("PV actuel du personnage =", actualHp)
-    // console.log("Bandage", localStorage.getItem('Bandage'))
-    // console.log("Data = ", window.localStorage)
-    // Il faut absolument avoir crée son personnage pour commencer l'aventure
+
+    // Il faut absolument avoir crée son personnage pour commencer la Road1
     if (data.length >= 6 && data.length < 11) {
         return (<div>
             <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+            {/* Sauvegarde de l'aventure */}
             {component === 1 && <Start01 component={component} setComponent={setComponent} />}
-            {/* On obtiens les bandages ici ce qui permet la premiere save */}
             {component === 2 && <Start02 component={component} setComponent={setComponent} />}
             {component === 3 && <Start03 component={component} setComponent={setComponent} />}
             {component === 4 && <Start04 component={component} setComponent={setComponent} />}
@@ -46,32 +44,20 @@ const Road1 = () => {
             {component === "dangerous02" && <Dangerous02 component={component} setComponent={setComponent} />}
             {component === "dangerous03" && <Dangerous03 component={component} setComponent={setComponent} />}
             {component === "dangerous04" && <Dangerous04 component={component} setComponent={setComponent} />}
-            {component === "battle01" && <Battle01
-                component={component}
-                setComponent={setComponent}
-                maxHp={maxHp}
-                setMaxHp={setMaxHp}
-                actualHp={actualHp}
-                setActualHp={setActualHp}
-            />}
+            {component === "battle01" && <Battle01 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
         </div>
         );
-    } else if (data.length >= 11) {
+    }  /* Sauvegarde de l'aventure attribution du niveau et de l'or */
+    else if (data.length >= 11) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Safe03 component={component} setComponent={setComponent} />}
-                {component === "randomFight01" && <RandomFight01
-                    component={component}
-                    setComponent={setComponent}
-                    maxHp={maxHp}
-                    setMaxHp={setMaxHp}
-                    actualHp={actualHp}
-                    setActualHp={setActualHp} />}
+                {component === "randomFight01" && <RandomFight01 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
             </div>
         );
-    } else {
-
+    } /* Si pas de sauvegarde retour à la page d'accueil*/
+    else {
         window.location.assign('/');
     }
 };

@@ -13,7 +13,6 @@ function Safe03(component) {
         component.setComponent("safe04")
     }
 
-
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">

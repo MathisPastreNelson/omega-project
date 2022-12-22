@@ -4,7 +4,7 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Start01(component) {
     const nextComponent = () => {
-        // On change le Props Ici pour passer au composant suivant
+        // Si j'ai plus de 6 data dans le localStorage je peux continuer l'aventure
         if (window.localStorage.length >= 6) {
             component.setComponent(2)
         } else {

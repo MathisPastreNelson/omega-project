@@ -2,6 +2,7 @@ import React from 'react';
 
 const Help = (component) => {
 
+    // Ce composant s'adapte en fonction du composant actif
     const actualComponent = component.component
 
     if (actualComponent === 1) {
