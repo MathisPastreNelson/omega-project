@@ -23,9 +23,9 @@ const Hud = (data) => {
     // La logique d'utilisation du bandage
     const bandageUse = () => {
         // Si on ades bandage et qu'on a plus de 20 hp manquant on change le nombre de bandage et on heal
-        if (actualHp + 8 < maxHp) {
+        if (actualHp + 20 < maxHp) {
             console.log("Bandage utilisé")
-            setActualHp(actualHp + 8)
+            setActualHp(actualHp + 20)
         }//Sinon on heal au maximum    
         else {
             console.log("Full Vie, bandage inutilisable")
@@ -37,7 +37,7 @@ const Hud = (data) => {
             buttonBandage.current.classList.add('recharging');
         }
 
-        let counter = 10
+        let counter = 30
 
         const interval = setInterval(() => {
             counter--;
