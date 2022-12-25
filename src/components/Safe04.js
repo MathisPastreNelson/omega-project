@@ -6,7 +6,7 @@ function Safe04(component) {
     const nextComponentSafe05 = () => {
         // On change le Props Ici pour passer au composant suivant
         window.localStorage.setItem('Save', 1);
-        component.setComponent("forest01")
+        component.setComponent(1)
     }
     const nextComponentMerchant01 = () => {
         // On change le Props Ici pour passer au composant suivant

@@ -6,10 +6,10 @@ import { useRef } from 'react';
 // Import FontAwesome Component
 import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
 
-function RandomFight02(component) {
+function Battle02(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp] = useState(65)
-    const [enemyHp, setEnemyHp] = useState(65)
+    const [enemyMaxHp] = useState(85)
+    const [enemyHp, setEnemyHp] = useState(85)
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
@@ -39,8 +39,8 @@ function RandomFight02(component) {
     const parseIntGoldStorage = parseInt(totalGold)
     const totalXp = window.localStorage.getItem("Xp")
     const parseIntXpStorage = parseInt(totalXp)
-    let goldEarned = Math.floor(Math.random() * 3) + 3;
-    let xpEarned = Math.floor(Math.random() * 2) + 5;
+    let goldEarned = Math.floor(Math.random() * 3) + 6;
+    let xpEarned = Math.floor(Math.random() * 2) + 7;
     let totalGoldNew = goldEarned + parseIntGoldStorage;
     let totalXpNew = xpEarned + parseIntXpStorage;
 
@@ -116,6 +116,7 @@ function RandomFight02(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            window.localStorage.setItem('Save', 2);
             window.location.assign('/SuccessRandomBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
@@ -155,6 +156,7 @@ function RandomFight02(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            window.localStorage.setItem('Save', 2);
             window.location.assign('/SuccessRandomBattle01');
         }
 
@@ -196,6 +198,7 @@ function RandomFight02(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                window.localStorage.setItem('Save', 2);
                 window.location.assign('/SuccessRandomBattle01');
             }
 
@@ -231,6 +234,7 @@ function RandomFight02(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                window.localStorage.setItem('Save', 2);
                 window.location.assign('/SuccessRandomBattle01');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
@@ -288,7 +292,7 @@ function RandomFight02(component) {
     useEffect(() => {
         const interval = setInterval(() => {
             //*********************  Calcul des dégâts du monstre ***********************//
-            let newDamage = Math.floor(Math.random() * (7 + 12) * damageReductionCoefficient);
+            let newDamage = Math.floor(Math.random() * (7 + 18) * damageReductionCoefficient);
             setDamage(newDamage);
 
             setActualHp(prevActualHp => {
@@ -301,7 +305,7 @@ function RandomFight02(component) {
                     return prevActualHp - newDamage;
                 }
             });
-        }, 3500);
+        }, 3100);
         return () => clearInterval(interval);
     }, [running, setActualHp, damageReductionCoefficient]);
 
@@ -310,7 +314,7 @@ function RandomFight02(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Rat bipède : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
+                    Bandit : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>
@@ -347,4 +351,4 @@ function RandomFight02(component) {
     );
 }
 
-export default RandomFight02;
+export default Battle02;

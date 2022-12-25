@@ -22,6 +22,12 @@ import Cucked01 from '../components/Cucked01';
 import Forest01 from '../components/Forest01';
 import Forest02 from '../components/Forest02';
 import RandomFight02 from "../components/RandomFight02"
+import Forest03 from '../components/Forest03';
+import QuestEncounter01 from '../components/QuestEncounter01';
+import Forest04 from '../components/Forest04';
+import Forest05 from '../components/Forest05';
+import Battle02 from '../components/Battle02';
+import Forest06 from '../components/Forest06';
 // import Test from "../components/Test"
 
 
@@ -74,6 +80,20 @@ const Road1 = () => {
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Forest01 component={component} setComponent={setComponent} />}
                 {component === "forest02" && < Forest02 component={component} setComponent={setComponent} />}
+                {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "forest03" && < Forest03 component={component} setComponent={setComponent} />}
+                {component === "questEncounter01" && <QuestEncounter01 component={component} setComponent={setComponent} />}
+                {component === "forest04" && <Forest04 component={component} setComponent={setComponent} />}
+                {component === "forest05" && <Forest05 component={component} setComponent={setComponent} />}
+                {component === "battle02" && <Battle02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+            </div>
+        )
+    }
+    else if (save === 2) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+                {component === 1 && <Forest06 component={component} setComponent={setComponent} />}
                 {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
             </div>
         )

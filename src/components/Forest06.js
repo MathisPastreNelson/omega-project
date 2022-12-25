@@ -3,14 +3,10 @@ import React from 'react';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaFulcrum } from 'react-icons/fa';
 
-function Forest02(component) {
-    const nextComponentForest0305 = () => {
+function Forest06(component) {
+    const nextComponentForest07 = () => {
         // On change le Props Ici pour passer au composant suivant
-        if (window.localStorage.getItem("SideQuest01")) {
-            component.setComponent("forest05")
-        } else {
-            component.setComponent("forest03")
-        }
+        component.setComponent("forest07")
     }
 
     const nextComponentRandomFight02 = () => {
@@ -20,9 +16,10 @@ function Forest02(component) {
 
     return (
         <div className="adventure__Container">
+            {window.localStorage.getItem("SideQuest01") === "notSaved" ? <p className="fade-in textAlign"> La dépouille de Clarisse et celle du bandit gisent au sol...</p> :
+                <p className="fade-in textAlign">La dépouille de la victime et celle du bandit gisent au sol...</p>}
             <p className="fade-in textAlign">
-                Rapidement, vous remarquez des traces étranges sur le sol, qui semblent être celles de pattes de rat.
-                Elles sont énormes et se déplacent sur deux pattes, indiquant une créature potentiellement dangereuse.
+                Rapidement, vous remarquez à nouveau les traces étranges sur le sol, qui semblent être celles de pattes de rat.
 
                 Vous hésitez un instant, vous demandant si vous devriez suivre ces traces ou poursuivre votre route.
                 Si vous suivez les traces, vous pourriez vous retrouver face à un danger inattendu.
@@ -35,7 +32,7 @@ function Forest02(component) {
                     Suivre les traces..
                     <FaFulcrum className='adventure__Button__Arrow' />
                 </button>
-                <button className='adventure__ChooseButton' onClick={nextComponentForest0305}>
+                <button className='adventure__ChooseButton' onClick={nextComponentForest07}>
                     Continuer le chemin.
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
@@ -44,4 +41,4 @@ function Forest02(component) {
     );
 }
 
-export default Forest02;
+export default Forest06;
