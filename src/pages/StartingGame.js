@@ -1,4 +1,5 @@
 import React from 'react';
+// import AMongoDbConnect from "../components/AMongoDbConnect"
 
 // Différents composants
 
@@ -12,6 +13,7 @@ const StartingGame = () => {
     return (
         <div>
             <Start />
+            {/* <AMongoDbConnect /> */}
         </div>
     )
 }

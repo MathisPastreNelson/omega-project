@@ -16,7 +16,14 @@ import Dangerous04 from "../components/Dangerous04"
 import Battle01 from "../components/Battle01"
 import Safe03 from '../components/Safe03';
 import RandomFight01 from "../components/RandomFight01"
+import Safe04 from "../components/Safe04"
+import Merchant01 from "../components/Merchant01"
+import Cucked01 from '../components/Cucked01';
+import Forest01 from '../components/Forest01';
+import Forest02 from '../components/Forest02';
+import RandomFight02 from "../components/RandomFight02"
 // import Test from "../components/Test"
+
 
 
 const Road1 = () => {
@@ -28,6 +35,8 @@ const Road1 = () => {
 
     // Importation de toutes les données du localStorage
     const data = window.localStorage
+    const save = parseInt(window.localStorage.Save)
+    console.log("test", save)
 
     // Il faut absolument avoir crée son personnage pour commencer la Road1
     if (data.length >= 6 && data.length < 11) {
@@ -48,15 +57,29 @@ const Road1 = () => {
         </div>
         );
     }  /* Sauvegarde de l'aventure attribution du niveau et de l'or */
-    else if (data.length >= 11) {
+    else if (data.length === 11 && data.Save === undefined) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Safe03 component={component} setComponent={setComponent} />}
                 {component === "randomFight01" && <RandomFight01 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "safe04" && <Safe04 component={component} setComponent={setComponent} />}
+                {component === "merchant01" && <Merchant01 data={data} component={component} setComponent={setComponent} />}
+                {component === "cucked01" && <Cucked01 component={component} setComponent={setComponent} />}
             </div>
         );
-    } /* Si pas de sauvegarde retour à la page d'accueil*/
+    } else if (save === 1) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+                {component === 1 && <Forest01 component={component} setComponent={setComponent} />}
+                {component === "forest02" && < Forest02 component={component} setComponent={setComponent} />}
+                {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+            </div>
+        )
+    }
+
+    /* Si pas de sauvegarde retour à la page d'accueil*/
     else {
         window.location.assign('/');
     }

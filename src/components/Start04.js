@@ -15,7 +15,7 @@ function Start04(component) {
     return (
         <div className="adventure__Container">
             <p className="fade-in textAlign">
-                Vous marchez depuis plusieurs heures et la forêt Tourbe-Burnes n'est toujours pas en vue. Vous commencez à vous demander si
+                Vous marchez depuis plusieurs heures et la forêt Tourbe-Bourbe n'est toujours pas en vue. Vous commencez à vous demander si
                 vous n'avez pas pris la mauvaise direction lorsque vous arrivez à une croisée de chemins.
 
                 Un chemin large et bien entretenu mène tout droit vers la forêt, bordé de poteaux indicateurs et de pancartes indiquant la

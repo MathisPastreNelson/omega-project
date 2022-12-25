@@ -306,7 +306,7 @@ function Fight01(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Monstre {Math.floor(enemyHp)} / {enemyMaxHp} Pv
+                    Slime baveux {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>

@@ -39,8 +39,8 @@ function RandomFight01(component) {
     const parseIntGoldStorage = parseInt(totalGold)
     const totalXp = window.localStorage.getItem("Xp")
     const parseIntXpStorage = parseInt(totalXp)
-    let goldEarned = Math.floor(Math.random() * 3) + 1;
-    let xpEarned = Math.floor(Math.random() * 2) + 3;
+    let goldEarned = Math.floor(Math.random() * 3) + 2;
+    let xpEarned = Math.floor(Math.random() * 2) + 5;
     let totalGoldNew = goldEarned + parseIntGoldStorage;
     let totalXpNew = xpEarned + parseIntXpStorage;
 
@@ -288,7 +288,7 @@ function RandomFight01(component) {
     useEffect(() => {
         const interval = setInterval(() => {
             //*********************  Calcul des dégâts du monstre ***********************//
-            let newDamage = Math.floor(Math.random() * (5 + 11) * damageReductionCoefficient);
+            let newDamage = Math.floor(Math.random() * (7 + 12) * damageReductionCoefficient);
             setDamage(newDamage);
 
             setActualHp(prevActualHp => {
@@ -310,7 +310,7 @@ function RandomFight01(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Slime : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
+                    Rat bipède : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>

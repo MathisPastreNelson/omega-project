@@ -18,7 +18,7 @@ function Start02(component, { bandageNumber }) {
                 Mais vous êtes déterminé à vous faire une place dans ce monde et à prouver votre valeur.
                 La forêt Tourbe-Burnes vous attend, une dense et mystérieuse forêt où vous espérez trouver votre premier contrat.
                 La nature vous entoure de toutes parts et vous vous sentez un peu perdu, loin de la sécurité de votre foyer.
-                Mais attention, la forêt Tourbe-Burnes est réputée pour être dangereuse et peuplée de créatures féroces.
+                Mais attention, la forêt Tourbe-Bourbe est réputée pour être dangereuse et peuplée de créatures féroces.
                 Vous devrez être vigilant et prêt à tout moment à dégainer votre arme.
                 Qui sait ce que vous réserve cette journée d'aventures ?
                 Peut-être trouverez-vous votre premier contrat ou bien vous devrez affronter des ennemis redoutables.
