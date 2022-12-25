@@ -1,8 +1,12 @@
 import React from 'react';
-// import { useEffect, useState } from 'react';
+import { useState, useRef } from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
 const Hud = (data) => {
+    const [bandageDisabled, setBandageEnable] = useState(false);
+    const [buttonBandageText, setButtonBandageText] = useState("Bandage")
+    const buttonBandage = useRef(null);
+
     // Variable nécéssaire au levelUp
     let parsedLevel = parseInt(data.data.Level)
     let parsedXp = parseInt(data.data.Xp)
@@ -27,6 +31,26 @@ const Hud = (data) => {
             console.log("Full Vie, bandage inutilisable")
             setActualHp(maxHp)
         }
+        if (buttonBandage.current) {
+            // Désactivez le bouton et ajoutez la classe de recharge
+            setBandageEnable(true);
+            buttonBandage.current.classList.add('recharging');
+        }
+
+        let counter = 10
+
+        const interval = setInterval(() => {
+            counter--;
+            setButtonBandageText(` Récupération(${counter}s)`);
+
+            // Si le compteur atteint 0, arrêtez l'intervalle et réactivez le bouton
+            if (counter === 0) {
+                clearInterval(interval);
+                setBandageEnable(false);
+                setButtonBandageText('Bandage');
+                buttonBandage.current.classList.remove('recharging');
+            }
+        }, 1000);
     }
 
 
@@ -60,8 +84,10 @@ const Hud = (data) => {
                         id='bandage'
                         className={`bandage__Button ${isLowHp ? 'low-hp' : ''}`}
                         onClick={bandageUse}
+                        disabled={bandageDisabled}
+                        ref={buttonBandage}
                     >
-                        Bandage
+                        {buttonBandageText}
                     </button>
                 ) : (
                     <p>Pas de bandage</p>
