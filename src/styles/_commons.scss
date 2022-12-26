@@ -11,6 +11,17 @@
     display: flex;
 }
 
+h1 {
+    font-weight: bold;
+    border: 8px double black;
+    width: 50%;
+    margin: 10px auto;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgba(146, 80, 19, 0.459);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 // Mes animations
 @keyframes slide-in-blurred-top {
     0% {
@@ -64,6 +75,7 @@
     background-color: rgba(146, 80, 19, 0.459);
     margin: 0 auto 10px;
     padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .adventure__Container {
@@ -81,6 +93,7 @@
     border-radius: 25px;
     padding: 1rem;
     margin: 10px auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 div.adventure__Container p {
@@ -214,7 +227,9 @@ div.adventure__Container p {
         margin: 0 auto 10px;
     }
 
-
+    h1 {
+        width: 80%;
+    }
 
     .adventure__ChooseButton__Container {
         flex-direction: column;

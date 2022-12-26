@@ -12,6 +12,7 @@ const StartingGame = () => {
 
     return (
         <div>
+            <h1 className='textAlign'>Role-Playing-Groubi</h1>
             <Start />
             {/* <AMongoDbConnect /> */}
         </div>
