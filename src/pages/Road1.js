@@ -28,6 +28,25 @@ import Forest04 from '../components/Forest04';
 import Forest05 from '../components/Forest05';
 import Battle02 from '../components/Battle02';
 import Forest06 from '../components/Forest06';
+import Forest07 from '../components/Forest07';
+import Forest08 from '../components/Forest08';
+import Forest09 from '../components/Forest09';
+import Forest10 from '../components/Forest10';
+import Forest11 from '../components/Forest11';
+import RandomFight03 from '../components/RandomFight03';
+import Forest12 from '../components/Forest12';
+import Forest13 from '../components/Forest13';
+import Forest14 from '../components/Forest14';
+import Forest15 from '../components/Forest15';
+import Forest16 from '../components/Forest16';
+import Grondar from '../components/Grondar';
+import Forest17 from '../components/Forest17';
+import Forest18 from '../components/Forest18';
+import Forest19 from '../components/Forest19';
+import Forest20 from '../components/Forest20';
+import Forest21 from '../components/Forest21';
+import Forest22 from '../components/Forest22';
+import Bivouac01 from '../components/Bivouac01';
 // import Test from "../components/Test"
 
 
@@ -95,7 +114,34 @@ const Road1 = () => {
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Forest06 component={component} setComponent={setComponent} />}
                 {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "forest07" && <Forest07 component={component} setComponent={setComponent} />}
+                {component === "forest08" && <Forest08 component={component} setComponent={setComponent} />}
+                {component === "forest09" && <Forest09 component={component} setComponent={setComponent} />}
+                {component === "forest10" && <Forest10 component={component} setComponent={setComponent} />}
+                {component === "forest11" && <Forest11 component={component} setComponent={setComponent} />}
+                {component === "randomFight03" && <RandomFight03 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "forest12" && <Forest12 component={component} setComponent={setComponent} />}
+                {component === "forest13" && <Forest13 data={data} component={component} setComponent={setComponent} />}
+                {component === "forest14" && <Forest14 component={component} setComponent={setComponent} />}
+                {component === "forest15" && <Forest15 component={component} setComponent={setComponent} />}
+                {component === "forest16" && <Forest16 component={component} setComponent={setComponent} />}
+                {component === "grondar" && <Grondar component={component} setComponent={setComponent} />}
+                {component === "forest17" && <Forest17 component={component} setComponent={setComponent} />}
+                {component === "forest18" && <Forest18 component={component} setComponent={setComponent} />}
+                {component === "forest19" && <Forest19 component={component} setComponent={setComponent} />}
+                {component === "forest20" && <Forest20 component={component} setComponent={setComponent} />}
+                {component === "forest21" && <Forest21 component={component} setComponent={setComponent} />}
+                {component === "bivouac01" && <Bivouac01 component={component} setComponent={setComponent} />}
             </div>
+        )
+    } else if (save === 3) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+                {component === 1 && <Forest22 component={component} setComponent={setComponent} />}
+                {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+            </div>
+
         )
     }
 
