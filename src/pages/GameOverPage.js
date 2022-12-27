@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Importation des différents composants
-import GameOver from '../components/GameOver';
+import GameOver from '../components/Gameplay-Commun/GameOver';
 
 const GameOverPage = () => {
     return (

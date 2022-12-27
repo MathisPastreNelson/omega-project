@@ -3,7 +3,7 @@ import React from 'react';
 
 // Différents composants
 import Start from "../components/Gameplay-Commun/Start"
-import RoadSelect from '../components/RoadSelect';
+import RoadSelect from '../components/Gameplay-Commun/RoadSelect';
 import Introduction from '../components/Gameplay-Commun/Introduction';
 
 const StartingGame = () => {
