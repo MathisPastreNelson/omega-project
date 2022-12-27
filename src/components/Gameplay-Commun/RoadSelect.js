@@ -51,9 +51,11 @@ function RoadSelect(component) {
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
-                    <button className='adventure__Button' onClick={goToVillage}>
-                        Bientôt...
-                    </button>
+                    <div className='adventure__ChooseButton__Container'>
+                        <button className='adventure__Button' onClick={goToVillage}>
+                            Bientôt...
+                        </button>
+                    </div>
                 </div>
             }
         </div>
