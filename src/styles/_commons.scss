@@ -277,11 +277,13 @@ div.adventure__Container p {
 }
 
 .notDone {
-    background-color: rgba(126, 41, 26, 0.644);
+    background-color: rgba(170, 26, 0, 0.644);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .done {
     background-color: rgba(45, 156, 30, 0.644);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 /**********************MEDIA QUERIES***************************/
