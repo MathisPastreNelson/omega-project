@@ -10,6 +10,8 @@ import GameOverPage from "./pages/GameOverPage"
 import SuccessBattlePage01 from "./pages/SuccessBattlePage"
 import SuccessRandomFightPage01 from "./pages/SuccessRandomFightPage01"
 
+import RoadSelectPage from './pages/RoadSelectPage';
+
 /* Definition des routes de l'applications */
 const App = () => {
   return (
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="/GameOver" element={<GameOverPage />} />
           <Route path="/SuccessBattle01" element={<SuccessBattlePage01 />} />
           <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
+          <Route path="/roadSelect" element={<RoadSelectPage />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

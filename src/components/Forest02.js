@@ -4,13 +4,9 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaFulcrum } from 'react-icons/fa';
 
 function Forest02(component) {
-    const nextComponentForest0305 = () => {
+    const nextComponentForest03 = () => {
         // On change le Props Ici pour passer au composant suivant
-        if (window.localStorage.getItem("SideQuest01")) {
-            component.setComponent("forest05")
-        } else {
-            component.setComponent("forest03")
-        }
+        component.setComponent("forest03")
     }
 
     const nextComponentRandomFight02 = () => {
@@ -35,7 +31,7 @@ function Forest02(component) {
                     Suivre les traces..
                     <FaFulcrum className='adventure__Button__Arrow' />
                 </button>
-                <button className='adventure__ChooseButton' onClick={nextComponentForest0305}>
+                <button className='adventure__ChooseButton' onClick={nextComponentForest03}>
                     Continuer le chemin.
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>

@@ -11,7 +11,11 @@ function QuestEncounter01(component) {
     }
     const nextComponentForest04SideNone = () => {
         // On change le Props Ici pour passer au composant suivant
-        window.localStorage.setItem('SideQuest01', "notSaved");
+        if (localStorage.getItem('SideQuest01', "saved")) {
+            alert("Un objectif accompli restera accompli")
+        } else {
+            window.localStorage.setItem('SideQuest01', "notSaved");
+        }
         component.setComponent("forest04")
     }
 

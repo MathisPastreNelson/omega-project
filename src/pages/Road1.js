@@ -47,6 +47,11 @@ import Forest20 from '../components/Forest20';
 import Forest21 from '../components/Forest21';
 import Forest22 from '../components/Forest22';
 import Bivouac01 from '../components/Bivouac01';
+import Forest23 from '../components/Forest23';
+import Forest24 from '../components/Forest24';
+import Forest25 from '../components/Forest25';
+import Forest26 from '../components/Forest26';
+import Forest27End from '../components/Forest27End';
 // import Test from "../components/Test"
 
 
@@ -61,10 +66,9 @@ const Road1 = () => {
     // Importation de toutes les données du localStorage
     const data = window.localStorage
     const save = parseInt(window.localStorage.Save)
-    console.log("test", save)
 
     // Il faut absolument avoir crée son personnage pour commencer la Road1
-    if (data.length >= 6 && data.length < 11) {
+    if (data.length >= 6 && data.length < 12) {
         return (<div>
             <Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
             {/* Sauvegarde de l'aventure */}
@@ -82,7 +86,7 @@ const Road1 = () => {
         </div>
         );
     }  /* Sauvegarde de l'aventure attribution du niveau et de l'or */
-    else if (data.length === 11 && data.Save === undefined) {
+    else if (save === 0) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
@@ -140,6 +144,11 @@ const Road1 = () => {
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Forest22 component={component} setComponent={setComponent} />}
                 {component === "randomFight02" && <RandomFight02 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "forest23" && <Forest23 component={component} setComponent={setComponent} />}
+                {component === "forest24" && <Forest24 component={component} setComponent={setComponent} />}
+                {component === "forest25" && <Forest25 component={component} setComponent={setComponent} />}
+                {component === "forest26" && <Forest26 component={component} setComponent={setComponent} />}
+                {component === "forest27End" && <Forest27End component={component} data={data} setComponent={setComponent} />}
             </div>
 
         )

@@ -117,6 +117,7 @@ function RandomFight03(component) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
             localStorage.setItem("Save", 3)
+            localStorage.setItem('SideQuest03', "ok");
             window.location.assign('/SuccessRandomBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
@@ -157,6 +158,7 @@ function RandomFight03(component) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
             localStorage.setItem("Save", 3)
+            localStorage.setItem('SideQuest03', "ok");
             window.location.assign('/SuccessRandomBattle01');
         }
 
@@ -199,6 +201,7 @@ function RandomFight03(component) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
                 localStorage.setItem("Save", 3)
+                localStorage.setItem('SideQuest03', "ok");
                 window.location.assign('/SuccessRandomBattle01');
             }
 
@@ -235,6 +238,7 @@ function RandomFight03(component) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
                 localStorage.setItem("Save", 3)
+                localStorage.setItem('SideQuest03', "ok");
                 window.location.assign('/SuccessRandomBattle01');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style

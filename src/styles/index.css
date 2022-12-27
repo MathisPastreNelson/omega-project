@@ -28,6 +28,23 @@ body {
   display: flex;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bold;
+  border: 8px double black;
+  width: 50%;
+  margin: 10px auto;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: rgba(146, 80, 19, 0.459);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 @-webkit-keyframes slide-in-blurred-top {
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -99,6 +116,7 @@ body {
   background-color: rgba(146, 80, 19, 0.459);
   margin: 0 auto 10px;
   padding: 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .adventure__Container {
@@ -114,6 +132,31 @@ body {
   border-radius: 25px;
   padding: 1rem;
   margin: 10px auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.road__Container {
+  -webkit-animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+          animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(63, 97, 54, 0.438);
+  justify-content: center;
+  border: double 8px black;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 10px auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+h2 {
+  border: 8px double black;
+  border-radius: 15px;
+  width: 75%;
+  margin: 10px auto;
+  background-color: rgba(121, 126, 26, 0.644);
 }
 
 div.adventure__Container p {
@@ -139,8 +182,8 @@ div.adventure__Container p {
 .adventure__Button {
   border: double 6px black;
   border-radius: 5px;
-  width: 140px;
-  height: 50px;
+  width: 180px;
+  height: 60px;
   background-color: rgba(65, 160, 62, 0.637);
   display: flex;
   align-items: center;
@@ -231,6 +274,34 @@ div.adventure__Container p {
   border-radius: 5px;
 }
 
+.adventure__Finished {
+  color: rgba(62, 194, 10, 0.589);
+  background: linear-gradient(180deg, rgba(52, 49, 255, 0.555) 0%, rgba(76, 175, 79, 0.658) 100%);
+  background-color: rgba(65, 160, 62, 0.637);
+  padding: 0.2rem;
+  font-size: 30px;
+  border: double 5px black;
+  margin: 2px 1rem;
+  border-radius: 5px;
+  width: 15px;
+  min-width: 15px;
+  height: 15px;
+}
+
+.adventure__NotFinished {
+  color: rgba(194, 10, 10, 0.589);
+  background: linear-gradient(180deg, rgba(255, 95, 2, 0.534) 0%, rgba(175, 99, 76, 0.5) 100%);
+  background-color: rgba(160, 62, 62, 0.637);
+  padding: 0.2rem;
+  font-size: 30px;
+  border: double 5px black;
+  margin: 2px 1rem;
+  border-radius: 5px;
+  width: 15px;
+  min-width: 15px;
+  height: 15px;
+}
+
 /**********************MEDIA QUERIES***************************/
 @media only screen and (max-width: 800px) {
   .adventure__Container {
@@ -242,6 +313,9 @@ div.adventure__Container p {
   .generalContainer {
     width: 80%;
     margin: 0 auto 10px;
+  }
+  h1 {
+    width: 80%;
   }
   .adventure__ChooseButton__Container {
     flex-direction: column;
@@ -265,6 +339,9 @@ div.adventure__Container p {
     margin: 10px auto;
     width: 100%;
   }
+  .road__Container {
+    width: 80%;
+  }
 }
 .character__container {
   padding: 1rem;
@@ -276,6 +353,7 @@ div.adventure__Container p {
   margin: 10px auto;
   width: 80%;
   font-size: 14px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .character__consommable {
@@ -337,6 +415,11 @@ div.adventure__Container p {
   transition: 0.2s;
   transform: rotate(0deg);
   transition: transform 0.5s ease-in-out;
+}
+
+button.bandage__Button.recharging {
+  background-color: rgba(242, 79, 3, 0.741);
+  color: rgb(28, 28, 28);
 }
 
 .bandage__Button:hover {
@@ -651,6 +734,7 @@ div.adventure__Container p {
   border-radius: 25px;
   padding: 1rem;
   margin: 10px auto;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .battle__Container__Box {
@@ -695,7 +779,7 @@ button.attack.spamThis {
   flex-direction: column;
   border: double 8px black;
   border-radius: 20px;
-  background-color: rgba(146, 19, 19, 0.644);
+  background-color: rgba(140, 158, 38, 0.644);
   padding: 1rem;
   margin: auto;
   width: 80%;
@@ -703,6 +787,7 @@ button.attack.spamThis {
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 @media only screen and (max-width: 800px) {

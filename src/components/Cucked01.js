@@ -6,7 +6,7 @@ function Cucked01(component) {
     const nextComponentSafe04 = () => {
         window.localStorage.setItem('Save', 1);
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("Forest01")
+        component.setComponent(1)
     }
 
     return (

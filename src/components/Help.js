@@ -34,6 +34,13 @@ const Help = (component) => {
                 <p className='textAlign'>Une armure lourde augmente votre défense.</p>
             </div>
         );
+    } else if (actualComponent === "roadSelect") {
+        return (
+            <div className='help__Container'>
+                <p className='textAlign'>Finir la totalité des objectifs d'une route donne une récompense.</p>
+                <p className='textAlign'>N'hésitez pas a rejouer les routes.</p>
+            </div>
+        );
     }
 
 };

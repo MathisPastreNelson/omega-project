@@ -111,6 +111,7 @@ function Fight01(component) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
             localStorage.setItem("Level", 1)
+            localStorage.setItem("Save", 0)
             window.location.assign('/SuccessBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
@@ -151,6 +152,7 @@ function Fight01(component) {
             localStorage.setItem("Or", goldEarned)
             localStorage.setItem("Xp", xpEarned)
             localStorage.setItem("Level", 1)
+            localStorage.setItem("Save", 0)
             window.location.assign('/SuccessBattle01');
         }
 
@@ -192,6 +194,7 @@ function Fight01(component) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
                 localStorage.setItem("Level", 1)
+                localStorage.setItem("Save", 0)
                 window.location.assign('/SuccessBattle01');
             }
 
@@ -228,6 +231,7 @@ function Fight01(component) {
                 localStorage.setItem("Or", goldEarned)
                 localStorage.setItem("Xp", xpEarned)
                 localStorage.setItem("Level", 1)
+                localStorage.setItem("Save", 0)
                 window.location.assign('/SuccessBattle01');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style

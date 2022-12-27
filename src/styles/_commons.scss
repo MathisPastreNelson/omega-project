@@ -11,6 +11,12 @@
     display: flex;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
     font-weight: bold;
     border: 8px double black;
@@ -96,6 +102,32 @@ h1 {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
+.road__Container {
+    animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+    width: 50%;
+    // background: url(../assets/scrollBackground.jpg);
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(63, 97, 54, 0.438);
+    justify-content: center;
+    border: double 8px black;
+    border-radius: 25px;
+    padding: 1rem;
+    margin: 10px auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+h2 {
+    border: 8px double black;
+    border-radius: 15px;
+    width: 75%;
+    margin: 10px auto;
+    background-color: rgba(121, 126, 26, 0.644);
+}
+
 div.adventure__Container p {
     padding: 2rem 1rem;
 }
@@ -119,8 +151,8 @@ div.adventure__Container p {
 .adventure__Button {
     border: double 6px black;
     border-radius: 5px;
-    width: 140px;
-    height: 50px;
+    width: 180px;
+    height: 60px;
     background-color: rgba(65, 160, 62, 0.637);
     display: flex;
     align-items: center;
@@ -212,6 +244,34 @@ div.adventure__Container p {
     border-radius: 5px;
 }
 
+.adventure__Finished {
+    color: rgba(62, 194, 10, 0.589);
+    background: linear-gradient(180deg, rgba(52, 49, 255, 0.555) 0%, rgba(76, 175, 79, 0.658) 100%);
+    background-color: rgba(65, 160, 62, 0.637);
+    padding: 0.2rem;
+    font-size: 30px;
+    border: double 5px black;
+    margin: 2px 1rem;
+    border-radius: 5px;
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+}
+
+.adventure__NotFinished {
+    color: rgba(194, 10, 10, 0.589);
+    background: linear-gradient(180deg, rgba(255, 95, 2, 0.534) 0%, rgba(175, 99, 76, 0.5) 100%);
+    background-color: rgba(160, 62, 62, 0.637);
+    padding: 0.2rem;
+    font-size: 30px;
+    border: double 5px black;
+    margin: 2px 1rem;
+    border-radius: 5px;
+    width: 15px;
+    min-width: 15px;
+    height: 15px;
+}
+
 /**********************MEDIA QUERIES***************************/
 
 @media only screen and (max-width: 800px) {
@@ -259,5 +319,9 @@ div.adventure__Container p {
 
         margin: 10px auto;
         width: 100%;
+    }
+
+    .road__Container {
+        width: 80%;
     }
 }
