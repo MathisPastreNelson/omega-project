@@ -282,28 +282,26 @@ div.adventure__Container p {
   color: rgba(62, 194, 10, 0.589);
   background: linear-gradient(180deg, rgba(52, 49, 255, 0.555) 0%, rgba(76, 175, 79, 0.658) 100%);
   background-color: rgba(65, 160, 62, 0.637);
-  padding: 0.2rem;
+  padding: 0.1rem;
   font-size: 30px;
   border: double 5px black;
-  margin: 2px 1rem;
+  margin: 2px 0.3rem;
   border-radius: 5px;
-  width: 15px;
-  min-width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
 }
 
 .adventure__NotFinished {
   color: rgba(194, 10, 10, 0.589);
   background: linear-gradient(180deg, rgba(255, 95, 2, 0.534) 0%, rgba(175, 99, 76, 0.5) 100%);
   background-color: rgba(160, 62, 62, 0.637);
-  padding: 0.2rem;
+  padding: 0.1rem;
   font-size: 30px;
   border: double 5px black;
-  margin: 2px 1rem;
+  margin: 2px 0.3rem;
   border-radius: 5px;
-  width: 15px;
-  min-width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
 }
 
 .notDone {
