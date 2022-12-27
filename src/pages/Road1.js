@@ -14,6 +14,7 @@ import Dangerous02 from "../components/Tutoriel/Dangerous02"
 import Dangerous03 from "../components/Tutoriel/Dangerous03"
 import Dangerous04 from "../components/Tutoriel/Dangerous04"
 import Battle01 from "../components/Tutoriel/Battle01"
+// Fin du tuto
 import Safe03 from '../components/Foret-Tourbe-Bourbe/Safe03';
 import RandomFight01 from "../components/Foret-Tourbe-Bourbe/RandomFight01"
 import Safe04 from "../components/Foret-Tourbe-Bourbe/Safe04"
@@ -52,7 +53,6 @@ import Forest24 from '../components/Foret-Tourbe-Bourbe/Forest24';
 import Forest25 from '../components/Foret-Tourbe-Bourbe/Forest25';
 import Forest26 from '../components/Foret-Tourbe-Bourbe/Forest26';
 import Forest27End from '../components/Foret-Tourbe-Bourbe/Forest27End';
-// import Test from "../components/Test"
 
 
 

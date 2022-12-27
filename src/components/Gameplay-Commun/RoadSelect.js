@@ -4,6 +4,7 @@ import { FaCheck, FaRegWindowClose } from 'react-icons/fa';
 
 function RoadSelect(component) {
     const data = component.data
+    const saveAdvance = parseInt(data.SavePosition)
 
     const goToForest = () => {
         localStorage.setItem("Save", 0)
@@ -14,8 +15,6 @@ function RoadSelect(component) {
         window.location.assign('/vilage01')
     }
 
-    console.log(data.SavePosition)
-    const saveAdvance = parseInt(data.SavePosition)
     return (
         <div>
             <div className="road__Container">

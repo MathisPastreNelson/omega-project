@@ -2,7 +2,7 @@ import React from 'react';
 // Import FontAwesome Component
 
 function Introduction() {
-
+    // Ce composant n'est affiché que lors du premier lancement du jeu
     return (
         <div className="road__Container">
             <p className="fade-in textAlign center">

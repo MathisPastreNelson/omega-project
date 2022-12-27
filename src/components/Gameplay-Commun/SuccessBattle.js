@@ -3,9 +3,10 @@ import React from 'react';
 
 const SuccessBattle = (component) => {
     const mainScreen = () => {
-        // On change le Props Ici pour passer au composant suivant
+        // Retour à la route 1
         window.location.assign('/road1')
     }
+
     return (
         <div className='adventure__Container'>
             <p className='textAlign '>Bravo, vous êtes victorieux.</p>

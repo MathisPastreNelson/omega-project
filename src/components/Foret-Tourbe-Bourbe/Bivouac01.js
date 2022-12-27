@@ -1,5 +1,4 @@
 import React from 'react';
-// Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Bivouac01(component) {

@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import { FaHeartbeat } from 'react-icons/fa';
 
 const Hud = (data) => {
+    // State du bandage et pour son utilisation
     const [bandageDisabled, setBandageEnable] = useState(false);
     const [buttonBandageText, setButtonBandageText] = useState("Bandage")
     const buttonBandage = useRef(null);

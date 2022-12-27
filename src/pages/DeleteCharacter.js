@@ -1,11 +1,11 @@
 import React from 'react';
 
 const DeleteCharacter = () => {
+    // Retour à la page d'introduction
     const returnToMenu = () => {
-        if (window.localStorage.length >= 6) {
-            window.location.assign('/')
-        };
+        window.location.assign('/')
     }
+    // On efface la sauvegarde et on retourne à la création de personnage
     const clearSavedGame = () => {
         localStorage.clear();
         window.location.assign('/NewCharacter');

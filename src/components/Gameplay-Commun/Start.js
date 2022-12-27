@@ -17,6 +17,7 @@ function Start() {
         window.location.assign('/DeleteCharacter');
     };
 
+    // Il faut au moin avoir crée son personnage
     if (window.localStorage.length >= 6) {
         return (
             <div className="adventure__Container">
