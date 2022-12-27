@@ -17,6 +17,11 @@
     align-items: center;
 }
 
+.smallFont {
+    font-size: 14px;
+    height: 50px;
+}
+
 h1 {
     font-weight: bold;
     border: 8px double black;
@@ -125,7 +130,6 @@ h2 {
     border-radius: 15px;
     width: 75%;
     margin: 10px auto;
-    background-color: rgba(121, 126, 26, 0.644);
 }
 
 div.adventure__Container p {
@@ -272,6 +276,14 @@ div.adventure__Container p {
     height: 15px;
 }
 
+.notDone {
+    background-color: rgba(126, 41, 26, 0.644);
+}
+
+.done {
+    background-color: rgba(45, 156, 30, 0.644);
+}
+
 /**********************MEDIA QUERIES***************************/
 
 @media only screen and (max-width: 800px) {
@@ -323,5 +335,10 @@ div.adventure__Container p {
 
     .road__Container {
         width: 80%;
+    }
+
+    .smallFont {
+        font-size: 12px;
+        height: 50px;
     }
 }
