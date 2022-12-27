@@ -150,7 +150,6 @@ const Road1 = () => {
                 {component === "forest26" && <Forest26 component={component} setComponent={setComponent} />}
                 {component === "forest27End" && <Forest27End component={component} data={data} setComponent={setComponent} />}
             </div>
-
         )
     }
 
