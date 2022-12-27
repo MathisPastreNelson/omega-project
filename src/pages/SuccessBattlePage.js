@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-import SuccessBattle from '../components/SuccessBattle';
+import SuccessBattle from '../components/Gameplay-Commun/SuccessBattle';
 
 const SucessBattlePage = () => {
     const [component, setComponent] = useState(1);

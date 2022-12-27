@@ -2,9 +2,9 @@ import React from 'react';
 // import AMongoDbConnect from "../components/AMongoDbConnect"
 
 // Différents composants
-import Start from "../components/Start"
+import Start from "../components/Gameplay-Commun/Start"
 import RoadSelect from '../components/RoadSelect';
-import Introduction from '../components/Introduction';
+import Introduction from '../components/Gameplay-Commun/Introduction';
 
 const StartingGame = () => {
     const data = window.localStorage

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from "react";
 // Importation des différents composants
-import Hud from '../components/Hud';
+import Hud from '../components/Gameplay-Commun/Hud';
 import RoadSelect from '../components/RoadSelect';
-import Help from '../components/Help';
+import Help from '../components/Gameplay-Commun/Help';
 
 const RoadSelectPage = () => {
     const [component] = useState("roadSelect");
