@@ -9,6 +9,11 @@ function RoadSelect(component) {
         localStorage.setItem("Save", 0)
         window.location.assign('/road1')
     }
+    const goToVillage = () => {
+        localStorage.setItem("Save", 0)
+        window.location.assign('/vilage01')
+    }
+
     console.log(data.SavePosition)
     const saveAdvance = parseInt(data.SavePosition)
     return (
@@ -46,6 +51,9 @@ function RoadSelect(component) {
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
                     <p className="fade-in textAlign center smallFont"> <FaRegWindowClose className='adventure__NotFinished' />???</p>
+                    <button className='adventure__Button' onClick={goToVillage}>
+                        Bientôt...
+                    </button>
                 </div>
             }
         </div>
