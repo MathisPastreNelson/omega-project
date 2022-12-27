@@ -11,6 +11,7 @@ import SuccessBattlePage01 from "./pages/SuccessBattlePage"
 import SuccessRandomFightPage01 from "./pages/SuccessRandomFightPage01"
 
 import RoadSelectPage from './pages/RoadSelectPage';
+import DeleteCharacter from './pages/DeleteCharacter';
 
 /* Definition des routes de l'applications */
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/SuccessBattle01" element={<SuccessBattlePage01 />} />
           <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
           <Route path="/roadSelect" element={<RoadSelectPage />} />
+          <Route path="/deleteCharacter" element={<DeleteCharacter />} />
           <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>

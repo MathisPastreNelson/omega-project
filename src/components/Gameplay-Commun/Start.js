@@ -14,8 +14,7 @@ function Start() {
         };
     }
     const clearSavedGame = () => {
-        localStorage.clear();
-        window.location.assign('/NewCharacter');
+        window.location.assign('/DeleteCharacter');
     };
 
     if (window.localStorage.length >= 6) {
