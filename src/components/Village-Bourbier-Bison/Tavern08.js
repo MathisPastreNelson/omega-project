@@ -18,7 +18,7 @@ function Tavern08(component) {
             </p>
             <div className='adventure__ChooseButton__Container'>
                 <button className='adventure__ChooseButton' onClick={nextComponentTavern09}>
-                    Demander l'adresse de Jérôme
+                    Demander où se trouve Jérôme
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
             </div>

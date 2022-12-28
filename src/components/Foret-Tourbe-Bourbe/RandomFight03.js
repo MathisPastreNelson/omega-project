@@ -8,8 +8,8 @@ import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icon
 
 function RandomFight03(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp] = useState(155)
-    const [enemyHp, setEnemyHp] = useState(155)
+    const [enemyMaxHp] = useState(185)
+    const [enemyHp, setEnemyHp] = useState(185)
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
@@ -296,7 +296,7 @@ function RandomFight03(component) {
     useEffect(() => {
         const interval = setInterval(() => {
             //*********************  Calcul des dégâts du monstre ***********************//
-            let newDamage = Math.floor(Math.random() * (20 + 10) * damageReductionCoefficient);
+            let newDamage = Math.floor(Math.random() * (20 + 15) * damageReductionCoefficient);
             setDamage(newDamage);
 
             setActualHp(prevActualHp => {
@@ -309,7 +309,7 @@ function RandomFight03(component) {
                     return prevActualHp - newDamage;
                 }
             });
-        }, 1500);
+        }, 1400);
         return () => clearInterval(interval);
     }, [running, setActualHp, damageReductionCoefficient]);
 
