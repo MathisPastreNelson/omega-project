@@ -6,10 +6,10 @@ import { useRef } from 'react';
 // Import FontAwesome Component
 import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
 
-function RandomFight04(component) {
+function FightSideBoss1(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp] = useState(90)
-    const [enemyHp, setEnemyHp] = useState(90)
+    const [enemyMaxHp] = useState(135)
+    const [enemyHp, setEnemyHp] = useState(135)
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
@@ -39,8 +39,8 @@ function RandomFight04(component) {
     const parseIntGoldStorage = parseInt(totalGold)
     const totalXp = window.localStorage.getItem("Xp")
     const parseIntXpStorage = parseInt(totalXp)
-    let goldEarned = Math.floor(Math.random() * 3) + 5;
-    let xpEarned = Math.floor(Math.random() * 2) + 7;
+    let goldEarned = Math.floor(Math.random() * 3) + 11;
+    let xpEarned = Math.floor(Math.random() * 2) + 10;
     let totalGoldNew = goldEarned + parseIntGoldStorage;
     let totalXpNew = xpEarned + parseIntXpStorage;
 
@@ -116,6 +116,7 @@ function RandomFight04(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            localStorage.setItem("SideQuest04", "ok")
             window.location.assign('/SuccessBattle02');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
@@ -155,6 +156,7 @@ function RandomFight04(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            localStorage.setItem("SideQuest04", "ok")
             window.location.assign('/SuccessBattle02');
         }
 
@@ -196,6 +198,7 @@ function RandomFight04(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                localStorage.setItem("SideQuest04", "ok")
                 window.location.assign('/SuccessBattle02');
             }
 
@@ -231,6 +234,7 @@ function RandomFight04(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                localStorage.setItem("SideQuest04", "ok")
                 window.location.assign('/SuccessBattle02');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
@@ -301,7 +305,7 @@ function RandomFight04(component) {
                     return prevActualHp - newDamage;
                 }
             });
-        }, 3400);
+        }, 2100);
         return () => clearInterval(interval);
     }, [running, setActualHp, damageReductionCoefficient]);
 
@@ -310,7 +314,7 @@ function RandomFight04(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Glubandurs : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
+                    Glubandur Reine : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>
@@ -347,4 +351,4 @@ function RandomFight04(component) {
     );
 }
 
-export default RandomFight04;
+export default FightSideBoss1;

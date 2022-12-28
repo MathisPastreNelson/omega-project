@@ -4,6 +4,7 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Village02(component) {
     const nextComponentVillage03 = () => {
+        window.localStorage.setItem('Save', 1);
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("village03")
     }

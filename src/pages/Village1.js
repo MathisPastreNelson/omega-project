@@ -3,6 +3,8 @@ import { useState } from "react";
 
 // Importation des différents composants
 import Hud from '../components/Gameplay-Commun/Hud';
+import FightSideBoss1 from '../components/Village-Bourbier-Bison/FightSideBoss1';
+import FightSideBoss2 from '../components/Village-Bourbier-Bison/FightSideBoss2';
 import RandomFight04 from '../components/Village-Bourbier-Bison/RandomFight04';
 import Tavern01 from '../components/Village-Bourbier-Bison/Tavern01';
 import Tavern02 from '../components/Village-Bourbier-Bison/Tavern02';
@@ -20,6 +22,7 @@ import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQ
 import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
 import VillageSideQuest3 from '../components/Village-Bourbier-Bison/VillageSideQuest3';
 import VillageSideQuest4 from '../components/Village-Bourbier-Bison/VillageSideQuest4';
+import VillageSideQuest4Alt from '../components/Village-Bourbier-Bison/VillageSideQuest4Alt';
 
 const Village1 = () => {
     const [component, setComponent] = useState(1);
@@ -58,9 +61,13 @@ const Village1 = () => {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-                {component === 1 && <VillageSideQuest3 component={component} setComponent={setComponent} />}
-                {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} />}
+                {component === 1 && <VillageSideQuest2 component={component} setComponent={setComponent} />}
+                {component === "villageSideQuest3" && <VillageSideQuest3 component={component} setComponent={setComponent} />}
                 {component === "villageSideQuest4" && <VillageSideQuest4 component={component} setComponent={setComponent} />}
+                {component === "villageSideQuest4Alt" && <VillageSideQuest4Alt component={component} setComponent={setComponent} />}
+                {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "sideBoss1" && <FightSideBoss1 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "sideBoss2" && <FightSideBoss2 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
             </div>
         )
     }
