@@ -10,7 +10,7 @@ function VillageSideQuest1(component) {
 
     const nextComponentVillage03SideQuest2 = () => {
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("village03SideQuest2")
+        component.setComponent("villageSideQuest2")
     }
 
     return (

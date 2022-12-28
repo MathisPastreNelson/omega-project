@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // Importation des différents composants
 import Hud from '../components/Gameplay-Commun/Hud';
+import RandomFight04 from '../components/Village-Bourbier-Bison/RandomFight04';
 import Tavern01 from '../components/Village-Bourbier-Bison/Tavern01';
 import Tavern02 from '../components/Village-Bourbier-Bison/Tavern02';
 import Tavern03 from '../components/Village-Bourbier-Bison/Tavern03';
@@ -17,6 +18,8 @@ import Village01 from '../components/Village-Bourbier-Bison/Village01';
 import Village02 from '../components/Village-Bourbier-Bison/Village02';
 import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQuest1';
 import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
+import VillageSideQuest3 from '../components/Village-Bourbier-Bison/VillageSideQuest3';
+import VillageSideQuest4 from '../components/Village-Bourbier-Bison/VillageSideQuest4';
 
 const Village1 = () => {
     const [component, setComponent] = useState(1);
@@ -31,7 +34,7 @@ const Village1 = () => {
     const save = parseInt(data.Save)
 
     // Il faut absolument avoir fini la Road1 pour faire celle ci   
-    if (savePosition <= 1) {
+    if (savePosition >= 1 && save === 0) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
@@ -51,22 +54,24 @@ const Village1 = () => {
                 {component === "villageSideQuest2" && <VillageSideQuest2 component={component} setComponent={setComponent} />}
             </div>
         );
-    } else if (savePosition <= 1 && save === 1) {
+    } else if (savePosition >= 1 && save === 1) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-
+                {component === 1 && <VillageSideQuest3 component={component} setComponent={setComponent} />}
+                {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} />}
+                {component === "villageSideQuest4" && <VillageSideQuest4 component={component} setComponent={setComponent} />}
             </div>
         )
     }
-    else if (savePosition <= 1 && save === 2) {
+    else if (savePosition >= 1 && save === 2) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-
+                village 3
             </div>
         )
-    } else if (savePosition <= 1 && save === 3) {
+    } else if (savePosition >= 1 && save === 3) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />

@@ -8,10 +8,11 @@ function Start() {
     }
     // LA SAUVEGARDE DE L'AVENTURE SERA CONTENU ICI
     const savedGame = () => {
-        if (window.localStorage.length >= 6) {
-            console.log("bon")
+        if (window.localStorage.getItem("SavePosition") >= 1) {
+            window.location.assign('/village1')
+        } else {
             window.location.assign('/road1')
-        };
+        }
     }
     const clearSavedGame = () => {
         window.location.assign('/DeleteCharacter');

@@ -8,7 +8,7 @@ import Road1 from "./pages/Road1"
 import ErrorPage from "./pages/ErrorPage"
 import GameOverPage from "./pages/GameOverPage"
 import SuccessBattlePage01 from "./pages/SuccessBattlePage"
-import SuccessRandomFightPage01 from "./pages/SuccessRandomFightPage01"
+import SuccessBattlePage02 from "./pages/SuccessBattlePage2"
 
 import RoadSelectPage from './pages/RoadSelectPage';
 import DeleteCharacter from './pages/DeleteCharacter';
@@ -26,7 +26,7 @@ const App = () => {
           <Route path="/village1" element={<Village1 />} />
           <Route path="/GameOver" element={<GameOverPage />} />
           <Route path="/SuccessBattle01" element={<SuccessBattlePage01 />} />
-          <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
+          <Route path="/SuccessBattle02" element={<SuccessBattlePage02 />} />
           <Route path="/roadSelect" element={<RoadSelectPage />} />
           <Route path="/deleteCharacter" element={<DeleteCharacter />} />
           <Route path="/*" element={<ErrorPage />} />

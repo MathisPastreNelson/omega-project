@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState } from "react";
-import SuccessBattle from '../components/Gameplay-Commun/SuccessBattle';
+import SuccessBattle from '../components/Village-Bourbier-Bison/SuccessBattle';
 
-const SuccessRandomFightPage01 = () => {
+const SucessBattlePage2 = () => {
     const [component, setComponent] = useState(1);
     return (
         <div>
@@ -11,4 +11,4 @@ const SuccessRandomFightPage01 = () => {
     );
 };
 
-export default SuccessRandomFightPage01;
+export default SucessBattlePage2;

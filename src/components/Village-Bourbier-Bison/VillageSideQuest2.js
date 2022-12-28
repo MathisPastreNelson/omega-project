@@ -4,13 +4,15 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function VillageSideQuest2(component) {
     const nextComponentVillage03 = () => {
+        window.localStorage.setItem('Save', 2);
         // On change le Props Ici pour passer au composant suivant
         component.setComponent("village03")
     }
 
     const nextComponentVillage03SideQuest2 = () => {
+        window.localStorage.setItem('Save', 1);
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("VillageSideQuest3")
+        component.setComponent(1)
     }
 
     return (
