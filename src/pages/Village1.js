@@ -11,6 +11,12 @@ import Tavern05 from '../components/Village-Bourbier-Bison/Tavern05';
 import Tavern06 from '../components/Village-Bourbier-Bison/Tavern06';
 import Tavern07 from '../components/Village-Bourbier-Bison/Tavern07';
 import Tavern08 from '../components/Village-Bourbier-Bison/Tavern08';
+import Tavern09 from '../components/Village-Bourbier-Bison/Tavern09';
+import Tavern10 from '../components/Village-Bourbier-Bison/Tavern10';
+import Village01 from '../components/Village-Bourbier-Bison/Village01';
+import Village02 from '../components/Village-Bourbier-Bison/Village02';
+import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQuest1';
+import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
 
 const Village1 = () => {
     const [component, setComponent] = useState(1);
@@ -37,6 +43,12 @@ const Village1 = () => {
                 {component === "tavern06" && <Tavern06 component={component} setComponent={setComponent} />}
                 {component === "tavern07" && <Tavern07 component={component} setComponent={setComponent} />}
                 {component === "tavern08" && <Tavern08 component={component} setComponent={setComponent} />}
+                {component === "tavern09" && <Tavern09 component={component} setComponent={setComponent} />}
+                {component === "tavern10" && <Tavern10 component={component} setComponent={setComponent} />}
+                {component === "village01" && <Village01 component={component} setComponent={setComponent} />}
+                {component === "village02" && <Village02 component={component} setComponent={setComponent} />}
+                {component === "villageSideQuest1" && <VillageSideQuest1 component={component} setComponent={setComponent} />}
+                {component === "villageSideQuest2" && <VillageSideQuest2 component={component} setComponent={setComponent} />}
             </div>
         );
     } else if (savePosition <= 1 && save === 1) {

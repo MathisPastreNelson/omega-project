@@ -14,7 +14,7 @@ function Tavern08(component) {
                 "Il y a un vieil ami à moi qui habite non loin d'ici, dans une petite ferme au bord de la forêt",
                 commence le vieil homme. "Il s'appelle Jérôme et c'est un homme bon et généreux, mais il a un problème
                 qui le tracasse depuis quelque temps. Il y a quelques semaines, un groupe de voleurs est venu lui dérober
-                sa précieuse possession"
+                de précieuses possessions."
             </p>
             <div className='adventure__ChooseButton__Container'>
                 <button className='adventure__ChooseButton' onClick={nextComponentTavern09}>

@@ -19,7 +19,7 @@ function Tavern02(component) {
             <p className="fade-in textAlign">
                 Un homme énorme arrive en trombe. Il a la bedaine proéminente et la barbe grisonnante,
                 et il porte un tablier qui indique qu'il est le Tavernier. Il s'approche de vous et vous salue d'un sourire jovial.
-                "Bonsoir, mon ami ! Qu'est-ce que je vous sers ce soir ?", demande-t-il.
+                "Bonsoir, mon ami ! Qu'est-ce que je vous sers ?", demande-t-il.
             </p>
             <div className='adventure__ChooseButton__Container'>
                 <button className='adventure__ChooseButton' onClick={nextComponentTavern03}>
