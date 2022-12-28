@@ -8,8 +8,8 @@ import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icon
 
 function RandomFight03(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp] = useState(225)
-    const [enemyHp, setEnemyHp] = useState(255)
+    const [enemyMaxHp] = useState(155)
+    const [enemyHp, setEnemyHp] = useState(155)
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
@@ -146,7 +146,7 @@ function RandomFight03(component) {
                 setButtonAttack1Disabled(false);
                 buttonAttack1.current.classList.remove('recharging');
             }
-        }, 1000);
+        }, 1500);
     }
 
     /******************************  DEFINITION ATAQUE LOURDE  ******************************/
@@ -296,7 +296,7 @@ function RandomFight03(component) {
     useEffect(() => {
         const interval = setInterval(() => {
             //*********************  Calcul des dégâts du monstre ***********************//
-            let newDamage = Math.floor(Math.random() * (20 + 22) * damageReductionCoefficient);
+            let newDamage = Math.floor(Math.random() * (20 + 10) * damageReductionCoefficient);
             setDamage(newDamage);
 
             setActualHp(prevActualHp => {

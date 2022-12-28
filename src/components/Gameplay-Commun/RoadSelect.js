@@ -12,7 +12,7 @@ function RoadSelect(component) {
     }
     const goToVillage = () => {
         localStorage.setItem("Save", 0)
-        window.location.assign('/vilage01')
+        window.location.assign('/village1')
     }
 
     return (

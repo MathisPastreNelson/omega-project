@@ -12,6 +12,7 @@ import SuccessRandomFightPage01 from "./pages/SuccessRandomFightPage01"
 
 import RoadSelectPage from './pages/RoadSelectPage';
 import DeleteCharacter from './pages/DeleteCharacter';
+import Village1 from './pages/Village1';
 
 /* Definition des routes de l'applications */
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='/' element={<StartingGame />} />
           <Route path="/NewCharacter" element={<NewCharacter />} />
           <Route path="/road1" element={<Road1 />} />
+          <Route path="/village1" element={<Village1 />} />
           <Route path="/GameOver" element={<GameOverPage />} />
           <Route path="/SuccessBattle01" element={<SuccessBattlePage01 />} />
           <Route path="/SuccessRandomBattle01" element={<SuccessRandomFightPage01 />} />
