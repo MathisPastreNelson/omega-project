@@ -1,6 +1,6 @@
 import React from 'react';
 // Import FontAwesome Component
-import { FaArrowAltCircleRight, FaFulcrum } from 'react-icons/fa';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function VillageSideQuest3(component) {
     const nextComponentVillage03SideQuest4 = () => {

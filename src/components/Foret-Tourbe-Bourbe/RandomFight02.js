@@ -116,7 +116,7 @@ function RandomFight02(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
@@ -155,7 +155,7 @@ function RandomFight02(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
 
         if (buttonAttack2.current) {
@@ -196,7 +196,7 @@ function RandomFight02(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
             }
 
             if (buttonAttack3.current) {
@@ -231,7 +231,7 @@ function RandomFight02(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
             setButtonAttack3AlternativeText(`Fendre à mort`);

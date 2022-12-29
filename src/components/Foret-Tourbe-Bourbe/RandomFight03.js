@@ -118,7 +118,7 @@ function RandomFight03(component) {
             localStorage.setItem("Xp", totalXpNew)
             localStorage.setItem("Save", 3)
             localStorage.setItem('SideQuest03', "ok");
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
 
@@ -159,7 +159,7 @@ function RandomFight03(component) {
             localStorage.setItem("Xp", totalXpNew)
             localStorage.setItem("Save", 3)
             localStorage.setItem('SideQuest03', "ok");
-            window.location.assign('/SuccessRandomBattle01');
+            window.location.assign('/SuccessBattle01');
         }
 
         if (buttonAttack2.current) {
@@ -202,7 +202,7 @@ function RandomFight03(component) {
                 localStorage.setItem("Xp", totalXpNew)
                 localStorage.setItem("Save", 3)
                 localStorage.setItem('SideQuest03', "ok");
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
             }
 
             if (buttonAttack3.current) {
@@ -239,7 +239,7 @@ function RandomFight03(component) {
                 localStorage.setItem("Xp", totalXpNew)
                 localStorage.setItem("Save", 3)
                 localStorage.setItem('SideQuest03', "ok");
-                window.location.assign('/SuccessRandomBattle01');
+                window.location.assign('/SuccessBattle01');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
             setButtonAttack3AlternativeText(`Fendre à mort`);
