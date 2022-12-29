@@ -9,8 +9,10 @@ function Forest27(component) {
     const successForest = () => {
         if (savePosition >= 1) {
             window.location.assign('/roadSelect')
+            window.localStorage.setItem('Save', 0);
         } else {
             window.localStorage.setItem('SavePosition', 1);
+            window.localStorage.setItem('Save', 0);
             window.location.assign('/roadSelect')
         }
     }
