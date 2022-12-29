@@ -25,7 +25,7 @@ function Start() {
                 <p className="fade-in textAlign">Reprendre votre aventure.</p>
                 <div className='adventure__ChooseButton__Container'>
                     <button onClick={savedGame} className='adventure__ChooseButton'>
-                        Reprendre
+                        Reprendre l'histoire
                         <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                     </button>
                     <button onClick={clearSavedGame} className='battle__ChooseButton'>

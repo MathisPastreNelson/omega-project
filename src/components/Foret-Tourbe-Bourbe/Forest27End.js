@@ -4,10 +4,15 @@ import { FaArrowAltCircleRight, FaCheck, FaRegWindowClose } from 'react-icons/fa
 
 function Forest27(component) {
     const data = component.data
+    const savePosition = parseInt(data.SavePosition)
 
-    const succesForest = () => {
-        window.localStorage.setItem('SavePosition', 1);
-        window.location.assign('/roadSelect')
+    const successForest = () => {
+        if (savePosition >= 1) {
+            window.location.assign('/roadSelect')
+        } else {
+            window.localStorage.setItem('SavePosition', 1);
+            window.location.assign('/roadSelect')
+        }
     }
     return (
         <div className="adventure__Container">
@@ -22,7 +27,7 @@ function Forest27(component) {
             {data.SideQuest02 === undefined && <p className="fade-in textAlign center smallFont"><FaRegWindowClose className='adventure__NotFinished' />Un personnage n'a pas été rencontré</p>}
             {data.SideQuest03 === undefined && <p className="fade-in textAlign center smallFont"><FaRegWindowClose className='adventure__NotFinished' />Un monstre n'a pas été tué</p>}
             <div className='adventure__ChooseButton__Container'>
-                <button className='adventure__ChooseButton' onClick={succesForest}>
+                <button className='adventure__ChooseButton' onClick={successForest}>
                     Achever le scenario
                     <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
