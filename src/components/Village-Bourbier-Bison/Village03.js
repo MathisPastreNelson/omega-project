@@ -19,7 +19,7 @@ function Village03(component) {
                 Vous êtes étonné de voir à quel point le village est calme et paisible,
                 et vous vous demandez si vous n'avez pas commis une erreur en venant ici.
                 Soudain, vous apercevez une petite échoppe qui semble être le seul commerce du village.
-                Vous vous approchez et vous jetez un coup d'œil à l'intérieur.
+                Vous pouvez vous approcher et jeter un coup d'œil à l'intérieur.
             </p>
             <div className='adventure__ChooseButton__Container'>
                 <button className='adventure__ChooseButton' onClick={nextComponentMerchant01}>

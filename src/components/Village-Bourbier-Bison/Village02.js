@@ -6,7 +6,11 @@ function Village02(component) {
     const nextComponentVillage03 = () => {
         window.localStorage.setItem('Save', 3);
         // On change le Props Ici pour passer au composant suivant
-        component.setComponent("village03")
+        if (localStorage.getItem("SideQuest06")) {
+            component.setComponent("village04")
+        } else {
+            component.setComponent("village03")
+        }
     }
 
     const nextComponentVillageSideQuest1 = () => {
