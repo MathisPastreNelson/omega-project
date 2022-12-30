@@ -18,11 +18,13 @@ import Tavern09 from '../components/Village-Bourbier-Bison/Tavern09';
 import Tavern10 from '../components/Village-Bourbier-Bison/Tavern10';
 import Village01 from '../components/Village-Bourbier-Bison/Village01';
 import Village02 from '../components/Village-Bourbier-Bison/Village02';
+import Village03 from '../components/Village-Bourbier-Bison/Village03';
 import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQuest1';
 import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
 import VillageSideQuest3 from '../components/Village-Bourbier-Bison/VillageSideQuest3';
 import VillageSideQuest4 from '../components/Village-Bourbier-Bison/VillageSideQuest4';
 import VillageSideQuest4Alt from '../components/Village-Bourbier-Bison/VillageSideQuest4Alt';
+import VillageSideQuest5 from '../components/Village-Bourbier-Bison/VillageSideQuest5';
 
 const Village1 = () => {
     const [component, setComponent] = useState(1);
@@ -75,14 +77,14 @@ const Village1 = () => {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-                village 3
+                {component === 1 && <VillageSideQuest5 component={component} setComponent={setComponent} />}
             </div>
         )
     } else if (savePosition >= 1 && save === 3) {
         return (
             <div>
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
-
+                {(component === 1 || component === "village03") && <Village03 component={component} setComponent={setComponent} />}
             </div>
         )
     }

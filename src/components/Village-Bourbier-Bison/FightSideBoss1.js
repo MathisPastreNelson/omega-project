@@ -116,6 +116,7 @@ function FightSideBoss1(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            localStorage.setItem('Save', 2);
             localStorage.setItem("SideQuest04", "ok")
             window.location.assign('/SuccessBattle02');
         }
@@ -156,6 +157,7 @@ function FightSideBoss1(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
+            localStorage.setItem('Save', 2);
             localStorage.setItem("SideQuest04", "ok")
             window.location.assign('/SuccessBattle02');
         }
@@ -198,6 +200,7 @@ function FightSideBoss1(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                localStorage.setItem('Save', 2);
                 localStorage.setItem("SideQuest04", "ok")
                 window.location.assign('/SuccessBattle02');
             }
@@ -234,6 +237,7 @@ function FightSideBoss1(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
+                localStorage.setItem('Save', 2);
                 localStorage.setItem("SideQuest04", "ok")
                 window.location.assign('/SuccessBattle02');
             }
