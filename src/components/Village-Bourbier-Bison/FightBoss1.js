@@ -6,10 +6,10 @@ import { useRef } from 'react';
 // Import FontAwesome Component
 import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
 
-function FightSideBoss3(component) {
+function FightBoss1(component) {
     const { setActualHp } = component;
-    const [enemyMaxHp] = useState(175)
-    const [enemyHp, setEnemyHp] = useState(175)
+    const [enemyMaxHp] = useState(145)
+    const [enemyHp, setEnemyHp] = useState(145)
     // le state des dégats de l'adversaire
     const [damage, setDamage] = useState(0);
 
@@ -116,8 +116,7 @@ function FightSideBoss3(component) {
         if (enemyHp - getRandomNumber1() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
-            localStorage.setItem("Save", 5)
-            localStorage.setItem("SideQuest07", "ok")
+            localStorage.setItem("Save", 6)
             window.location.assign('/SuccessBattle02');
         }
         setEnemyHp(prevEnemyHp => prevEnemyHp - getRandomNumber1());
@@ -157,8 +156,7 @@ function FightSideBoss3(component) {
         if (enemyHp - getRandomNumber2() < 1) {
             localStorage.setItem("Or", totalGoldNew)
             localStorage.setItem("Xp", totalXpNew)
-            localStorage.setItem("Save", 5)
-            localStorage.setItem("SideQuest07", "ok")
+            localStorage.setItem("Save", 6)
             window.location.assign('/SuccessBattle02');
         }
 
@@ -200,8 +198,7 @@ function FightSideBoss3(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
-                localStorage.setItem("Save", 5)
-                localStorage.setItem("SideQuest07", "ok")
+                localStorage.setItem("Save", 6)
                 window.location.assign('/SuccessBattle02');
             }
 
@@ -237,8 +234,7 @@ function FightSideBoss3(component) {
             if (enemyHp - getRandomNumber3() < 1) {
                 localStorage.setItem("Or", totalGoldNew)
                 localStorage.setItem("Xp", totalXpNew)
-                localStorage.setItem("Save", 5)
-                localStorage.setItem("SideQuest07", "ok")
+                localStorage.setItem("Save", 6)
                 window.location.assign('/SuccessBattle02');
             }
             // Une fois le bouton préssé on déclenche un changement de texte et un nouveau style
@@ -309,7 +305,7 @@ function FightSideBoss3(component) {
                     return prevActualHp - newDamage;
                 }
             });
-        }, 1500);
+        }, 1750);
         return () => clearInterval(interval);
     }, [running, setActualHp, damageReductionCoefficient]);
 
@@ -318,7 +314,7 @@ function FightSideBoss3(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 <p className="fade-in textAlign">
-                    Bandit isolé : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
+                    Le chapardeur : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
                 <p>J'encaisse {damage} dégats</p>
             </div>
@@ -355,4 +351,4 @@ function FightSideBoss3(component) {
     );
 }
 
-export default FightSideBoss3;
+export default FightBoss1;

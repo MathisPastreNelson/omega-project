@@ -3,8 +3,10 @@ import { useState } from "react";
 
 // Importation des différents composants
 import Hud from '../components/Gameplay-Commun/Hud';
+import FightBoss1 from '../components/Village-Bourbier-Bison/FightBoss1';
 import FightSideBoss1 from '../components/Village-Bourbier-Bison/FightSideBoss1';
 import FightSideBoss2 from '../components/Village-Bourbier-Bison/FightSideBoss2';
+import FightSideBoss3 from '../components/Village-Bourbier-Bison/FightSideBoss3';
 import Merchant01 from '../components/Village-Bourbier-Bison/Merchant01';
 import RandomFight04 from '../components/Village-Bourbier-Bison/RandomFight04';
 import Tavern01 from '../components/Village-Bourbier-Bison/Tavern01';
@@ -27,8 +29,10 @@ import Village07 from '../components/Village-Bourbier-Bison/Village07';
 import Village08 from '../components/Village-Bourbier-Bison/Village08';
 import Village09 from '../components/Village-Bourbier-Bison/Village09';
 import Village10 from '../components/Village-Bourbier-Bison/Village10';
+import Village10Alt from '../components/Village-Bourbier-Bison/Village10Alt';
 import Village11 from '../components/Village-Bourbier-Bison/Village11';
 import Village12 from '../components/Village-Bourbier-Bison/Village12';
+import Village13 from '../components/Village-Bourbier-Bison/Village13';
 import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQuest1';
 import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
 import VillageSideQuest3 from '../components/Village-Bourbier-Bison/VillageSideQuest3';
@@ -111,8 +115,27 @@ const Village1 = () => {
                 {component === 1 && <Village09 component={component} setComponent={setComponent} />}
                 {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
                 {component === "village10" && <Village10 component={component} setComponent={setComponent} />}
+                {component === "village10Alt" && <Village10Alt component={component} setComponent={setComponent} />}
                 {component === "village11" && <Village11 component={component} setComponent={setComponent} />}
                 {component === "village12" && <Village12 component={component} setComponent={setComponent} />}
+                {component === "fightSideBoss3" && <FightSideBoss3 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "fightBoss1" && <FightBoss1 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+            </div>
+        )
+    } else if (savePosition >= 1 && save === 5) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+                {(component === 1 || component === "village12") && <Village12 component={component} setComponent={setComponent} />}
+                {component === "fightBoss1" && <FightBoss1 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+            </div>
+        )
+    } else if (savePosition >= 1 && save === 6) {
+        return (
+            <div>
+                < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
+                {component === 1 && <Village13 component={component} setComponent={setComponent} />}
+                {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
             </div>
         )
     }
