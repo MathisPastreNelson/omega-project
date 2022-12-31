@@ -19,7 +19,7 @@ function Start04(component) {
                 vous n'avez pas pris la mauvaise direction lorsque vous arrivez à une croisée de chemins.
 
                 Un chemin large et bien entretenu mène tout droit vers la forêt, bordé de poteaux indicateurs et de pancartes indiquant la
-                direction à suivre. Vous en déduisez qu'il s'agit du chemin de pélerin, emprunté par de nombreux voyageurs pour se rendre dans la forêt Tourbe-Burnes.
+                direction à suivre. Vous en déduisez qu'il s'agit du chemin de pélerin, emprunté par de nombreux voyageurs pour se rendre dans la forêt Tourbe-Bourbe.
 
                 L'autre chemin est beaucoup moins emprunté, envahi par les herbes hautes et parsemé de cailloux et de branches. Il semble plus
                 rapide et plus direct, mais aussi plus périlleux. Vous hésitez un instant, ne sachant lequel choisir.

@@ -16,7 +16,7 @@ function Start02(component, { bandageNumber }) {
                 Le soleil se lève à peine sur la prairie et vous vous réveillez, nerveux à l'idée de votre première véritable aventure.
                 Vous êtes un jeune débutant, peu habitué aux dangers et aux incertitudes de la vie de mercenaire.
                 Mais vous êtes déterminé à vous faire une place dans ce monde et à prouver votre valeur.
-                La forêt Tourbe-Burnes vous attend, une dense et mystérieuse forêt où vous espérez trouver votre premier contrat.
+                La forêt Tourbe-Bourbe vous attend, une dense et mystérieuse forêt où vous espérez trouver votre premier contrat.
                 La nature vous entoure de toutes parts et vous vous sentez un peu perdu, loin de la sécurité de votre foyer.
                 Mais attention, la forêt Tourbe-Bourbe est réputée pour être dangereuse et peuplée de créatures féroces.
                 Vous devrez être vigilant et prêt à tout moment à dégainer votre arme.
