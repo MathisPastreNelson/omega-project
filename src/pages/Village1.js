@@ -33,6 +33,9 @@ import Village10Alt from '../components/Village-Bourbier-Bison/Village10Alt';
 import Village11 from '../components/Village-Bourbier-Bison/Village11';
 import Village12 from '../components/Village-Bourbier-Bison/Village12';
 import Village13 from '../components/Village-Bourbier-Bison/Village13';
+import Village14 from '../components/Village-Bourbier-Bison/Village14';
+import Village15 from '../components/Village-Bourbier-Bison/Village15';
+import Village16 from '../components/Village-Bourbier-Bison/Village16';
 import VillageSideQuest1 from '../components/Village-Bourbier-Bison/VillageSideQuest1';
 import VillageSideQuest2 from '../components/Village-Bourbier-Bison/VillageSideQuest2';
 import VillageSideQuest3 from '../components/Village-Bourbier-Bison/VillageSideQuest3';
@@ -136,6 +139,12 @@ const Village1 = () => {
                 < Hud data={data} maxHp={maxHp} actualHp={actualHp} setMaxHp={setMaxHp} setActualHp={setActualHp} />
                 {component === 1 && <Village13 component={component} setComponent={setComponent} />}
                 {component === "randomBattle04" && <RandomFight04 component={component} setComponent={setComponent} maxHp={maxHp} setMaxHp={setMaxHp} actualHp={actualHp} setActualHp={setActualHp} />}
+                {component === "village11" && <Village11 component={component} setComponent={setComponent} />}
+                {component === "village12" && <Village12 component={component} setComponent={setComponent} />}
+                {component === "village13" && <Village13 component={component} setComponent={setComponent} />}
+                {component === "village14" && <Village14 component={component} setComponent={setComponent} />}
+                {component === "village15" && <Village15 component={component} setComponent={setComponent} />}
+                {component === "village16" && <Village16 component={component} data={data} setComponent={setComponent} />}
             </div>
         )
     }
