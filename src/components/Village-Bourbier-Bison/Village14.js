@@ -1,6 +1,6 @@
 import React from 'react';
 // Import FontAwesome Component
-import { FaFulcrum } from 'react-icons/fa';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Village14(component) {
     const nextComponentVillage15 = () => {
@@ -17,9 +17,9 @@ function Village14(component) {
                 Vous êtes impatients de remettre cette boîte à Jérome et de lui annoncer la nouvelle de votre victoire.
             </p>
             <div className='adventure__ChooseButton__Container'>
-                <button className='battle__ChooseButton' onClick={nextComponentVillage15}>
+                <button className='adventure__ChooseButton' onClick={nextComponentVillage15}>
                     Remettre la boîte
-                    <FaFulcrum className='adventure__Button__Arrow' />
+                    <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 // Import FontAwesome Component
-import { FaFulcrum } from 'react-icons/fa';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 function Village16(component) {
     const data = component.data
@@ -23,12 +23,13 @@ function Village16(component) {
                 Avant de partir la femme de Jérome vous interpelle, elle vous offre un beau sac de voyageur
                 qu'elle a cousu elle-même durant la nuit.
                 Selon elle, il devrait être assez grand pour contenir tout ce dont vous avez besoin pour vos futurs périples.
-                Vous remerciez chaleureusement la femme pour son geste et prenez congé
+                Vous remerciez chaleureusement la femme pour son geste et prenez congé.
+                Vous quitter Bourbier-Bison, votre route continue.
             </p>
             <div className='adventure__ChooseButton__Container'>
-                <button className='battle__ChooseButton' onClick={successVillage}>
+                <button className='adventure__ChooseButton' onClick={successVillage}>
                     Achever le scenario
-                    <FaFulcrum className='adventure__Button__Arrow' />
+                    <FaArrowAltCircleRight className='adventure__Button__Arrow' />
                 </button>
             </div>
         </div>
