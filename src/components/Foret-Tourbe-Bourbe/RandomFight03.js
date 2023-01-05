@@ -318,7 +318,7 @@ function RandomFight03(component) {
     return (
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
-                <img className='imageEnemy' src={imageEnemy} alt="Image de l'adversaire" />
+                <img className='imageEnemy' src={imageEnemy} alt="Illustration d'adversaire" />
                 <p className="fade-in textAlign">
                     Loup-garou : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>

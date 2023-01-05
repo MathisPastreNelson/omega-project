@@ -312,7 +312,7 @@ function Fight01(component) {
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
                 {/* test */}
-                <img className='imageEnemy' src={imageEnemy} alt="Image de l'adversaire" />
+                <img className='imageEnemy' src={imageEnemy} alt="Illustration d'adversaire" />
                 <p className="fade-in textAlign">
                     Slime baveux {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
