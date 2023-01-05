@@ -5,6 +5,7 @@ import { useRef } from 'react';
 // import { useRef } from "react";
 // Import FontAwesome Component
 import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
+import imageEnemy from '../../assets/enemyImg/Slime.webp'
 
 function RandomFight01(component) {
     const { setActualHp } = component;
@@ -309,6 +310,7 @@ function RandomFight01(component) {
     return (
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
+                <img className='imageEnemy' src={imageEnemy} alt="Image de l'adversaire" />
                 <p className="fade-in textAlign">
                     Slime : {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>

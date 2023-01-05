@@ -5,6 +5,8 @@ import { useRef } from 'react';
 // import { useRef } from "react";
 // Import FontAwesome Component
 import { FaPhoenixSquadron, FaAudible, FaServicestack, FaSith } from 'react-icons/fa';
+import imageEnemy from '../../assets/enemyImg/Slime.webp'
+
 
 function Fight01(component) {
     const { setActualHp } = component;
@@ -309,6 +311,8 @@ function Fight01(component) {
     return (
         <div className="battle__Container">
             <div className='textAlign battle__Container__Box'>
+                {/* test */}
+                <img className='imageEnemy' src={imageEnemy} alt="Image de l'adversaire" />
                 <p className="fade-in textAlign">
                     Slime baveux {Math.floor(enemyHp)} / {enemyMaxHp} Pv
                 </p>
