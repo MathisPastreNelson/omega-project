@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/OldWoman.webp'
 
 function VillageSideQuest1(component) {
     const nextComponentVillage03 = () => {
@@ -17,6 +18,7 @@ function VillageSideQuest1(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 La vieille femme semble encore plus inquiète lorsque vous lui demandez ce qui la tracasse.
                 Elle vous explique qu'elle vient de découvrir un tunnel dans sa cave, un tunnel creusé par les Glubandurs,

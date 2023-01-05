@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaFulcrum } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/BlackHairWomanForest.webp'
 
 function Village12(component) {
     const nextComponentFightBoss1 = () => {
@@ -10,6 +11,7 @@ function Village12(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 Vous avancez encore un peu et, soudain, vous entendez un craquement sous vos pieds.
                 Horrifié, et vous entendez les bandits se rapprocher.

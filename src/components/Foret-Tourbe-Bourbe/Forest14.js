@@ -1,14 +1,15 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/Grondar.webp'
 
 function Forest14(component) {
     const nextComponentForest15 = () => {
         component.setComponent("forest15")
     }
-
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 L'homme qui ouvre la porte est grand et imposant, avec une barbe broussailleuse et des yeux perçants.
                 Il a l'air d'un guerrier expérimenté et vous avez l'impression qu'il n'a pas froid aux yeux.

@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/IntroductionImg/Bourbier-Bison.webp'
 
 function Village01(component) {
     const nextComponentVillage02 = () => {
@@ -10,6 +11,7 @@ function Village01(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 Le village de Bourbier-Bison est un petit hameau perdu au milieu de la campagne,
                 une poignée de maisons de pierre et de bois regroupées autour d'une place centrale où se trouve une fontaine.

@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/Merchant.webp'
 
 function Merchant01(component) {
     let parsedOr = parseInt(component.data.Or)
@@ -17,6 +18,7 @@ function Merchant01(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 L'homme vous salue avec une politesse feinte et vous tend une fiole remplie d'un liquide rouge vif, qui brille d'une lueur étrange.
                 "Voici une Flamenkunsh enchantée", dit-il d'une voix grave et râpeuse. "Elle vous donnera la force et le courage nécessaires

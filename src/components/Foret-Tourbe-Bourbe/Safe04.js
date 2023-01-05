@@ -17,7 +17,6 @@ function Safe04(component) {
         <div className="adventure__Container">
             <p className="fade-in textAlign">
                 La forêt Tourbe-Bourbe se dresse fièrement à l'horizon, ses arbres verts et luxuriants semblant vous inviter à les découvrir.
-
                 Mais alors que vous vous mettiez en route, vous remarquez un individu étrange semblant vous regarder.
             </p>
             <div className='adventure__ChooseButton__Container'>

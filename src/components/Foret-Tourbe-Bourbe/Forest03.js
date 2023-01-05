@@ -2,6 +2,7 @@ import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { FaFulcrum } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/Clarisse.webp'
 
 function Forest03(component) {
     const nextComponentQuestEncounter01 = () => {
@@ -15,6 +16,7 @@ function Forest03(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 Vous avancez dans la forêt Tourbe-Bourbe, votre arme à la main, prêt à affronter n'importe quel danger qui se présentera.
                 Alors que vous marchez, vous apercevez un endroit un peu dégagé devant vous. Intrigué, vous vous approchez pour en savoir plus.

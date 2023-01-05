@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/IntroductionImg/Tavern.webp'
 
 function Tavern01(component) {
     const nextComponentTavern02 = () => {
@@ -10,6 +11,7 @@ function Tavern01(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 Vous êtes assis à une table de la taverne, entourés de voyageurs et de villageois qui viennent profiter
                 de la chaleur et de la bonne humeur qui règnent dans l'établissement. La taverne est remplie de fumée

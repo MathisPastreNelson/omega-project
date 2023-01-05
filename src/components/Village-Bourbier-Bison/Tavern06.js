@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/BlackHairWomanTavern.webp'
 
 function Tavern06(component) {
     const nextComponentTavern07 = () => {
@@ -12,10 +13,13 @@ function Tavern06(component) {
     return (
         <div className="adventure__Container">
             {window.localStorage.getItem("Solene") ?
-                <p className="fade-in textAlign">
-                    Vous vous approchez de la jeune femme et vous lui demandez si vous pouvez vous asseoir à côté d'elle.
-                    Un refus catégorique vous oblige à rebrousser chemin. Vous vous rabattez sur le vieil homme.
-                </p> :
+                <div>
+                    <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
+                    <p className="fade-in textAlign">
+                        Vous vous approchez de la jeune femme et vous lui demandez si vous pouvez vous asseoir à côté d'elle.
+                        Un refus catégorique vous oblige à rebrousser chemin. Vous vous rabattez sur le vieil homme.
+                    </p>
+                </div> :
                 <p className="fade-in textAlign">
                     Vous vous approchez du vieil homme..
                 </p>}

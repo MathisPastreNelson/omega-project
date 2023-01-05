@@ -758,13 +758,15 @@ button.bandage__Button.recharging {
   border-radius: 5px;
   border: double 6px black;
   margin: 1rem 0;
+  padding: 1rem;
 }
 
 .imageEnemy {
   width: 50%;
-  margin-top: 1rem;
+  display: block;
   border: 2px black solid;
   border-radius: 5px;
+  margin: auto;
 }
 
 .battle__Container__Damage {

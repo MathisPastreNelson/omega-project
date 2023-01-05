@@ -1,6 +1,7 @@
 import React from 'react';
 // Import FontAwesome Component
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import imageEncounter from '../../assets/EncounterImg/Merchant2.webp'
 
 function Merchant01(component) {
     let parsedOr = parseInt(component.data.Or)
@@ -23,6 +24,7 @@ function Merchant01(component) {
 
     return (
         <div className="adventure__Container">
+            <img className='imageEnemy' src={imageEncounter} alt="Illustration d'adversaire" />
             <p className="fade-in textAlign">
                 Vous poussez la porte de l'échoppe et vous entrez. L'homme qui se tient derrière le comptoir est petit et rondouillard,
                 avec des cheveux gris et un visage buriné par le temps. Il porte une longue robe de coton et un tablier maculé de taches diverses.
